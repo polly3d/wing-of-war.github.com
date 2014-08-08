@@ -1,2 +1,4 @@
 markdown: rdiscount
 pygments: true
+baseurl: /
+encoding: utf-8
