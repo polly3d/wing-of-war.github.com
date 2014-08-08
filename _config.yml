@@ -1,4 +1,11 @@
-markdown: rdiscount
-pygments: true
-baseurl: /
-encoding: utf-8
+# Site settings
+title: Nothing is important.
+email: wing.of.war.1980th@gmail.com
+description: "I will show my best."
+baseurl: ""
+url: "http://wing-of-war.github.io/"
+github_username:  wing-of-war
+
+# Build settings
+markdown: kramdown
+permalink: pretty
