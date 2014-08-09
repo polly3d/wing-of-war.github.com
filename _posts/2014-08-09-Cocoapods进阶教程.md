@@ -95,7 +95,7 @@ pod install
 * ***使用xcodeproj文件打开工程，删除Frameworks组下的Pods.xcconfig及libPods.a引用***
 * 在工程设置中的Build Phases下删除Check Pods Manifest.lock及Copy Pods Resources
 
-![CocoaPods Delete](http://macdown.uranusjr.com/static/base/img/logo-160.png)
+![CocoaPods Delete](https://raw.githubusercontent.com/Wing-Of-War/wing-of-war.github.com/master/_postsImages/2014/08/CocoaPods%20Delete.png)
 
 以上几点中，第三点中删除xcconfig应该是核心点，它是Cocoapods链接各个类库的关键。经常有可能Podfile写错后，生成多个xcconfig造成工程的头文件引入编译错误。此时可以先用此方法进行一次卸载后，重新初始化Cocoapods。
 
@@ -110,7 +110,7 @@ pod lib create "MyPrivateLibs"
 ![CocoaPods library create](https://raw.githubusercontent.com/Wing-Of-War/wing-of-war.github.com/master/_postsImages/2014/08/MyPrivateLibs%20Create.png)
 
 创建是使用的Cocoapods的模板类，几个选项默认就好。进入此文件夹，
-![MyPrivateLibs files](http://macdown.uranusjr.com/static/base/img/logo-160.png)
+![MyPrivateLibs files](https://raw.githubusercontent.com/Wing-Of-War/wing-of-war.github.com/master/_postsImages/2014/08/MyPrivateLibs%20files.png)
 
 * Example是模板中创建的测试工程项目，Example下已经自带podfile并且在运行install命令后，会自动导入这个类库，可以很方便的进行编写与测试；
 * MyPrivateLibs.podspec**非常重要**，几乎是整个类库用于导入与存储结构的核心，不过目前步骤使用默认即可；
@@ -119,13 +119,16 @@ pod lib create "MyPrivateLibs"
 
 现在我们在Example里的项目中，添加一个类别（可以向类别扩展属性），命名为AssociatedObjects
 .h文件
+
 ~~~
 @interface NSObject (AssociatedObjects)
 - (void)associateValue:(id)value withKey:(void *)key;
 - (id)associatedValueForKey:(void *)key;
 @end
 ~~~
+
 .m文件
+
 ~~~
 #import "NSObject+AssociatedObjects.h"
 #import <objc/runtime.h>
@@ -140,9 +143,10 @@ pod lib create "MyPrivateLibs"
 }
 @end
 ~~~
+
 写一个简单的测试方法，向一个NSArray中关联了一个日期，十秒后取出，一切正常工作～
 
-![MyPrivateLibs Test](http://macdown.uranusjr.com/static/base/img/logo-160.png)
+![MyPrivateLibs Test](https://raw.githubusercontent.com/Wing-Of-War/wing-of-war.github.com/master/_postsImages/2014/08/MyPrivateLibs%20Test.png)
 
 以下是我目前自己的方法
 
@@ -163,6 +167,7 @@ pod update命令
 * 如果是要直接引用Github上的类库，则务必将 .podspec文件放在类库的最上层目录中
 
 回到`CocoaPods_Demo/MyProject/`中，修改Podfile如下
+
 ~~~
 target "MyProject" do
 pod "AFNetworking" 
@@ -174,13 +179,14 @@ target "MyProjectTests" do
 
 end
 ~~~
+
 然后install一下
 
-![MyPrivateLibs import](http://macdown.uranusjr.com/static/base/img/logo-160.png)
+![MyPrivateLibs import](https://raw.githubusercontent.com/Wing-Of-War/wing-of-war.github.com/master/_postsImages/2014/08/MyPrivateLibs%20import.png)
 
 看见Installing MyPrivateLibs (0.1.0）已经正常安装，打开MyProject.xcworkspace，在Pod项目中，MyPrivateLibs和两个类库文件出现。然后测试一下：
 
-![After Import MyPrivateLibs Test](http://macdown.uranusjr.com/static/base/img/logo-160.png)
+![After Import MyPrivateLibs Test](https://raw.githubusercontent.com/Wing-Of-War/wing-of-war.github.com/master/_postsImages/2014/08/After%20Import%20MyPrivateLibs%20Test.png)
 
 一切工作正常，说明导入和类库都是正常的。
 
@@ -197,6 +203,7 @@ OK，接下来更多干货马上出现～
 在MyProject中，我创建了一个用于转换RFC3339的时间与字符串的转换方法类。
 
 MyTimeTool.h
+
 ~~~
 @interface MyTimeTool : NSObject
 
@@ -205,7 +212,9 @@ MyTimeTool.h
 
 @end
 ~~~
+
 MyTimeTool.m，本来是自己写的方法，后来根据Apple官方文档改的。
+
 ~~~
 
 + (NSString *)rfc3339DateFormatterGenerate:(NSDate *)date isExtend:(BOOL)isExtend
@@ -267,6 +276,7 @@ MyTimeTool.m，本来是自己写的方法，后来根据Apple官方文档改的
 就以这两个文件为例创建一个本地类库
 
 从终端进入到CocoaPods_Demo文件下
+
 ~~~
 pod lib create MyLocalLib
 
@@ -282,6 +292,7 @@ Would you like to do view based testing? [ Yes / No ]
  > NO
 
 ~~~
+
 与之前的过程是类似的，但我们可以简单点，移植过来的类库都是已经在原有项目中测试过的。
 
 为了丰富一下这个本地类库，我们将会把MyPrivate项目里的框架也一并移植过来。
@@ -310,8 +321,8 @@ Pod::Spec.new do |s|
   s.author           = { "wing.of.war.1980th" => "wing.of.war.1980th@gmail.com" }
   s.source           = { :git => "https://github.com/<GITHUB_USERNAME>/MyLocalLib.git", :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
-
 ~~~
+
 这部分是此类库的对外信息，很容易修改，*s.name*里的类库名称不要拼错，是与podfile中的引用名称所对应的。
 
 ~~~
@@ -319,15 +330,18 @@ Pod::Spec.new do |s|
   s.osx.deployment_target = '10.9'
   s.requires_arc = true
 ~~~
+
 此部分是类库的使用平台信息，我这里不仅设置了iOS平台，也设置了Mac OS平台。
 
 ~~~
   s.public_header_files = '*.h'
   s.source_files = 'MyLocalLibHeader.h'
 ~~~
+
 如果有此文件，将会做为此类库的公共头文件。这样在框架导入的时候，使用者可以在自己`MyProject-Prefix.pch`文件中直接引入此文件。
 
 #### 重点部分
+
 ~~~
   s.subspec 'MyCategory' do |ss|
         ss.source_files = 'MyCategory/*.{h,m}'
@@ -354,7 +368,7 @@ end
 
 OK，准备工作做完后，开始导入。这是我当前项目的文件夹结构。
 
-![file struct](http://macdown.uranusjr.com/static/base/img/logo-160.png)
+![file struct](https://raw.githubusercontent.com/Wing-Of-War/wing-of-war.github.com/master/_postsImages/2014/08/file%20struct.png)
 
 ***如果是用路径引用，则podfile中的路径一定要能指向类库的.podspec文件***
 所以，将podfile更改为如下
@@ -367,11 +381,11 @@ end
 
 `../MyLocalLib`表示的路径为上一级目录下的`MyLocalLib`文件，此文件下包括了.podspec
 
-![import LocalLib](http://macdown.uranusjr.com/static/base/img/logo-160.png)
+![import LocalLib](https://raw.githubusercontent.com/Wing-Of-War/wing-of-war.github.com/master/_postsImages/2014/08/import%20LocalLib.png)
 
 不仅安装了MyLocalLib框架，并且通过`ss.dependency 'FMDB'`导入了`FMDB`类库。打开工程文件，如下图所示
 
-![Mylocallib insatll](http://macdown.uranusjr.com/static/base/img/logo-160.png)
+![Mylocallib insatll](https://raw.githubusercontent.com/Wing-Of-War/wing-of-war.github.com/master/_postsImages/2014/08/Mylocallib%20insatll.png)
 
 * 通过GitHub安装的MyPrivateLib框架已经移除
 * MyLocalLib已经导入可以正常使用
