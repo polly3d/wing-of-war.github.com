@@ -16,7 +16,7 @@ Cocoapods的教程一般都是基本的入门（大约是如我下图所示的St
 
 ###此文的结构如下图步骤所示：
 
-![Cocoapods article  structure](https://github.com/Wing-Of-War/wing-of-war.github.com/blob/master/_postsImages/Cocoapods%20article%20%20structure.jpg)
+![Cocoapods article  structure](https://raw.githubusercontent.com/Wing-Of-War/wing-of-war.github.com/master/_postsImages/Cocoapods%20article%20%20structure.jpg)
 
 
 
