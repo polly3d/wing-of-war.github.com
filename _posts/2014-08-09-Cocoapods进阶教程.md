@@ -33,6 +33,86 @@ Cocoapods的教程一般都是基本的入门（大约是如我下图所示的St
 之后本文的内容就会以上面的步骤的逐步进行，读者可以根据自身的需要来选择章节。
 
 ###几个关键点
-* 多个项目工程使用同一个Cocoapods
+* 一个很好的[安装教程](http://code4app.com/article/cocoapods-install-usage)
+* 多个项目工程使用同一个Cocoapods的Podfile的编写
+* *.podspec文件的编写
+* 使用CocoaPoads对自身项目中的私有类库进行管理
+* 从Github导入个人类库
+* [Demo项目](https://github.com/Wing-Of-War/CocoaPods_Demo)，[Demo框架](https://github.com/Wing-Of-War/MyPrivateLibs)
 
-## Step2 工程导入Cocoapods
+
+## Step2 工程导入CocoaPoads
+
+虽然是进阶教程，但我还是把基本的操作和常用的方法写一下，如果大家有更简便的方法可以我指点一下。
+
+在桌面上，我新建了一个文件夹为将来的整体项目
+~~~
+mkdir CocoaPods_Demo
+~~~
+在此文件夹下，我建立了一个iPhone项目，命名为MyProject
+进入到此项目下，pod初始化。
+~~~
+cd MyProject
+pod init
+~~~
+或者直接在此文件夹下创建一个podfile文件，编辑podfile的内容如下，添加一个AFNetworking框架（非常好的类库示例，研究了很多）:
+~~~
+# Uncomment this line to define a global platform for your project
+# platform :ios, "6.0"
+
+target "MyProject" do
+pod "AFNetworking" 
+end
+
+
+target "MyProjectTests" do
+
+end
+~~~
+打开MyProject，此后使用的将是MyProject.xcworkspace这种以.xcworkspace为后缀的工作空间。在ViewController中我们可以尝试导入一下<AFNetworking/...>，如下图所示提示相关的头文件，则导入的框架AFNetworking工作正常。
+![AFNetworking import](http://macdown.uranusjr.com/static/base/img/logo-160.png)
+
+***[补充:pod install和pod update命令的区别](https://github.com/CocoaPods/guides.cocoapods.org/issues/14)***
+* pod install作为初次安装
+* pod update为变更podfile和导入类库升级时使用
+
+
+### Step2.1 类库移除&CocoaPods卸载
+
+####类库移除
+
+* 在podfile文件中移除相应的类库引入行，然后执行
+~~~
+pod install
+~~~
+将自动移除多余的框架
+
+####CocoaPods卸载
+
+转自[《从工程中删除Cocoapods》](http://blog.csdn.net/freedom2028/article/details/10244819):
+* 删除工程文件夹下的Podfile、Podfile.lock及Pods文件夹
+* 删除xcworkspace文件
+* ***使用xcodeproj文件打开工程，删除Frameworks组下的Pods.xcconfig及libPods.a引用***
+* 在工程设置中的Build Phases下删除Check Pods Manifest.lock及Copy Pods Resources
+![CocoaPods library create](http://img.blog.csdn.net/20130824010939328?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvZnJlZWRvbTIwMjg=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
+
+以上几点中，第三点中删除xcconfig应该是核心点，它是Cocoapods链接各个类库的关键。经常有可能Podfile写错后，生成多个xcconfig造成工程的头文件引入编译错误。此时可以先用此方法进行一次卸载后，重新初始化Cocoapods。
+
+## Step3 创建个人类库
+
+创建类库的pod命令
+~~~
+pod lib create "MyPrivateLibs"
+~~~
+
+
+![CocoaPods library create](http://macdown.uranusjr.com/static/base/img/logo-160.png)
+
+几个选项默认就好。
+然后打开这个library项目
+
+### Step3.1 导入Github类库
+
+### Step3.2 导入本地类库
+
+## Step4 工作空间使用CocoaPoads
