@@ -46,16 +46,21 @@ Cocoapods的教程一般都是基本的入门（大约是如我下图所示的St
 虽然是进阶教程，但我还是把基本的操作和常用的方法写一下，如果大家有更简便的方法可以我指点一下。
 
 在桌面上，我新建了一个文件夹为将来的整体项目
+
 ~~~
 mkdir CocoaPods_Demo
 ~~~
+
 在此文件夹下，我建立了一个iPhone项目，命名为MyProject
 进入到此项目下，pod初始化。
+
 ~~~
 cd MyProject
 pod init
 ~~~
+
 或者直接在此文件夹下创建一个podfile文件，编辑podfile的内容如下，添加一个AFNetworking框架（非常好的类库示例，研究了很多）:
+
 ~~~
 # Uncomment this line to define a global platform for your project
 # platform :ios, "6.0"
@@ -69,6 +74,7 @@ target "MyProjectTests" do
 
 end
 ~~~
+
 打开MyProject，此后使用的将是MyProject.xcworkspace这种以.xcworkspace为后缀的工作空间。在ViewController中我们可以尝试导入一下<AFNetworking/...>，如下图所示提示相关的头文件，则导入的框架AFNetworking工作正常。
 ![AFNetworking import](https://raw.githubusercontent.com/Wing-Of-War/wing-of-war.github.com/master/_postsImages/2014/08/AFNetworking%20import.png)
 
@@ -82,9 +88,11 @@ end
 ####类库移除
 
 * 在podfile文件中移除相应的类库引入行，然后执行
+
 ~~~
 pod install
 ~~~
+
 将自动移除多余的框架
 
 ####CocoaPods卸载
@@ -102,6 +110,7 @@ pod install
 ## Step3 创建个人类库
 
 创建类库的pod命令
+
 ~~~
 pod lib create "MyPrivateLibs"
 ~~~
