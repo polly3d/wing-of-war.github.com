@@ -397,7 +397,7 @@ end
 
 为了增加一点配置文件编写难度和保持项目的平级性，我们的文件结构是如下所示：
 
-![MacProject file structure]()
+![MacProject file structure](https://raw.githubusercontent.com/Wing-Of-War/wing-of-war.github.com/master/_postsImages/2014/08/MacProject%20file%20structure.png)
 
 `Podfile`的配置文件是位于`MyProject`下的。所以根据之前在导入`MyLocalLib`时所写的配置也会有些技巧。根据多处查找资料和研究别人的类库，是需要根据每一个工程中的Targe来建立与CocoaPods的关联，每一个target都要把相应的`*.xcodeproj`的位置在其中进行描述。同时我也对`target`所使用的平台进行了描述，免得在导入一些类库时引起一些版本上的限制。
 
@@ -431,4 +431,4 @@ pod install
 
 命令。完成后，再打开`MyProject.xcworkspace`工作空间，已经如下图所示，在MyMacProject中导入`MyLocalLib`类库，一切正常～
 
-![MacProject import MyLocalLib]()
+![MacProject import MyLocalLib](https://raw.githubusercontent.com/Wing-Of-War/wing-of-war.github.com/master/_postsImages/2014/08/MacProject%20import%20MyLocalLib.png)
