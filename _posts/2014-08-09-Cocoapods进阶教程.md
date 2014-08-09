@@ -70,7 +70,7 @@ target "MyProjectTests" do
 end
 ~~~
 打开MyProject，此后使用的将是MyProject.xcworkspace这种以.xcworkspace为后缀的工作空间。在ViewController中我们可以尝试导入一下<AFNetworking/...>，如下图所示提示相关的头文件，则导入的框架AFNetworking工作正常。
-![AFNetworking import](http://macdown.uranusjr.com/static/base/img/logo-160.png)
+![AFNetworking import](https://raw.githubusercontent.com/Wing-Of-War/wing-of-war.github.com/master/_postsImages/2014/08/AFNetworking%20import.png)
 
 ***[补充:pod install和pod update命令的区别](https://github.com/CocoaPods/guides.cocoapods.org/issues/14)***
 * pod install作为初次安装
@@ -106,7 +106,7 @@ pod lib create "MyPrivateLibs"
 ~~~
 
 
-![CocoaPods library create](http://macdown.uranusjr.com/static/base/img/logo-160.png)
+![CocoaPods library create](https://raw.githubusercontent.com/Wing-Of-War/wing-of-war.github.com/master/_postsImages/2014/08/MyPrivateLibs%20Create.png)
 
 几个选项默认就好。
 然后打开这个library项目
