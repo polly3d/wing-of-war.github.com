@@ -1,7 +1,8 @@
 ---
 layout: post
 title: Cocoapods进阶教程
-categories: CH
+date: 2014-08-10
+categories: Cn
 ---
 
 作为第一篇正式技术性Blog，主要是为了记录最近研究的Cocoapods在项目中的使用（虽然也还不是特别懂：P）。

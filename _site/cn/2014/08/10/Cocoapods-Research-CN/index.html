@@ -7,7 +7,7 @@
     <title>Cocoapods进阶教程</title>
     <meta name="viewport" content="width=device-width">
     <meta name="description" content="I will show my best.">
-    <link rel="canonical" href="http://wing-of-war.github.io//ch/2014/08/09/Cocoapods%E8%BF%9B%E9%98%B6%E6%95%99%E7%A8%8B/">
+    <link rel="canonical" href="http://wing-of-war.github.io//cn/2014/08/10/Cocoapods-Research-CN/">
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="/css/main.css">
@@ -57,7 +57,7 @@
 
   <header class="post-header">
     <h1>Cocoapods进阶教程</h1>
-    <p class="meta">Aug 9, 2014</p>
+    <p class="meta">Aug 10, 2014</p>
   </header>
 
   <article class="post-content">
@@ -103,30 +103,34 @@
 
 <p>虽然是进阶教程，但我还是把基本的操作和常用的方法写一下，如果大家有更简便的方法可以我指点一下。</p>
 
-<p>在桌面上，我新建了一个文件夹为将来的整体项目
-~~~
-mkdir CocoaPods_Demo
-~~~
-在此文件夹下，我建立了一个iPhone项目，命名为MyProject
-进入到此项目下，pod初始化。
-~~~
-cd MyProject
+<p>在桌面上，我新建了一个文件夹为将来的整体项目</p>
+
+<pre><code>mkdir CocoaPods_Demo
+</code></pre>
+
+<p>在此文件夹下，我建立了一个iPhone项目，命名为MyProject
+进入到此项目下，pod初始化。</p>
+
+<pre><code>cd MyProject
 pod init
-~~~
-或者直接在此文件夹下创建一个podfile文件，编辑podfile的内容如下，添加一个AFNetworking框架（非常好的类库示例，研究了很多）:
-~~~
-# Uncomment this line to define a global platform for your project
-# platform :ios, “6.0”</p>
+</code></pre>
 
-<p>target “MyProject” do
-pod “AFNetworking” 
-end</p>
+<p>或者直接在此文件夹下创建一个podfile文件，编辑podfile的内容如下，添加一个AFNetworking框架（非常好的类库示例，研究了很多）:</p>
 
-<p>target “MyProjectTests” do</p>
+<pre><code># Uncomment this line to define a global platform for your project
+# platform :ios, "6.0"
 
-<p>end
-~~~
-打开MyProject，此后使用的将是MyProject.xcworkspace这种以.xcworkspace为后缀的工作空间。在ViewController中我们可以尝试导入一下&lt;AFNetworking/…&gt;，如下图所示提示相关的头文件，则导入的框架AFNetworking工作正常。
+target "MyProject" do
+pod "AFNetworking" 
+end
+
+
+target "MyProjectTests" do
+
+end
+</code></pre>
+
+<p>打开MyProject，此后使用的将是MyProject.xcworkspace这种以.xcworkspace为后缀的工作空间。在ViewController中我们可以尝试导入一下&lt;AFNetworking/…&gt;，如下图所示提示相关的头文件，则导入的框架AFNetworking工作正常。
 <img src="https://raw.githubusercontent.com/Wing-Of-War/wing-of-war.github.com/master/_postsImages/2014/08/AFNetworking%20import.png" alt="AFNetworking import" /></p>
 
 <p><strong><em><a href="https://github.com/CocoaPods/guides.cocoapods.org/issues/14">补充:pod install和pod update命令的区别</a></em></strong>
@@ -138,12 +142,13 @@ end</p>
 <h4 id="section-4">类库移除</h4>
 
 <ul>
-  <li>在podfile文件中移除相应的类库引入行，然后执行
-~~~
-pod install
-~~~
-将自动移除多余的框架</li>
+  <li>在podfile文件中移除相应的类库引入行，然后执行</li>
 </ul>
+
+<pre><code>pod install
+</code></pre>
+
+<p>将自动移除多余的框架</p>
 
 <h4 id="cocoapods">CocoaPods卸载</h4>
 
@@ -159,10 +164,10 @@ pod install
 
 <h2 id="step3-">Step3 创建个人类库</h2>
 
-<p>创建类库的pod命令
-~~~
-pod lib create “MyPrivateLibs”
-~~~</p>
+<p>创建类库的pod命令</p>
+
+<pre><code>pod lib create "MyPrivateLibs"
+</code></pre>
 
 <p><img src="https://raw.githubusercontent.com/Wing-Of-War/wing-of-war.github.com/master/_postsImages/2014/08/MyPrivateLibs%20Create.png" alt="CocoaPods library create" /></p>
 
@@ -448,6 +453,44 @@ end
 </ul>
 
 <h2 id="step4-cocoapoads">Step4 工作空间使用CocoaPoads</h2>
+
+<p>最后一个部分，既然我项目的核心功能部分独立出来，那我在多个平台上都可以用。所以我们在<code>MyProject\MyProject.xcworkspace</code>的工作空间下添加了一个Mac项目<code>MyMacProject</code>,此项目也将引用我们之前使用的<code>MyLocalLib</code>和<code>AFNetworking</code></p>
+
+<p>为了增加一点配置文件编写难度和保持项目的平级性，我们的文件结构是如下所示：</p>
+
+<p><img src="https://raw.githubusercontent.com/Wing-Of-War/wing-of-war.github.com/master/_postsImages/2014/08/MacProject%20file%20structure.png" alt="MacProject file structure" /></p>
+
+<p><code>Podfile</code>的配置文件是位于<code>MyProject</code>下的。所以根据之前在导入<code>MyLocalLib</code>时所写的配置也会有些技巧。根据多处查找资料和研究别人的类库，是需要根据每一个工程中的Targe来建立与CocoaPods的关联，每一个target都要把相应的<code>*.xcodeproj</code>的位置在其中进行描述。同时我也对<code>target</code>所使用的平台进行了描述，免得在导入一些类库时引起一些版本上的限制。</p>
+
+<pre><code>workspace 'MyProject'
+
+target 'MyProject' do
+    platform :ios, '7.0'
+	pod "AFNetworking" 
+    pod "MyLocalLib", :path =&gt; "../MyLocalLib"
+	xcodeproj 'MyProject.xcodeproj'
+end
+
+target 'MyMacProject' do
+    platform :osx, '10.9'
+	pod "AFNetworking" 
+    pod "MyLocalLib", :path =&gt; "../MyLocalLib"
+	xcodeproj '../MyMacProject/MyMacProject.xcodeproj'
+end
+
+target "MyProjectTests" do
+
+end
+</code></pre>
+
+<p>在<code>MyProject\</code>目录下运行</p>
+
+<pre><code>pod install
+</code></pre>
+
+<p>命令。完成后，再打开<code>MyProject.xcworkspace</code>工作空间，已经如下图所示，在MyMacProject中导入<code>MyLocalLib</code>类库，一切正常～</p>
+
+<p><img src="https://raw.githubusercontent.com/Wing-Of-War/wing-of-war.github.com/master/_postsImages/2014/08/MacProject%20import%20MyLocalLib.png" alt="MacProject import MyLocalLib" /></p>
 
   </article>
 

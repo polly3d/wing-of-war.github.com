@@ -1,6 +1,7 @@
 ---
 layout: post
 title: My first blog in github
+date: 2014-08-09
 categories: En
 ---
 

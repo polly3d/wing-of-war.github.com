@@ -5,32 +5,9 @@
     <description>I will show my best.</description>
     <link>http://wing-of-war.github.io//</link>
     <atom:link href="http://wing-of-war.github.io//feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Sat, 09 Aug 2014 22:23:11 +0800</pubDate>
-    <lastBuildDate>Sat, 09 Aug 2014 22:23:11 +0800</lastBuildDate>
+    <pubDate>Wed, 20 Aug 2014 01:07:17 +0800</pubDate>
+    <lastBuildDate>Wed, 20 Aug 2014 01:07:17 +0800</lastBuildDate>
     <generator>Jekyll v2.2.0</generator>
-    
-      <item>
-        <title>My first blog in github</title>
-        <description>&lt;h1 id=&quot;my-first-blog-in-github&quot;&gt;My first blog in github&lt;/h1&gt;
-
-&lt;p class=&quot;meta&quot;&gt;9 August 2014 - BeiJing&lt;/p&gt;
-
-&lt;p&gt;I had set serval target to myself:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Jekyll is not easy to use, but very fascinating, I want to good to use it.&lt;/li&gt;
-  &lt;li&gt;Each post of this blog will be published in Chinese and English.(I’m exercising my English writing skills)&lt;/li&gt;
-  &lt;li&gt;Improve the web site every week.&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Sat, 09 Aug 2014 00:00:00 +0800</pubDate>
-        <link>http://wing-of-war.github.io//en/2014/08/09/FirstPost/</link>
-        <guid isPermaLink="true">http://wing-of-war.github.io//en/2014/08/09/FirstPost/</guid>
-        
-        
-        <category>en</category>
-        
-      </item>
     
       <item>
         <title>Cocoapods进阶教程</title>
@@ -76,30 +53,34 @@
 
 &lt;p&gt;虽然是进阶教程，但我还是把基本的操作和常用的方法写一下，如果大家有更简便的方法可以我指点一下。&lt;/p&gt;
 
-&lt;p&gt;在桌面上，我新建了一个文件夹为将来的整体项目
-~~~
-mkdir CocoaPods_Demo
-~~~
-在此文件夹下，我建立了一个iPhone项目，命名为MyProject
-进入到此项目下，pod初始化。
-~~~
-cd MyProject
+&lt;p&gt;在桌面上，我新建了一个文件夹为将来的整体项目&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;mkdir CocoaPods_Demo
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;在此文件夹下，我建立了一个iPhone项目，命名为MyProject
+进入到此项目下，pod初始化。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;cd MyProject
 pod init
-~~~
-或者直接在此文件夹下创建一个podfile文件，编辑podfile的内容如下，添加一个AFNetworking框架（非常好的类库示例，研究了很多）:
-~~~
-# Uncomment this line to define a global platform for your project
-# platform :ios, “6.0”&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;target “MyProject” do
-pod “AFNetworking” 
-end&lt;/p&gt;
+&lt;p&gt;或者直接在此文件夹下创建一个podfile文件，编辑podfile的内容如下，添加一个AFNetworking框架（非常好的类库示例，研究了很多）:&lt;/p&gt;
 
-&lt;p&gt;target “MyProjectTests” do&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;# Uncomment this line to define a global platform for your project
+# platform :ios, &quot;6.0&quot;
 
-&lt;p&gt;end
-~~~
-打开MyProject，此后使用的将是MyProject.xcworkspace这种以.xcworkspace为后缀的工作空间。在ViewController中我们可以尝试导入一下&amp;lt;AFNetworking/…&amp;gt;，如下图所示提示相关的头文件，则导入的框架AFNetworking工作正常。
+target &quot;MyProject&quot; do
+pod &quot;AFNetworking&quot; 
+end
+
+
+target &quot;MyProjectTests&quot; do
+
+end
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;打开MyProject，此后使用的将是MyProject.xcworkspace这种以.xcworkspace为后缀的工作空间。在ViewController中我们可以尝试导入一下&amp;lt;AFNetworking/…&amp;gt;，如下图所示提示相关的头文件，则导入的框架AFNetworking工作正常。
 &lt;img src=&quot;https://raw.githubusercontent.com/Wing-Of-War/wing-of-war.github.com/master/_postsImages/2014/08/AFNetworking%20import.png&quot; alt=&quot;AFNetworking import&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;&lt;em&gt;&lt;a href=&quot;https://github.com/CocoaPods/guides.cocoapods.org/issues/14&quot;&gt;补充:pod install和pod update命令的区别&lt;/a&gt;&lt;/em&gt;&lt;/strong&gt;
@@ -111,12 +92,13 @@ end&lt;/p&gt;
 &lt;h4 id=&quot;section-4&quot;&gt;类库移除&lt;/h4&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;在podfile文件中移除相应的类库引入行，然后执行
-~~~
-pod install
-~~~
-将自动移除多余的框架&lt;/li&gt;
+  &lt;li&gt;在podfile文件中移除相应的类库引入行，然后执行&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;pre&gt;&lt;code&gt;pod install
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;将自动移除多余的框架&lt;/p&gt;
 
 &lt;h4 id=&quot;cocoapods&quot;&gt;CocoaPods卸载&lt;/h4&gt;
 
@@ -132,10 +114,10 @@ pod install
 
 &lt;h2 id=&quot;step3-&quot;&gt;Step3 创建个人类库&lt;/h2&gt;
 
-&lt;p&gt;创建类库的pod命令
-~~~
-pod lib create “MyPrivateLibs”
-~~~&lt;/p&gt;
+&lt;p&gt;创建类库的pod命令&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;pod lib create &quot;MyPrivateLibs&quot;
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Wing-Of-War/wing-of-war.github.com/master/_postsImages/2014/08/MyPrivateLibs%20Create.png&quot; alt=&quot;CocoaPods library create&quot; /&gt;&lt;/p&gt;
 
@@ -421,13 +403,99 @@ end
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;step4-cocoapoads&quot;&gt;Step4 工作空间使用CocoaPoads&lt;/h2&gt;
+
+&lt;p&gt;最后一个部分，既然我项目的核心功能部分独立出来，那我在多个平台上都可以用。所以我们在&lt;code&gt;MyProject\MyProject.xcworkspace&lt;/code&gt;的工作空间下添加了一个Mac项目&lt;code&gt;MyMacProject&lt;/code&gt;,此项目也将引用我们之前使用的&lt;code&gt;MyLocalLib&lt;/code&gt;和&lt;code&gt;AFNetworking&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;为了增加一点配置文件编写难度和保持项目的平级性，我们的文件结构是如下所示：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Wing-Of-War/wing-of-war.github.com/master/_postsImages/2014/08/MacProject%20file%20structure.png&quot; alt=&quot;MacProject file structure&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;Podfile&lt;/code&gt;的配置文件是位于&lt;code&gt;MyProject&lt;/code&gt;下的。所以根据之前在导入&lt;code&gt;MyLocalLib&lt;/code&gt;时所写的配置也会有些技巧。根据多处查找资料和研究别人的类库，是需要根据每一个工程中的Targe来建立与CocoaPods的关联，每一个target都要把相应的&lt;code&gt;*.xcodeproj&lt;/code&gt;的位置在其中进行描述。同时我也对&lt;code&gt;target&lt;/code&gt;所使用的平台进行了描述，免得在导入一些类库时引起一些版本上的限制。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;workspace &#39;MyProject&#39;
+
+target &#39;MyProject&#39; do
+    platform :ios, &#39;7.0&#39;
+	pod &quot;AFNetworking&quot; 
+    pod &quot;MyLocalLib&quot;, :path =&amp;gt; &quot;../MyLocalLib&quot;
+	xcodeproj &#39;MyProject.xcodeproj&#39;
+end
+
+target &#39;MyMacProject&#39; do
+    platform :osx, &#39;10.9&#39;
+	pod &quot;AFNetworking&quot; 
+    pod &quot;MyLocalLib&quot;, :path =&amp;gt; &quot;../MyLocalLib&quot;
+	xcodeproj &#39;../MyMacProject/MyMacProject.xcodeproj&#39;
+end
+
+target &quot;MyProjectTests&quot; do
+
+end
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;在&lt;code&gt;MyProject\&lt;/code&gt;目录下运行&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;pod install
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;命令。完成后，再打开&lt;code&gt;MyProject.xcworkspace&lt;/code&gt;工作空间，已经如下图所示，在MyMacProject中导入&lt;code&gt;MyLocalLib&lt;/code&gt;类库，一切正常～&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Wing-Of-War/wing-of-war.github.com/master/_postsImages/2014/08/MacProject%20import%20MyLocalLib.png&quot; alt=&quot;MacProject import MyLocalLib&quot; /&gt;&lt;/p&gt;
+</description>
+        <pubDate>Sun, 10 Aug 2014 00:00:00 +0800</pubDate>
+        <link>http://wing-of-war.github.io//cn/2014/08/10/Cocoapods-Research-CN/</link>
+        <guid isPermaLink="true">http://wing-of-war.github.io//cn/2014/08/10/Cocoapods-Research-CN/</guid>
+        
+        
+        <category>cn</category>
+        
+      </item>
+    
+      <item>
+        <title>My first blog in github</title>
+        <description>&lt;h1 id=&quot;my-first-blog-in-github&quot;&gt;My first blog in github&lt;/h1&gt;
+
+&lt;p class=&quot;meta&quot;&gt;9 August 2014 - BeiJing&lt;/p&gt;
+
+&lt;p&gt;I had set serval target to myself:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Jekyll is not easy to use, but very fascinating, I want to good to use it.&lt;/li&gt;
+  &lt;li&gt;Each post of this blog will be published in Chinese and English.(I’m exercising my English writing skills)&lt;/li&gt;
+  &lt;li&gt;Improve the web site every week.&lt;/li&gt;
+&lt;/ul&gt;
 </description>
         <pubDate>Sat, 09 Aug 2014 00:00:00 +0800</pubDate>
-        <link>http://wing-of-war.github.io//ch/2014/08/09/Cocoapods%E8%BF%9B%E9%98%B6%E6%95%99%E7%A8%8B/</link>
-        <guid isPermaLink="true">http://wing-of-war.github.io//ch/2014/08/09/Cocoapods%E8%BF%9B%E9%98%B6%E6%95%99%E7%A8%8B/</guid>
+        <link>http://wing-of-war.github.io//en/2014/08/09/FirstPost-EN/</link>
+        <guid isPermaLink="true">http://wing-of-war.github.io//en/2014/08/09/FirstPost-EN/</guid>
         
         
-        <category>ch</category>
+        <category>en</category>
+        
+      </item>
+    
+      <item>
+        <title>GitHub 上的第一贴（My first blog in github）</title>
+        <description>&lt;h1 id=&quot;github-&quot;&gt;GitHub 上的第一贴&lt;/h1&gt;
+
+&lt;p class=&quot;meta&quot;&gt;9 August 2014 - BeiJing&lt;/p&gt;
+
+&lt;p&gt;我在这里设立了几个目标：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;通过Jekyll来打造Github上的技术博客，学习与使用一些Html技术&lt;/li&gt;
+  &lt;li&gt;每一遍技术博客都是中英文双语&lt;/li&gt;
+  &lt;li&gt;保持更新量，并且争取投稿&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;ps2014-8-20&quot;&gt;PS:补于2014-8-20，文章分类后&lt;/h3&gt;
+</description>
+        <pubDate>Sat, 09 Aug 2014 00:00:00 +0800</pubDate>
+        <link>http://wing-of-war.github.io//cn/2014/08/09/FirstPost-CN/</link>
+        <guid isPermaLink="true">http://wing-of-war.github.io//cn/2014/08/09/FirstPost-CN/</guid>
+        
+        
+        <category>cn</category>
         
       </item>
     
