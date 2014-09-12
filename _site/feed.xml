@@ -5,9 +5,46 @@
     <description>I will show my best.</description>
     <link>http://wing-of-war.github.io//</link>
     <atom:link href="http://wing-of-war.github.io//feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Wed, 20 Aug 2014 01:07:17 +0800</pubDate>
-    <lastBuildDate>Wed, 20 Aug 2014 01:07:17 +0800</lastBuildDate>
-    <generator>Jekyll v2.2.0</generator>
+    <pubDate>Sat, 13 Sep 2014 02:09:57 +0800</pubDate>
+    <lastBuildDate>Sat, 13 Sep 2014 02:09:57 +0800</lastBuildDate>
+    <generator>Jekyll v2.4.0</generator>
+    
+      <item>
+        <title>ACGArt DownLoader</title>
+        <description>&lt;h2 id=&quot;project-origin&quot;&gt;Project Origin&lt;/h2&gt;
+
+&lt;p&gt;Last Year I bought a intersting iOS application named ACG ART&lt;a href=&quot;https://itunes.apple.com/cn/app/acg-art-er-ci-yuan-dong-man/id577006740?mt=8&quot;&gt;APP Store link&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;As your see, it will provide large number of anime pictures. It’s really very briliant.&lt;/p&gt;
+
+&lt;p&gt;But you know mobile phone it’s not a work platform , it hard to manage and pick the image from the application.(Connection and download are not fast..)
+So, I spent two days worktout this little thing to batch download.&lt;/p&gt;
+
+&lt;h2 id=&quot;proejct-repgithubhttpsgithubcomwing-of-waracgartimagebatchdone&quot;&gt;Proejct Rep:&lt;a href=&quot;https://github.com/Wing-Of-War/ACGArtImageBatchDone&quot;&gt;GitHub&lt;/a&gt;&lt;/h2&gt;
+
+&lt;h2 id=&quot;wow-i-cant-stop-it&quot;&gt;WoW~ I can’t stop it!&lt;/h2&gt;
+
+&lt;h3 id=&quot;downloading&quot;&gt;DownLoading..&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;http://ww3.sinaimg.cn/mw690/56becbc4gw1eka8cay4vkj20it0ca436.jpg&quot; alt=&quot;DownLoading..&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;pictures&quot;&gt;Pictures&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;http://ww3.sinaimg.cn/mw690/56becbc4gw1eka8cable3j20qr0u7q90.jpg&quot; alt=&quot;Pictures&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;please-tell-me&quot;&gt;Please Tell Me&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;If you like it &lt;/li&gt;
+  &lt;li&gt;If you have better ideal to impove it &lt;/li&gt;
+  &lt;li&gt;If this offend you&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Sat, 13 Sep 2014 00:00:00 +0800</pubDate>
+        <link>http://wing-of-war.github.io//en/2014/09/13/ACGArt-EN/</link>
+        <guid isPermaLink="true">http://wing-of-war.github.io//en/2014/09/13/ACGArt-EN/</guid>
+        
+        
+        <category>en</category>
+        
+      </item>
     
       <item>
         <title>Cocoapods进阶教程</title>
@@ -235,7 +272,7 @@ end
         NSLocale *enUSPOSIXLocale = [[NSLocale alloc] initWithLocaleIdentifier:@&quot;en_US_POSIX&quot;];
         [dateFormatter setLocale:enUSPOSIXLocale];
         [dateFormatter setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@&quot;UTC&quot;]];
-        [dateFormatter setDateFormat:@&quot;yyyyMMdd&#39;T&#39;HHmmss&#39;Z&#39;&quot;];
+        [dateFormatter setDateFormat:@&quot;yyyyMMdd'T'HHmmss'Z'&quot;];
     }
     //    NSLog(@&quot;rfc3339DateFormatterGenerate is %@, originDate is %@&quot;,[dateFormatter stringFromDate:date] , date);
     return [dateFormatter stringFromDate:date];
@@ -249,7 +286,7 @@ end
         rfc3339ExtendFormatter = [[NSDateFormatter alloc] init];
         NSLocale *enUSPOSIXLocale = [[NSLocale alloc] initWithLocaleIdentifier:@&quot;en_US_POSIX&quot;];
         [rfc3339ExtendFormatter setLocale:enUSPOSIXLocale];
-        [rfc3339ExtendFormatter setDateFormat:@&quot;yyyy&#39;-&#39;MM&#39;-&#39;dd&#39;T&#39;HH&#39;:&#39;mm&#39;:&#39;ss&#39;.&#39;SSS&#39;Z&#39;&quot;];
+        [rfc3339ExtendFormatter setDateFormat:@&quot;yyyy'-'MM'-'dd'T'HH':'mm':'ss'.'SSS'Z'&quot;];
         [rfc3339ExtendFormatter setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0]];
     }
     return rfc3339ExtendFormatter;
@@ -262,7 +299,7 @@ end
         rfc3339ShortFormatter = [[NSDateFormatter alloc] init];
         NSLocale *enUSPOSIXLocale = [[NSLocale alloc] initWithLocaleIdentifier:@&quot;en_US_POSIX&quot;];
         [rfc3339ShortFormatter setLocale:enUSPOSIXLocale];
-        [rfc3339ShortFormatter setDateFormat:@&quot;yyyyMMdd&#39;T&#39;HHmmss&#39;Z&#39;&quot;];
+        [rfc3339ShortFormatter setDateFormat:@&quot;yyyyMMdd'T'HHmmss'Z'&quot;];
         [rfc3339ShortFormatter setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0]];
     }
     return rfc3339ShortFormatter;    
@@ -312,7 +349,7 @@ Would you like to do view based testing? [ Yes / No ]
 &lt;p&gt;因为是ruby的语法，虽然我不懂，但在参考了其它几个比较成熟的Cocoapods后，写出来个配置文件也是能够work的。先把写好的配置文件粘上来，再解释一下相关的字段。&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;请注意所有的编写一定要不要Mac系统自带的文本处理器，经常会将&lt;code&gt;&#39;&lt;/code&gt;打成&lt;code&gt;‘&lt;/code&gt;。推荐使用&lt;code&gt;Sumblime&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;请注意所有的编写一定要不要Mac系统自带的文本处理器，经常会将&lt;code&gt;'&lt;/code&gt;打成&lt;code&gt;‘&lt;/code&gt;。推荐使用&lt;code&gt;Sumblime&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;pre&gt;&lt;code&gt;Pod::Spec.new do |s|
@@ -323,47 +360,47 @@ Would you like to do view based testing? [ Yes / No ]
                        An optional longer description of MyLocalLib
 
                        * Markdown format.
-                       * Don&#39;t worry about the indent, we strip it!
+                       * Don't worry about the indent, we strip it!
                        DESC
   s.homepage         = &quot;https://github.com/&amp;lt;GITHUB_USERNAME&amp;gt;/MyLocalLib&quot;
   # s.screenshots     = &quot;www.example.com/screenshots_1&quot;, &quot;www.example.com/screenshots_2&quot;
-  s.license          = &#39;MIT&#39;
+  s.license          = 'MIT'
   s.author           = { &quot;wing.of.war.1980th&quot; =&amp;gt; &quot;wing.of.war.1980th@gmail.com&quot; }
   s.source           = { :git =&amp;gt; &quot;https://github.com/&amp;lt;GITHUB_USERNAME&amp;gt;/MyLocalLib.git&quot;, :tag =&amp;gt; s.version.to_s }
-  # s.social_media_url = &#39;https://twitter.com/&amp;lt;TWITTER_USERNAME&amp;gt;&#39;
+  # s.social_media_url = 'https://twitter.com/&amp;lt;TWITTER_USERNAME&amp;gt;'
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;这部分是此类库的对外信息，很容易修改，&lt;em&gt;s.name&lt;/em&gt;里的类库名称不要拼错，是与podfile中的引用名称所对应的。&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;  s.ios.deployment_target = &#39;7.0&#39;
-  s.osx.deployment_target = &#39;10.9&#39;
+&lt;pre&gt;&lt;code&gt;  s.ios.deployment_target = '7.0'
+  s.osx.deployment_target = '10.9'
   s.requires_arc = true
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;此部分是类库的使用平台信息，我这里不仅设置了iOS平台，也设置了Mac OS平台。&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;  s.public_header_files = &#39;*.h&#39;
-  s.source_files = &#39;MyLocalLibHeader.h&#39;
+&lt;pre&gt;&lt;code&gt;  s.public_header_files = '*.h'
+  s.source_files = 'MyLocalLibHeader.h'
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;如果有此文件，将会做为此类库的公共头文件。这样在框架导入的时候，使用者可以在自己&lt;code&gt;MyProject-Prefix.pch&lt;/code&gt;文件中直接引入此文件。&lt;/p&gt;
 
 &lt;h4 id=&quot;section-6&quot;&gt;重点部分&lt;/h4&gt;
 
-&lt;pre&gt;&lt;code&gt;  s.subspec &#39;MyCategory&#39; do |ss|
-        ss.source_files = &#39;MyCategory/*.{h,m}&#39;
-        ss.dependency &#39;FMDB&#39;
-        # s.frameworks = &#39;UIKit&#39;, &#39;MapKit&#39;
+&lt;pre&gt;&lt;code&gt;  s.subspec 'MyCategory' do |ss|
+        ss.source_files = 'MyCategory/*.{h,m}'
+        ss.dependency 'FMDB'
+        # s.frameworks = 'UIKit', 'MapKit'
   end
 
-  s.subspec &#39;DataCenter&#39; do |ss|
-        ss.source_files = &#39;MyTimeTool/*.{h,m}&#39;
-        # ss.dependency &#39;AFNetworking&#39;
+  s.subspec 'DataCenter' do |ss|
+        ss.source_files = 'MyTimeTool/*.{h,m}'
+        # ss.dependency 'AFNetworking'
   end
 
-  # s.public_header_files = &#39;Pod/Classes/**/*.h&#39;
-  # s.frameworks = &#39;UIKit&#39;, &#39;MapKit&#39;
-  # s.dependency &#39;AFNetworking&#39;, &#39;~&amp;gt; 2.3&#39;
+  # s.public_header_files = 'Pod/Classes/**/*.h'
+  # s.frameworks = 'UIKit', 'MapKit'
+  # s.dependency 'AFNetworking', '~&amp;gt; 2.3'
 end
 &lt;/code&gt;&lt;/pre&gt;
 
@@ -392,7 +429,7 @@ end
 
 &lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Wing-Of-War/wing-of-war.github.com/master/_postsImages/2014/08/import%20LocalLib.png&quot; alt=&quot;import LocalLib&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;不仅安装了MyLocalLib框架，并且通过&lt;code&gt;ss.dependency &#39;FMDB&#39;&lt;/code&gt;导入了&lt;code&gt;FMDB&lt;/code&gt;类库。打开工程文件，如下图所示&lt;/p&gt;
+&lt;p&gt;不仅安装了MyLocalLib框架，并且通过&lt;code&gt;ss.dependency 'FMDB'&lt;/code&gt;导入了&lt;code&gt;FMDB&lt;/code&gt;类库。打开工程文件，如下图所示&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Wing-Of-War/wing-of-war.github.com/master/_postsImages/2014/08/Mylocallib%20insatll.png&quot; alt=&quot;Mylocallib insatll&quot; /&gt;&lt;/p&gt;
 
@@ -412,20 +449,20 @@ end
 
 &lt;p&gt;&lt;code&gt;Podfile&lt;/code&gt;的配置文件是位于&lt;code&gt;MyProject&lt;/code&gt;下的。所以根据之前在导入&lt;code&gt;MyLocalLib&lt;/code&gt;时所写的配置也会有些技巧。根据多处查找资料和研究别人的类库，是需要根据每一个工程中的Targe来建立与CocoaPods的关联，每一个target都要把相应的&lt;code&gt;*.xcodeproj&lt;/code&gt;的位置在其中进行描述。同时我也对&lt;code&gt;target&lt;/code&gt;所使用的平台进行了描述，免得在导入一些类库时引起一些版本上的限制。&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;workspace &#39;MyProject&#39;
+&lt;pre&gt;&lt;code&gt;workspace 'MyProject'
 
-target &#39;MyProject&#39; do
-    platform :ios, &#39;7.0&#39;
+target 'MyProject' do
+    platform :ios, '7.0'
 	pod &quot;AFNetworking&quot; 
     pod &quot;MyLocalLib&quot;, :path =&amp;gt; &quot;../MyLocalLib&quot;
-	xcodeproj &#39;MyProject.xcodeproj&#39;
+	xcodeproj 'MyProject.xcodeproj'
 end
 
-target &#39;MyMacProject&#39; do
-    platform :osx, &#39;10.9&#39;
+target 'MyMacProject' do
+    platform :osx, '10.9'
 	pod &quot;AFNetworking&quot; 
     pod &quot;MyLocalLib&quot;, :path =&amp;gt; &quot;../MyLocalLib&quot;
-	xcodeproj &#39;../MyMacProject/MyMacProject.xcodeproj&#39;
+	xcodeproj '../MyMacProject/MyMacProject.xcodeproj'
 end
 
 target &quot;MyProjectTests&quot; do
