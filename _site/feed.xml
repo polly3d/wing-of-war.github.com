@@ -5,9 +5,324 @@
     <description>I will show my best.</description>
     <link>http://wing-of-war.github.io//</link>
     <atom:link href="http://wing-of-war.github.io//feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Sat, 13 Sep 2014 22:01:55 +0800</pubDate>
-    <lastBuildDate>Sat, 13 Sep 2014 22:01:55 +0800</lastBuildDate>
-    <generator>Jekyll v2.4.0</generator>
+    <pubDate>Sat, 25 Oct 2014 19:34:15 +0800</pubDate>
+    <lastBuildDate>Sat, 25 Oct 2014 19:34:15 +0800</lastBuildDate>
+    <generator>Jekyll v2.2.0</generator>
+    
+      <item>
+        <title>Ruby Study Memo</title>
+        <description>&lt;p&gt;Leran this at www.codecademy.com. Great online course.I picked up some key word from this lession for memo.&lt;/p&gt;
+
+&lt;h1 id=&quot;basic&quot;&gt;Basic&lt;/h1&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;There’s always more than one way to do something in Ruby.&lt;/li&gt;
+  &lt;li&gt;Everything in Ruby is an Object.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;input&quot;&gt;Input&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;variable = gets.chomp
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;code&gt;chomp&lt;/code&gt; removes that extra line.&lt;/p&gt;
+
+&lt;h2 id=&quot;operation&quot;&gt;Operation&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;create with empty hash&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-ruby&quot;&gt;file = {}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;need space between variable and operation&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-ruby&quot;&gt;Error: a++
+Fine: a += 1 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&quot;control-flow&quot;&gt;Control Flow&lt;/h2&gt;
+
+&lt;h3 id=&quot;unless--ifvar&quot;&gt;unless == if(!var)&lt;/h3&gt;
+
+&lt;h2 id=&quot;loops--iterators&quot;&gt;Loops &amp;amp; Iterators&lt;/h2&gt;
+
+&lt;h3 id=&quot;until&quot;&gt;until&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;i = 0
+until i == 6
+  i += 1
+end
+puts i
+# ==&amp;gt; 6
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&quot;loop&quot;&gt;Loop&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;i = 20
+loop do
+  i -= 1
+  print &quot;#{i}&quot;
+  break if i &amp;lt;= 0
+end
+#==&amp;gt;191817161514131211109876543210
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ul&gt;
+  &lt;li&gt;The &lt;code&gt;next&lt;/code&gt; keywords can be used to skip over certain steps in the loop.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code&gt;i = 20
+loop do
+  i -= 1
+  next if i % 2 == 1
+  print &quot;#{i}&quot;
+  break if i &amp;lt;= 0
+end
+#==&amp;gt;181614121086420
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&quot;inclusive-and-exclusive-ranges&quot;&gt;Inclusive and Exclusive Ranges&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code&gt;1..15&lt;/code&gt; not include 15&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;1...15&lt;/code&gt; inlcude 15 &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;iterator&quot;&gt;Iterator&lt;/h2&gt;
+
+&lt;p&gt;can apply an expression to each element of an object.
+~~~
+object.each { |item| # Do something }
+~~~&lt;/p&gt;
+
+&lt;p&gt;The &lt;code&gt;.times&lt;/code&gt; methods is like a super compact &lt;code&gt;for&lt;/code&gt; loop: it can perform a task on each item in a object a specified number of times.
+~~~
+10.times { print “Chunky bacon!” }
+~~~&lt;/p&gt;
+
+&lt;h2 id=&quot;blockproclambda&quot;&gt;Block,Proc,Lambda&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;Block&lt;/code&gt;: A Ruby block is just a bit of code that can be excuted.&lt;/p&gt;
+
+&lt;h3 id=&quot;bolck&quot;&gt;Bolck&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-ruby&quot;&gt;
+my_nums = [1,2,3]
+#.collection
+my_nums.collection { |num| num ** 2 }
+# return [1,4,9]
+my_nums.collection! { |num| num ** 2 }
+# return [1,4,9] &amp;amp;&amp;amp; my_nums == [1,4,9]
+
+
+#.each
+[1, 2, 3].each do |num|
+  puts num
+end
+# ==&amp;gt; Prints 1, 2, 3 on separate lines
+[1, 2, 3].each { |num| puts num }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&quot;yied&quot;&gt;Yied&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-ruby&quot;&gt;def block_test
+  puts &quot;We&#39;re in the method!&quot;
+  puts &quot;Yielding to the block...&quot;
+  yield
+  puts &quot;We&#39;re back in the method!&quot;
+end
+
+block_test { puts &quot;&amp;gt;&amp;gt;&amp;gt; We&#39;re in the block!&quot; }
+
+
+def double(n)
+    puts &quot;Ori input is #{n}&quot;
+    yield(n)
+end
+
+double(2) { |n| puts n *2}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&quot;proc&quot;&gt;Proc&lt;/h3&gt;
+&lt;p&gt;Procs are easy to define! You just call &lt;code&gt;Proc.new&lt;/code&gt; and pass in the block you want to save.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Procs are full-fledged object.&lt;/li&gt;
+  &lt;li&gt;This prevents you from haveing to retype the contents of your block every time you need to execute a particular bit of code.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-ruby&quot;&gt;multiples_of_3 = Proc.new do |n|
+  n % 3 == 0
+end
+
+(1..100).to_a.select(&amp;amp;multiples_of_3)
+
+multiples_of_3.call
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&quot;lambda&quot;&gt;Lambda&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;lambda { |param| block }
+
+lambda { puts &quot;Hello!&quot; }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&quot;lambda-vs-proc&quot;&gt;Lambda VS. Proc&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;A lambda checks the number of arguments passed to it , while a proc does not. This means that a lambda will throw an error if you pass it the worng number of arguments, whereas a proc will ignore unexpected arguments and assign &lt;code&gt;nil&lt;/code&gt; to any that are missing.&lt;/li&gt;
+  &lt;li&gt;When a lambda returns , it passes control back to the calling methods; when a proc returns, it does so immediately, without going back to the calling methods.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;class&quot;&gt;Class&lt;/h1&gt;
+
+&lt;h3 id=&quot;create-a-class&quot;&gt;Create a class&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-ruby&quot;&gt;class Message
+    @@messages_sent = 0
+    def initialize(from, to)
+        @from = from
+        @to = to
+        @@messages_sent += 1
+    end
+end
+
+my_message = Message.new(&quot;wing.of.war&quot;,&quot;Zhangejue&quot;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;if you want to end a Ruby statement without going to a new line, you can just type a semicolon.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-ruby&quot;&gt;class Monkey
+end
+
+to 
+
+class Monkey;end
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&quot;set--get&quot;&gt;Set &amp;amp; Get&lt;/h3&gt;
+
+&lt;p&gt;That &lt;code&gt;name=&lt;/code&gt; might look funny, but you’re allowed to put an &lt;code&gt;=&lt;/code&gt; sign in a methods name.
+~~~
+def name
+  @name
+end&lt;/p&gt;
+
+&lt;p&gt;def name=(value)
+  @name = value
+end&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;*equal*
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;attr_reader :name
+attr_writer :job
+attr_accessor :job
+~~~&lt;/p&gt;
+
+&lt;h2 id=&quot;class-variable&quot;&gt;Class Variable&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;We can create class variable by starting a variable name with two @&lt;/li&gt;
+  &lt;li&gt;Only one copy of a class variable shared by all instances of a class.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-ruby&quot;&gt;class MyClass
+	@@class_variable
+end
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;class variable should use a class method to grab it.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;inheritance&quot;&gt;Inheritance&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-ruby&quot;&gt;class ChildClass &amp;lt; FatherClass
+end
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;ChildClass is called: &lt;strong&gt;derived class&lt;/strong&gt; Or &lt;strong&gt;subclasss&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;FatherClass is called: &lt;strong&gt;parent&lt;/strong&gt; or &lt;strong&gt;superclass&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;derived class&lt;/strong&gt; can only have one &lt;strong&gt;superclass&lt;/strong&gt;, not support &lt;strong&gt;multiple inheritance&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-ruby&quot;&gt;class DerivedClass &amp;lt; Base
+  def some_method
+    super(optional args)
+      # Some stuff
+    end
+  end
+end
+
+class Email&amp;lt;Message
+    def initialize(from, to)
+        super
+    end
+end
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&quot;publicprivate&quot;&gt;Public&amp;amp;Private&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Note that everything after the &lt;strong&gt;public&lt;/strong&gt; keyword through the &lt;strong&gt;end&lt;/strong&gt; of the class definition will now be public unless we say otherwise.&lt;/li&gt;
+  &lt;li&gt;Another way to say this is that the method cannot be called with an explicit receiver.&lt;/li&gt;
+  &lt;li&gt;In order to access private information, we have to create public methods that know how to get it.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;module&quot;&gt;Module&lt;/h1&gt;
+
+&lt;p&gt;You can think of a &lt;strong&gt;Module&lt;/strong&gt; as a toolbox that contains a set of methods and constants.&lt;/p&gt;
+
+&lt;p&gt;One of the main purposes of modules is to seprate methods and constants into named spaces. That is called &lt;code&gt;namespacing&lt;/code&gt;.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;It dosent’t make sense to include variables in modules, since variables change.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-ruby&quot;&gt;module MyLibrary
+    FAVE_BOOK = &quot;Harry porter&quot;
+end
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code&gt;Math::PI&lt;/code&gt; and &lt;code&gt;Circle::PI&lt;/code&gt;, This is called the &lt;strong&gt;scope resolution operator&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;inlcude-a-module&quot;&gt;inlcude a module…&lt;/h4&gt;
+&lt;pre&gt;&lt;code class=&quot;language-ruby&quot;&gt;class Angle
+  include Math
+  attr_accessor :radians
+  
+  def initialize(radians)
+    @radians = radians
+  end
+  
+  def cosine
+    cos(@radians)
+  end
+end
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&quot;mixin&quot;&gt;Mixin&lt;/h2&gt;
+
+&lt;p&gt;When a module is used to mix addtional behavior and information into a class, it’s called &lt;strong&gt;mixin&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code&gt;include&lt;/code&gt; mixed a module’s methods in at the instance level.&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;extend&lt;/code&gt; keyword mixes a module’s methods at the &lt;code&gt;class&lt;/code&gt; level.&lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+        <pubDate>Sat, 25 Oct 2014 00:00:00 +0800</pubDate>
+        <link>http://wing-of-war.github.io//en/2014/10/25/Ruby_Study-EN/</link>
+        <guid isPermaLink="true">http://wing-of-war.github.io//en/2014/10/25/Ruby_Study-EN/</guid>
+        
+        
+        <category>en</category>
+        
+      </item>
     
       <item>
         <title>ACGArt DownLoader</title>
@@ -272,7 +587,7 @@ end
         NSLocale *enUSPOSIXLocale = [[NSLocale alloc] initWithLocaleIdentifier:@&quot;en_US_POSIX&quot;];
         [dateFormatter setLocale:enUSPOSIXLocale];
         [dateFormatter setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@&quot;UTC&quot;]];
-        [dateFormatter setDateFormat:@&quot;yyyyMMdd'T'HHmmss'Z'&quot;];
+        [dateFormatter setDateFormat:@&quot;yyyyMMdd&#39;T&#39;HHmmss&#39;Z&#39;&quot;];
     }
     //    NSLog(@&quot;rfc3339DateFormatterGenerate is %@, originDate is %@&quot;,[dateFormatter stringFromDate:date] , date);
     return [dateFormatter stringFromDate:date];
@@ -286,7 +601,7 @@ end
         rfc3339ExtendFormatter = [[NSDateFormatter alloc] init];
         NSLocale *enUSPOSIXLocale = [[NSLocale alloc] initWithLocaleIdentifier:@&quot;en_US_POSIX&quot;];
         [rfc3339ExtendFormatter setLocale:enUSPOSIXLocale];
-        [rfc3339ExtendFormatter setDateFormat:@&quot;yyyy'-'MM'-'dd'T'HH':'mm':'ss'.'SSS'Z'&quot;];
+        [rfc3339ExtendFormatter setDateFormat:@&quot;yyyy&#39;-&#39;MM&#39;-&#39;dd&#39;T&#39;HH&#39;:&#39;mm&#39;:&#39;ss&#39;.&#39;SSS&#39;Z&#39;&quot;];
         [rfc3339ExtendFormatter setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0]];
     }
     return rfc3339ExtendFormatter;
@@ -299,7 +614,7 @@ end
         rfc3339ShortFormatter = [[NSDateFormatter alloc] init];
         NSLocale *enUSPOSIXLocale = [[NSLocale alloc] initWithLocaleIdentifier:@&quot;en_US_POSIX&quot;];
         [rfc3339ShortFormatter setLocale:enUSPOSIXLocale];
-        [rfc3339ShortFormatter setDateFormat:@&quot;yyyyMMdd'T'HHmmss'Z'&quot;];
+        [rfc3339ShortFormatter setDateFormat:@&quot;yyyyMMdd&#39;T&#39;HHmmss&#39;Z&#39;&quot;];
         [rfc3339ShortFormatter setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0]];
     }
     return rfc3339ShortFormatter;    
@@ -349,7 +664,7 @@ Would you like to do view based testing? [ Yes / No ]
 &lt;p&gt;因为是ruby的语法，虽然我不懂，但在参考了其它几个比较成熟的Cocoapods后，写出来个配置文件也是能够work的。先把写好的配置文件粘上来，再解释一下相关的字段。&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;请注意所有的编写一定要不要Mac系统自带的文本处理器，经常会将&lt;code&gt;'&lt;/code&gt;打成&lt;code&gt;‘&lt;/code&gt;。推荐使用&lt;code&gt;Sumblime&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;请注意所有的编写一定要不要Mac系统自带的文本处理器，经常会将&lt;code&gt;&#39;&lt;/code&gt;打成&lt;code&gt;‘&lt;/code&gt;。推荐使用&lt;code&gt;Sumblime&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;pre&gt;&lt;code&gt;Pod::Spec.new do |s|
@@ -360,47 +675,47 @@ Would you like to do view based testing? [ Yes / No ]
                        An optional longer description of MyLocalLib
 
                        * Markdown format.
-                       * Don't worry about the indent, we strip it!
+                       * Don&#39;t worry about the indent, we strip it!
                        DESC
   s.homepage         = &quot;https://github.com/&amp;lt;GITHUB_USERNAME&amp;gt;/MyLocalLib&quot;
   # s.screenshots     = &quot;www.example.com/screenshots_1&quot;, &quot;www.example.com/screenshots_2&quot;
-  s.license          = 'MIT'
+  s.license          = &#39;MIT&#39;
   s.author           = { &quot;wing.of.war.1980th&quot; =&amp;gt; &quot;wing.of.war.1980th@gmail.com&quot; }
   s.source           = { :git =&amp;gt; &quot;https://github.com/&amp;lt;GITHUB_USERNAME&amp;gt;/MyLocalLib.git&quot;, :tag =&amp;gt; s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/&amp;lt;TWITTER_USERNAME&amp;gt;'
+  # s.social_media_url = &#39;https://twitter.com/&amp;lt;TWITTER_USERNAME&amp;gt;&#39;
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;这部分是此类库的对外信息，很容易修改，&lt;em&gt;s.name&lt;/em&gt;里的类库名称不要拼错，是与podfile中的引用名称所对应的。&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;  s.ios.deployment_target = '7.0'
-  s.osx.deployment_target = '10.9'
+&lt;pre&gt;&lt;code&gt;  s.ios.deployment_target = &#39;7.0&#39;
+  s.osx.deployment_target = &#39;10.9&#39;
   s.requires_arc = true
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;此部分是类库的使用平台信息，我这里不仅设置了iOS平台，也设置了Mac OS平台。&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;  s.public_header_files = '*.h'
-  s.source_files = 'MyLocalLibHeader.h'
+&lt;pre&gt;&lt;code&gt;  s.public_header_files = &#39;*.h&#39;
+  s.source_files = &#39;MyLocalLibHeader.h&#39;
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;如果有此文件，将会做为此类库的公共头文件。这样在框架导入的时候，使用者可以在自己&lt;code&gt;MyProject-Prefix.pch&lt;/code&gt;文件中直接引入此文件。&lt;/p&gt;
 
 &lt;h4 id=&quot;section-6&quot;&gt;重点部分&lt;/h4&gt;
 
-&lt;pre&gt;&lt;code&gt;  s.subspec 'MyCategory' do |ss|
-        ss.source_files = 'MyCategory/*.{h,m}'
-        ss.dependency 'FMDB'
-        # s.frameworks = 'UIKit', 'MapKit'
+&lt;pre&gt;&lt;code&gt;  s.subspec &#39;MyCategory&#39; do |ss|
+        ss.source_files = &#39;MyCategory/*.{h,m}&#39;
+        ss.dependency &#39;FMDB&#39;
+        # s.frameworks = &#39;UIKit&#39;, &#39;MapKit&#39;
   end
 
-  s.subspec 'DataCenter' do |ss|
-        ss.source_files = 'MyTimeTool/*.{h,m}'
-        # ss.dependency 'AFNetworking'
+  s.subspec &#39;DataCenter&#39; do |ss|
+        ss.source_files = &#39;MyTimeTool/*.{h,m}&#39;
+        # ss.dependency &#39;AFNetworking&#39;
   end
 
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~&amp;gt; 2.3'
+  # s.public_header_files = &#39;Pod/Classes/**/*.h&#39;
+  # s.frameworks = &#39;UIKit&#39;, &#39;MapKit&#39;
+  # s.dependency &#39;AFNetworking&#39;, &#39;~&amp;gt; 2.3&#39;
 end
 &lt;/code&gt;&lt;/pre&gt;
 
@@ -429,7 +744,7 @@ end
 
 &lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Wing-Of-War/wing-of-war.github.com/master/_postsImages/2014/08/import%20LocalLib.png&quot; alt=&quot;import LocalLib&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;不仅安装了MyLocalLib框架，并且通过&lt;code&gt;ss.dependency 'FMDB'&lt;/code&gt;导入了&lt;code&gt;FMDB&lt;/code&gt;类库。打开工程文件，如下图所示&lt;/p&gt;
+&lt;p&gt;不仅安装了MyLocalLib框架，并且通过&lt;code&gt;ss.dependency &#39;FMDB&#39;&lt;/code&gt;导入了&lt;code&gt;FMDB&lt;/code&gt;类库。打开工程文件，如下图所示&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Wing-Of-War/wing-of-war.github.com/master/_postsImages/2014/08/Mylocallib%20insatll.png&quot; alt=&quot;Mylocallib insatll&quot; /&gt;&lt;/p&gt;
 
@@ -449,20 +764,20 @@ end
 
 &lt;p&gt;&lt;code&gt;Podfile&lt;/code&gt;的配置文件是位于&lt;code&gt;MyProject&lt;/code&gt;下的。所以根据之前在导入&lt;code&gt;MyLocalLib&lt;/code&gt;时所写的配置也会有些技巧。根据多处查找资料和研究别人的类库，是需要根据每一个工程中的Targe来建立与CocoaPods的关联，每一个target都要把相应的&lt;code&gt;*.xcodeproj&lt;/code&gt;的位置在其中进行描述。同时我也对&lt;code&gt;target&lt;/code&gt;所使用的平台进行了描述，免得在导入一些类库时引起一些版本上的限制。&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;workspace 'MyProject'
+&lt;pre&gt;&lt;code&gt;workspace &#39;MyProject&#39;
 
-target 'MyProject' do
-    platform :ios, '7.0'
+target &#39;MyProject&#39; do
+    platform :ios, &#39;7.0&#39;
 	pod &quot;AFNetworking&quot; 
     pod &quot;MyLocalLib&quot;, :path =&amp;gt; &quot;../MyLocalLib&quot;
-	xcodeproj 'MyProject.xcodeproj'
+	xcodeproj &#39;MyProject.xcodeproj&#39;
 end
 
-target 'MyMacProject' do
-    platform :osx, '10.9'
+target &#39;MyMacProject&#39; do
+    platform :osx, &#39;10.9&#39;
 	pod &quot;AFNetworking&quot; 
     pod &quot;MyLocalLib&quot;, :path =&amp;gt; &quot;../MyLocalLib&quot;
-	xcodeproj '../MyMacProject/MyMacProject.xcodeproj'
+	xcodeproj &#39;../MyMacProject/MyMacProject.xcodeproj&#39;
 end
 
 target &quot;MyProjectTests&quot; do
