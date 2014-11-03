@@ -5,9 +5,49 @@
     <description>I will show my best.</description>
     <link>http://wing-of-war.github.io//</link>
     <atom:link href="http://wing-of-war.github.io//feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Sat, 25 Oct 2014 19:34:15 +0800</pubDate>
-    <lastBuildDate>Sat, 25 Oct 2014 19:34:15 +0800</lastBuildDate>
+    <pubDate>Mon, 03 Nov 2014 12:15:57 +0800</pubDate>
+    <lastBuildDate>Mon, 03 Nov 2014 12:15:57 +0800</lastBuildDate>
     <generator>Jekyll v2.2.0</generator>
+    
+      <item>
+        <title>如何快速的切换Mac系统的网络配置</title>
+        <description>&lt;h1 id=&quot;mac&quot;&gt;如何快速的切换Mac系统的网络配置&lt;/h1&gt;
+
+&lt;h2 id=&quot;section&quot;&gt;问题&lt;/h2&gt;
+
+&lt;p&gt;由于国内网络环境恶劣，在日常使用中，我经常会面临如下情况&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;访问Google, Youtube等境外网站需要使用&lt;code&gt;曲径&lt;/code&gt;等自动代理配置&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;或者最近经常出现的DNS服务污染，比较严重的情况连taobao搜索都不可使用，或者在使用Appstore下载更新时，使用 114, 08 , openDNS等手动配置更为靠谱&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;时候却造成我访问国内网站（视频网站会比较明显）速度下降，所以需要切换回运营提供的DNS（此DNS一般能与114，08等DNS有几十到几百望毫秒的差距）&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;所以每当感觉上网不畅时，一般都需要点开&lt;code&gt;系统偏好设置&lt;/code&gt;-&amp;gt;&lt;code&gt;网络&lt;/code&gt;-&amp;gt;&lt;code&gt;高级&lt;/code&gt;-&amp;gt;&lt;code&gt;DNS&lt;/code&gt; or &lt;code&gt;代理&lt;/code&gt;等设置，还需要额外的从一些记录软件中提取相应的配置参数&lt;/p&gt;
+
+&lt;h2 id=&quot;section-1&quot;&gt;解决办法：&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;系统偏好设置&lt;/code&gt;-&amp;gt;&lt;code&gt;网络&lt;/code&gt; 此页面上有一个位置，选择&lt;code&gt;编辑位置&lt;/code&gt;后点击下面的&lt;code&gt;+&lt;/code&gt;，即设立一种新的网络环境。&lt;/p&gt;
+
+&lt;h2 id=&quot;section-2&quot;&gt;使用：&lt;/h2&gt;
+
+&lt;p&gt;OK，此种方法最赞的就是只用点击桌面左上角的小苹果&lt;code&gt;&lt;/code&gt;-&amp;gt;&lt;code&gt;位置&lt;/code&gt;进行切换即可。
+####缺点：网络会切断一会儿。&lt;/p&gt;
+</description>
+        <pubDate>Mon, 03 Nov 2014 00:00:00 +0800</pubDate>
+        <link>http://wing-of-war.github.io//cn/2014/11/03/SwitchInternetSetting-CN/</link>
+        <guid isPermaLink="true">http://wing-of-war.github.io//cn/2014/11/03/SwitchInternetSetting-CN/</guid>
+        
+        
+        <category>cn</category>
+        
+      </item>
     
       <item>
         <title>Ruby Study Memo</title>
@@ -827,7 +867,7 @@ end
       </item>
     
       <item>
-        <title>GitHub 上的第一贴（My first blog in github）</title>
+        <title>GitHub 上的第一贴</title>
         <description>&lt;h1 id=&quot;github-&quot;&gt;GitHub 上的第一贴&lt;/h1&gt;
 
 &lt;p class=&quot;meta&quot;&gt;9 August 2014 - BeiJing&lt;/p&gt;
