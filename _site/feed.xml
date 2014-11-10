@@ -5,8 +5,8 @@
     <description>I will show my best.</description>
     <link>http://wing-of-war.github.io//</link>
     <atom:link href="http://wing-of-war.github.io//feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Mon, 10 Nov 2014 19:25:49 +0800</pubDate>
-    <lastBuildDate>Mon, 10 Nov 2014 19:25:49 +0800</lastBuildDate>
+    <pubDate>Mon, 10 Nov 2014 19:30:57 +0800</pubDate>
+    <lastBuildDate>Mon, 10 Nov 2014 19:30:57 +0800</lastBuildDate>
     <generator>Jekyll v2.2.0</generator>
     
       <item>
@@ -154,41 +154,41 @@
   &lt;li&gt;额外：如果有次级分组，使用 &lt;code&gt;#pragma mark &lt;/code&gt;子分片&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;~~~objective-c
-#pragma mark - Main Func&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-objc&quot;&gt;
+#pragma mark - Main Func
+
+- (void)sync;
+
+#pragma mark Add
+
+- (void)add:(id)obj;
+- (void)adds:(NSArray *)objs;
+
+#pragma mark Update
+
+- (void)update:(id)obj;
+- (void)update:(NSArray *)objs;
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&quot;spacing&quot;&gt;Spacing空格&lt;/h2&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;(void)sync;&lt;/li&gt;
+  &lt;li&gt;Indent using 2 spaces (this conserves space in print and makes line wrapping less likely). Never indent with tabs. Be sure to set this preference in Xcode.
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code&gt;xcode&lt;/code&gt;-&amp;gt;&lt;code&gt;preferences&lt;/code&gt;-&amp;gt;&lt;code&gt;Text Editing&lt;/code&gt;-&amp;gt;&lt;code&gt;Indentation&lt;/code&gt;-&amp;gt;&lt;code&gt;Indent width&lt;/code&gt;手动设置&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Method braces and other braces (&lt;code&gt;if&lt;/code&gt;/&lt;code&gt;else&lt;/code&gt;/&lt;code&gt;switch&lt;/code&gt;/&lt;code&gt;while&lt;/code&gt; etc.) always open on the same line as the statement but close on a new line.
+    &lt;ul&gt;
+      &lt;li&gt;方法体&lt;code&gt;{}&lt;/code&gt;的开始&lt;code&gt;{&lt;/code&gt;与方法和&lt;code&gt;if&lt;/code&gt;/&lt;code&gt;else&lt;/code&gt;/&lt;code&gt;switch&lt;/code&gt;/&lt;code&gt;while&lt;/code&gt;控制流方法处于同一行，&lt;code&gt;}&lt;/code&gt;结束于一个新行&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h1 id=&quot;pragma-mark-add&quot;&gt;pragma mark Add&lt;/h1&gt;
+&lt;p&gt;&lt;strong&gt;Preferred:&lt;/strong&gt;&lt;/p&gt;
 
-&lt;ul&gt;
-  &lt;li&gt;(void)add:(id)obj;&lt;/li&gt;
-  &lt;li&gt;(void)adds:(NSArray *)objs;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&quot;pragma-mark-update&quot;&gt;pragma mark Update&lt;/h1&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;(void)update:(id)obj;&lt;/li&gt;
-  &lt;li&gt;(void)update:(NSArray *)objs;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;pre&gt;&lt;code&gt;
-
-## Spacing空格
-
-* Indent using 2 spaces (this conserves space in print and makes line wrapping less likely). Never indent with tabs. Be sure to set this preference in Xcode.
-    *  `xcode`-&amp;gt;`preferences`-&amp;gt;`Text Editing`-&amp;gt;`Indentation`-&amp;gt;`Indent width`手动设置
-   
-* Method braces and other braces (`if`/`else`/`switch`/`while` etc.) always open on the same line as the statement but close on a new line.
-    * 方法体`{}`的开始`{`与方法和`if`/`else`/`switch`/`while`控制流方法处于同一行，`}`结束于一个新行
-
-**Preferred:**
-
-~~~objc
-if (user.isHappy) {
+&lt;pre&gt;&lt;code class=&quot;language-objc&quot;&gt;if (user.isHappy) {
   //Do something
 } else {
   //Do something else

@@ -135,7 +135,8 @@ Use `#pragma mark -` to categorize methods in functional groupings and protocol/
 
 * 额外：如果有次级分组，使用 `#pragma mark `子分片
 
-~~~objective-c
+~~~objc
+
 #pragma mark - Main Func
 
 - (void)sync;
