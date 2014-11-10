@@ -9,7 +9,7 @@ categories: CN
 
 This style guide outlines the coding conventions for raywenderlich.com.
 
-*  这份代码规范由[raywenderlich.com](raywenderlich.com)编写
+*  这份代码规范由[raywenderlich.com](raywenderlich.com)编写，原文[Git](https://github.com/raywenderlich/objective-c-style-guide)
 *  中文注释部分由 [wing.of.war.1980th@gmail](http://wing-of-war.github.io/) 编写于段落的加重部分
 *  对部分要点进行补充说明
 
