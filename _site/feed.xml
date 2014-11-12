@@ -5,8 +5,8 @@
     <description>I will show my best.</description>
     <link>http://wing-of-war.github.io//</link>
     <atom:link href="http://wing-of-war.github.io//feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Wed, 12 Nov 2014 11:11:45 +0800</pubDate>
-    <lastBuildDate>Wed, 12 Nov 2014 11:11:45 +0800</lastBuildDate>
+    <pubDate>Wed, 12 Nov 2014 11:25:15 +0800</pubDate>
+    <lastBuildDate>Wed, 12 Nov 2014 11:25:15 +0800</lastBuildDate>
     <generator>Jekyll v2.2.0</generator>
     
       <item>
@@ -117,20 +117,15 @@
 
 &lt;pre&gt;&lt;code class=&quot;language-objc&quot;&gt;#pragma mark - Lifecycle
 
-- (instancetype)init 
-{...}
+- (instancetype)init {...}
 
-- (void)dealloc 
-{...}
+- (void)dealloc {...}
 
-- (void)viewDidLoad 
-{...}
+- (void)viewDidLoad {...}
 
-- (void)viewWillAppear:(BOOL)animated 
-{...}
+- (void)viewWillAppear:(BOOL)animated {...}
 
-- (void)didReceiveMemoryWarning 
-{...}
+- (void)didReceiveMemoryWarning {...}
 
 #pragma mark - Custom Accessors
 
@@ -144,13 +139,11 @@
 
 #pragma mark - Public
 
-- (void)publicMethod 
-{...}
+- (void)publicMethod {...}
 
 #pragma mark - Private
 
-- (void)privateMethod 
-{...}
+- (void)privateMethod {...}
 
 #pragma mark - Protocol conformance
 #pragma mark - UITextFieldDelegate
@@ -163,7 +156,7 @@
 
 #pragma mark - NSObject
 
-- (NSString *)description {}
+- (NSString *)description {...}
 
 &lt;/code&gt;&lt;/pre&gt;
 

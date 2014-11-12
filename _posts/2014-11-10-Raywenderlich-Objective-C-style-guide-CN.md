@@ -97,20 +97,15 @@ Use `#pragma mark -` to categorize methods in functional groupings and protocol/
 ~~~objc
 #pragma mark - Lifecycle
 
-- (instancetype)init 
-{...}
+- (instancetype)init {...}
 
-- (void)dealloc 
-{...}
+- (void)dealloc {...}
 
-- (void)viewDidLoad 
-{...}
+- (void)viewDidLoad {...}
 
-- (void)viewWillAppear:(BOOL)animated 
-{...}
+- (void)viewWillAppear:(BOOL)animated {...}
 
-- (void)didReceiveMemoryWarning 
-{...}
+- (void)didReceiveMemoryWarning {...}
 
 #pragma mark - Custom Accessors
 
@@ -124,13 +119,11 @@ Use `#pragma mark -` to categorize methods in functional groupings and protocol/
 
 #pragma mark - Public
 
-- (void)publicMethod 
-{...}
+- (void)publicMethod {...}
 
 #pragma mark - Private
 
-- (void)privateMethod 
-{...}
+- (void)privateMethod {...}
 
 #pragma mark - Protocol conformance
 #pragma mark - UITextFieldDelegate
@@ -143,7 +136,7 @@ Use `#pragma mark -` to categorize methods in functional groupings and protocol/
 
 #pragma mark - NSObject
 
-- (NSString *)description {}
+- (NSString *)description {...}
 
 ~~~
 
