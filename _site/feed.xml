@@ -5,8 +5,8 @@
     <description>I will show my best.</description>
     <link>http://wing-of-war.github.io//</link>
     <atom:link href="http://wing-of-war.github.io//feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Mon, 10 Nov 2014 19:30:57 +0800</pubDate>
-    <lastBuildDate>Mon, 10 Nov 2014 19:30:57 +0800</lastBuildDate>
+    <pubDate>Wed, 12 Nov 2014 11:11:45 +0800</pubDate>
+    <lastBuildDate>Wed, 12 Nov 2014 11:11:45 +0800</lastBuildDate>
     <generator>Jekyll v2.2.0</generator>
     
       <item>
@@ -16,9 +16,9 @@
 &lt;p&gt;This style guide outlines the coding conventions for raywenderlich.com.&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;这份代码规范由&lt;a href=&quot;raywenderlich.com&quot;&gt;raywenderlich.com&lt;/a&gt;编写&lt;/li&gt;
-  &lt;li&gt;中文注释部分由 &lt;a href=&quot;http://wing-of-war.github.io/&quot;&gt;wing.of.war.1980th@gmail&lt;/a&gt; 编写于段落的加重部分&lt;/li&gt;
-  &lt;li&gt;对部分要点进行补充说明&lt;/li&gt;
+  &lt;li&gt;这份代码规范由&lt;a href=&quot;raywenderlich.com&quot;&gt;raywenderlich.com&lt;/a&gt;编写，原文&lt;a href=&quot;https://github.com/raywenderlich/objective-c-style-guide&quot;&gt;Git&lt;/a&gt;;&lt;/li&gt;
+  &lt;li&gt;中文注释部分由 &lt;a href=&quot;http://wing-of-war.github.io/&quot;&gt;wing.of.war.1980th@gmail&lt;/a&gt; 编写于段落的加重部分;&lt;/li&gt;
+  &lt;li&gt;中文主要是对代码规范要点解释，部分为补充说明。&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;introduction&quot;&gt;Introduction&lt;/h2&gt;
@@ -87,7 +87,7 @@
 &lt;p&gt;US English should be used.&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;使用美式英语和单词拼写&lt;/li&gt;
+  &lt;li&gt;使用美式英语和单词拼写，见过用法语和日语拼音的变量，识别困难。&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;strong&gt;Preferred:&lt;/strong&gt;&lt;/p&gt;
@@ -105,35 +105,52 @@
 &lt;p&gt;Use &lt;code&gt;#pragma mark -&lt;/code&gt; to categorize methods in functional groupings and protocol/delegate implementations following this general structure.&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;使用 &lt;code&gt;#pragma mark -&lt;/code&gt; 把相同功能下的方法和函数放入同一模块，保持&lt;code&gt;.h&lt;/code&gt;和&lt;code&gt;.m&lt;/code&gt;内的代码结构一致与顺序一致&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;使用 &lt;code&gt;#pragma mark -&lt;/code&gt; 把相同功能的代码放入同一代码区中。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;保持&lt;code&gt;.h&lt;/code&gt;和&lt;code&gt;.m&lt;/code&gt;文件内的代码分块一致与顺序一致。&lt;/p&gt;
+  &lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;示例：&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&quot;language-objc&quot;&gt;#pragma mark - Lifecycle
 
-- (instancetype)init {}
-- (void)dealloc {}
-- (void)viewDidLoad {}
-- (void)viewWillAppear:(BOOL)animated {}
-- (void)didReceiveMemoryWarning {}
+- (instancetype)init 
+{...}
+
+- (void)dealloc 
+{...}
+
+- (void)viewDidLoad 
+{...}
+
+- (void)viewWillAppear:(BOOL)animated 
+{...}
+
+- (void)didReceiveMemoryWarning 
+{...}
 
 #pragma mark - Custom Accessors
 
-- (void)setCustomProperty:(id)value {}
-- (id)customProperty {}
+- (void)setCustomProperty:(id)value {...}
+
+- (id)customProperty {...}
 
 #pragma mark - IBActions
 
-- (IBAction)submitData:(id)sender {}
+- (IBAction)submitData:(id)sender {...}
 
 #pragma mark - Public
 
-- (void)publicMethod {}
+- (void)publicMethod 
+{...}
 
 #pragma mark - Private
 
-- (void)privateMethod {}
+- (void)privateMethod 
+{...}
 
 #pragma mark - Protocol conformance
 #pragma mark - UITextFieldDelegate
@@ -142,7 +159,7 @@
 
 #pragma mark - NSCopying
 
-- (id)copyWithZone:(NSZone *)zone {}
+- (id)copyWithZone:(NSZone *)zone {...}
 
 #pragma mark - NSObject
 
@@ -151,7 +168,7 @@
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;额外：如果有次级分组，使用 &lt;code&gt;#pragma mark &lt;/code&gt;子分片&lt;/li&gt;
+  &lt;li&gt;额外：如果有次级分组，使用 &lt;code&gt;#pragma mark &lt;/code&gt;划分子代码区。&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;pre&gt;&lt;code class=&quot;language-objc&quot;&gt;
@@ -176,15 +193,15 @@
 &lt;ul&gt;
   &lt;li&gt;Indent using 2 spaces (this conserves space in print and makes line wrapping less likely). Never indent with tabs. Be sure to set this preference in Xcode.
     &lt;ul&gt;
-      &lt;li&gt;&lt;code&gt;xcode&lt;/code&gt;-&amp;gt;&lt;code&gt;preferences&lt;/code&gt;-&amp;gt;&lt;code&gt;Text Editing&lt;/code&gt;-&amp;gt;&lt;code&gt;Indentation&lt;/code&gt;-&amp;gt;&lt;code&gt;Indent width&lt;/code&gt;手动设置&lt;/li&gt;
+      &lt;li&gt;XCODE默认换行是4个空格，推荐使用2个空格，让代码看起来更紧凑，&lt;/li&gt;
+      &lt;li&gt;设置方法:&lt;code&gt;xcode&lt;/code&gt;-&amp;gt;&lt;code&gt;preferences&lt;/code&gt;-&amp;gt;&lt;code&gt;Text Editing&lt;/code&gt;-&amp;gt;&lt;code&gt;Indentation&lt;/code&gt;-&amp;gt;&lt;code&gt;Indent width&lt;/code&gt;。&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
-  &lt;li&gt;Method braces and other braces (&lt;code&gt;if&lt;/code&gt;/&lt;code&gt;else&lt;/code&gt;/&lt;code&gt;switch&lt;/code&gt;/&lt;code&gt;while&lt;/code&gt; etc.) always open on the same line as the statement but close on a new line.
-    &lt;ul&gt;
-      &lt;li&gt;方法体&lt;code&gt;{}&lt;/code&gt;的开始&lt;code&gt;{&lt;/code&gt;与方法和&lt;code&gt;if&lt;/code&gt;/&lt;code&gt;else&lt;/code&gt;/&lt;code&gt;switch&lt;/code&gt;/&lt;code&gt;while&lt;/code&gt;控制流方法处于同一行，&lt;code&gt;}&lt;/code&gt;结束于一个新行&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
+  &lt;li&gt;Method braces and other braces (&lt;code&gt;if&lt;/code&gt;/&lt;code&gt;else&lt;/code&gt;/&lt;code&gt;switch&lt;/code&gt;/&lt;code&gt;while&lt;/code&gt; etc.) always open on the same line as the statement but close on a new line.&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;pre&gt;&lt;code&gt;* 方法体`{}`的开始`{`与方法和`if`/`else`/`switch`/`while`控制流方法处于同一行，`}`则需要另起一行。
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;&lt;strong&gt;Preferred:&lt;/strong&gt;&lt;/p&gt;
 
@@ -209,17 +226,18 @@ else {
 &lt;ul&gt;
   &lt;li&gt;There should be exactly one blank line between methods to aid in visual clarity and organization. Whitespace within methods should separate functionality, but often there should probably be new methods.
     &lt;ul&gt;
-      &lt;li&gt;方法之间保持一个空行，有助于保持清晰的结构。&lt;/li&gt;
+      &lt;li&gt;方法之间应该保持一个空行，有助于保持清晰的结构。&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
   &lt;li&gt;Prefer using auto-synthesis. But if necessary, &lt;code&gt;@synthesize&lt;/code&gt; and &lt;code&gt;@dynamic&lt;/code&gt; should each be declared on new lines in the implementation.
     &lt;ul&gt;
-      &lt;li&gt;推荐使用&lt;code&gt;auto-property-synthesis&lt;/code&gt;,不推荐使用&lt;code&gt;@synthesize&lt;/code&gt; and &lt;code&gt;@dynamic&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;推荐使用&lt;code&gt;auto-property-synthesis&lt;/code&gt;自动生成属性的Set,Get方法；&lt;/li&gt;
+      &lt;li&gt;如果需要，每一个&lt;code&gt;@synthesize&lt;/code&gt; 和 &lt;code&gt;@dynamic&lt;/code&gt;都应该独占一行。&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
   &lt;li&gt;Colon-aligning method invocation should often be avoided.  There are cases where a method signature may have &amp;gt;= 3 colons and colon-aligning makes the code more readable. Please do &lt;strong&gt;NOT&lt;/strong&gt; however colon align methods containing blocks because Xcode’s indenting makes it illegible.
     &lt;ul&gt;
-      &lt;li&gt;使用block回调对齐的比冒号对齐的可读性更高。&lt;/li&gt;
+      &lt;li&gt;多个回调模块，使用&lt;code&gt;{}&lt;/code&gt;括号的对齐比使用 方法名中的&lt;code&gt;:&lt;/code&gt;对齐要便于阅读。&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
@@ -255,9 +273,9 @@ else {
 &lt;p&gt;Block comments should generally be avoided, as code should be as self-documenting as possible, with only the need for intermittent, few-line explanations. &lt;em&gt;Exception: This does not apply to those comments used to generate documentation.&lt;/em&gt;&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;注释一定要及时更新或者直接删除&lt;/li&gt;
-  &lt;li&gt;只有在复杂的地方才需要&lt;/li&gt;
-  &lt;li&gt;代码如注释&lt;/li&gt;
+  &lt;li&gt;注释及时更新，或者直接删除；&lt;/li&gt;
+  &lt;li&gt;只有在复杂的地方才需要；&lt;/li&gt;
+  &lt;li&gt;代码如注释。&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;naming-&quot;&gt;Naming 命名&lt;/h2&gt;
@@ -283,13 +301,13 @@ else {
 &lt;p&gt;A three letter prefix should always be used for class names and constants, however may be omitted for Core Data entity names. For any official raywenderlich.com books, starter kits, or tutorials, the prefix ‘RWT’ should be used.&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;三个首字母的缩写应该是用于类名和常量之中。（并且大写）&lt;/li&gt;
+  &lt;li&gt;三个首字母的缩写仅用于类名和常量之中。（并且大写）&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;Constants should be camel-case with all words capitalized and prefixed by the related class name for clarity.&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;驼峰命名&lt;/li&gt;
+  &lt;li&gt;驼峰命名。&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;strong&gt;Preferred:&lt;/strong&gt;&lt;/p&gt;
@@ -305,7 +323,7 @@ else {
 &lt;p&gt;Properties should be camel-case with the leading word being lowercase. Use auto-synthesis for properties rather than manual @synthesize statements unless you have good reason.&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;使用自动变量赋值方法，而不是自己实现&lt;code&gt;@synthesize&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;如果充分的理由，使用自动变量赋值方法，而不是自己实现&lt;code&gt;@synthesize&lt;/code&gt;。&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;strong&gt;Preferred:&lt;/strong&gt;&lt;/p&gt;
@@ -331,7 +349,7 @@ else {
 &lt;p&gt;Local variables should not contain underscores.&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;本地变量不应该包含下划线&lt;/li&gt;
+  &lt;li&gt;本地变量不应该包含下划线。&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;methods&quot;&gt;Methods&lt;/h2&gt;
@@ -339,13 +357,13 @@ else {
 &lt;p&gt;In method signatures, there should be a space after the method type (-/+ symbol). &lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;方法名和方法类型&lt;code&gt;（-/+）&lt;/code&gt;之间有一个空格&lt;/li&gt;
+  &lt;li&gt;方法名和方法类型&lt;code&gt;（-/+）&lt;/code&gt;之间有一个空格。&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;There should be a space between the method segments (matching Apple’s style). &lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;方法片段间有空格 &lt;/li&gt;
+  &lt;li&gt;方法片段间有空格。&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;Always include a keyword and be descriptive with the word before the argument which describes the argument.&lt;/p&gt;
@@ -353,7 +371,7 @@ else {
 &lt;p&gt;The usage of the word “and” is reserved.  It should not be used for multiple parameters as illustrated in the &lt;code&gt;initWithWidth:height:&lt;/code&gt; example below.&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;参数名前的方法要有描述性的关键字,并且不要包含&lt;strong&gt;and&lt;/strong&gt;字段。&lt;/li&gt;
+  &lt;li&gt;多个参数名前的方法要有描述性的关键字,并且不要包含&lt;strong&gt;and&lt;/strong&gt;字段。&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;strong&gt;Preferred:&lt;/strong&gt;&lt;/p&gt;
@@ -389,7 +407,7 @@ else {
 &lt;p&gt;Asterisks indicating pointers belong with the variable, e.g., &lt;code&gt;NSString *text&lt;/code&gt; not &lt;code&gt;NSString* text&lt;/code&gt; or &lt;code&gt;NSString * text&lt;/code&gt;, except in the case of constants.&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;&lt;code&gt;*&lt;/code&gt;与变量名紧靠在一起&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;*&lt;/code&gt;与变量名紧靠在一起。&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;a href=&quot;#private-properties&quot;&gt;Private properties&lt;/a&gt; should be used in place of instance variables whenever possible. Although using instance variables is a valid way of doing things, by agreeing to prefer properties our code will be more consistent. &lt;/p&gt;
@@ -397,7 +415,7 @@ else {
 &lt;p&gt;Direct access to instance variables that ‘back’ properties should be avoided except in initializer methods (&lt;code&gt;init&lt;/code&gt;, &lt;code&gt;initWithCoder:&lt;/code&gt;, etc…), &lt;code&gt;dealloc&lt;/code&gt; methods and within custom setters and getters. For more information on using Accessor Methods in Initializer Methods and dealloc, see &lt;a href=&quot;https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/MemoryMgmt/Articles/mmPractical.html#//apple_ref/doc/uid/TP40004447-SW6&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;除了&lt;code&gt;init&lt;/code&gt;,&lt;code&gt;dealloc&lt;/code&gt;，&lt;code&gt;set&lt;/code&gt;,&lt;code&gt;get&lt;/code&gt;等此类方法，应该尽量使用&lt;code&gt;setters&lt;/code&gt;和&lt;code&gt;getters&lt;/code&gt;。&lt;/li&gt;
+  &lt;li&gt;除&lt;code&gt;init&lt;/code&gt;,&lt;code&gt;dealloc&lt;/code&gt;，&lt;code&gt;set&lt;/code&gt;,&lt;code&gt;get&lt;/code&gt;等此类方法，应该尽量使用&lt;code&gt;setters&lt;/code&gt;和&lt;code&gt;getters&lt;/code&gt;。&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;strong&gt;Preferred:&lt;/strong&gt;&lt;/p&gt;
@@ -421,7 +439,7 @@ else {
 &lt;p&gt;Property attributes should be explicitly listed, and will help new programmers when reading the code.  The order of properties should be storage then atomicity, which is consistent with automatically generated code when connecting UI elements from Interface Builder.&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;原子属性在存储之后。&lt;/li&gt;
+  &lt;li&gt;变量申明时，原子属性在存储之后。&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;strong&gt;Preferred:&lt;/strong&gt;&lt;/p&gt;
@@ -454,11 +472,10 @@ Why? Even if you declared a property as &lt;code&gt;NSString&lt;/code&gt; somebo
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;如果让&lt;code&gt;NSString&lt;/code&gt;使用&lt;code&gt;strong&lt;/code&gt;,你有可能无法发现新值是&lt;code&gt;NSMutableString&lt;/code&gt;的类型，而在新值变更时可能并不希望一起变更。以下引用&lt;a href=&quot;http://blog.csdn.net/itianyi/article/details/9018567&quot;&gt;NSString什么时候用copy，什么时候用strong&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;以下引用&lt;a href=&quot;http://blog.csdn.net/itianyi/article/details/9018567&quot;&gt;NSString什么时候用copy，什么时候用strong&lt;/a&gt;对此例进行说明。&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;pre&gt;&lt;code&gt;比如:
-@property (retain,nonatomic) NSString *rStr;
+&lt;pre&gt;&lt;code class=&quot;language-objc&quot;&gt;@property (retain,nonatomic) NSString *rStr;
 @property (copy, nonatomic)   NSString *cStr;
 
 - (void)test:
@@ -470,6 +487,8 @@ Why? Even if you declared a property as &lt;code&gt;NSString&lt;/code&gt; somebo
     NSLog(@&quot;retainStr:%p,%p&quot;, _rStr, &amp;amp;_rStr);
     NSLog(@&quot;copyStr:%p,%p&quot;,   _cStr, &amp;amp;_cStr);
 ｝
+
+/*
 假如，mStr对象的地址为0x11，也就是0x11是@“abc”的首地址，mStr变量自身在内存中的地址为0x123；
 当把mStr赋值给retain的rStr时，rStr对象的地址为0x11，rStr变量自身在内存中的地址为0x124；rStr与mStr指向同样的地址，他们指向的是同一个对象@“abc”，这个对象的地址为0x11，所以他们的值是一样的。
 当把mStr赋值给copy的cStr时，cStr对象的地址为0x22，cStr变量自身在内存中的地址0x125；cStr与mStr指向的地址是不一样的，他们指向的是不同的对象，所以copy是深复制，一个新的对象，这个对象的地址为0x22，值为@“abc”。
@@ -487,6 +506,7 @@ Why? Even if you declared a property as &lt;code&gt;NSString&lt;/code&gt; somebo
 注意：上面的情况是针对于当把NSMutableString赋值给NSString的时候，才会有不同，如果是赋值是NSString对象，那么使用copy还是strong，结果都是一样的，因为NSString对象根本就不能改变自身的值，他是不可变的。
 
 把一个对象赋值给一个属性变量，当这个对象变化了，如果希望属性变量变化就使用strong属性，如果希望属性变量不跟着变化，就是用copy属性。
+*/
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;h2 id=&quot;dot-notation-syntax--&quot;&gt;Dot-Notation Syntax 点表达式 句法&lt;/h2&gt;
@@ -496,8 +516,12 @@ Why? Even if you declared a property as &lt;code&gt;NSString&lt;/code&gt; somebo
 &lt;p&gt;Dot-notation should &lt;strong&gt;always&lt;/strong&gt; be used for accessing and mutating properties, as it makes code more concise. Bracket notation is preferred in all other instances.&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;只要是对象自身的值和方法，都推荐使用点表达式&lt;/li&gt;
-  &lt;li&gt;只要是不是来自的值和方法，都推荐使用&lt;code&gt;[]&lt;/code&gt;&lt;strong&gt;括号记法&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;只要是对象自身的值和方法，都推荐使用点表达式；&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;只要不是自身的值和方法，都推荐使用&lt;code&gt;[]&lt;/code&gt;&lt;strong&gt;括号记法&lt;/strong&gt;。&lt;/p&gt;
+  &lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;strong&gt;Preferred:&lt;/strong&gt;&lt;/p&gt;
@@ -516,16 +540,17 @@ UIApplication.sharedApplication.delegate;
 
 &lt;h2 id=&quot;literals-&quot;&gt;Literals 字面量&lt;/h2&gt;
 
-&lt;blockquote&gt;
-  &lt;p&gt;Literals翻译成字面量或者字面值，就是直接被写到源代码中的值&lt;a href=&quot;http://my.oschina.net/iamzkt/blog/127718&quot;&gt;Objective-C 之 Literals（字面量）&lt;/a&gt;。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;它的语法很简单，上面的代码就是通过在C字符串的前面加上@符号创建了一个NSString对象greeting，整段代码看起来简洁易懂，如果没有直接量语法，那么创建这个greeting可能就要使用下面的方法了:&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-objc&quot;&gt;NSString *greeting = [NSString stringWithUTF8String:&quot;Hello World&quot;];
-&lt;/code&gt;&lt;/pre&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Literals翻译成字面量或者字面值，就是直接被写到源代码中的值&lt;a href=&quot;http://my.oschina.net/iamzkt/blog/127718&quot;&gt;Objective-C 之 Literals（字面量）&lt;/a&gt;。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;它的语法很简单，上面的代码就是通过在C字符串的前面加上@符号创建了一个NSString对象greeting，整段代码看起来简洁易懂，如果没有直接量语法，那么创建这个greeting可能就要使用下面的方法了：
+~~~objc
+NSString *greeting = [NSString stringWithUTF8String:”Hello World”];
+~~~&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;p&gt;&lt;code&gt;NSString&lt;/code&gt;, &lt;code&gt;NSDictionary&lt;/code&gt;, &lt;code&gt;NSArray&lt;/code&gt;, and &lt;code&gt;NSNumber&lt;/code&gt; literals should be used whenever creating immutable instances of those objects. Pay special care that &lt;code&gt;nil&lt;/code&gt; values can not be passed into &lt;code&gt;NSArray&lt;/code&gt; and &lt;code&gt;NSDictionary&lt;/code&gt; literals, as this will cause a crash.&lt;/p&gt;
 
@@ -550,7 +575,7 @@ NSNumber *buildingStreetNumber = [NSNumber numberWithInteger:10018];
 &lt;p&gt;Constants are preferred over in-line string literals or numbers, as they allow for easy reproduction of commonly used variables and can be quickly changed without the need for find and replace. Constants should be declared as &lt;code&gt;static&lt;/code&gt; constants and not &lt;code&gt;#define&lt;/code&gt;s unless explicitly being used as a macro.&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;除非是宏定义，常量使用&lt;code&gt;static&lt;/code&gt;与直接量语法创建。&lt;/li&gt;
+  &lt;li&gt;常量使用&lt;code&gt;static&lt;/code&gt;与直接量语法创建，&lt;code&gt;#define&lt;/code&gt;可以用于定义便利方法。&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;strong&gt;Preferred:&lt;/strong&gt;&lt;/p&gt;
@@ -572,7 +597,7 @@ static CGFloat const RWTImageThumbnailHeight = 50.0;
 &lt;p&gt;When using &lt;code&gt;enum&lt;/code&gt;s, it is recommended to use the new fixed underlying type specification because it has stronger type checking and code completion. The SDK now includes a macro to facilitate and encourage use of fixed underlying types: &lt;code&gt;NS_ENUM()&lt;/code&gt;&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;推荐使用代码块中的新枚举模块来创建，有更好的类型检测和代码补完功能。&lt;/li&gt;
+  &lt;li&gt;推荐使用代码提示中&lt;code&gt;NS_ENUM()&lt;/code&gt;枚举模块来创建，它可以提供更严谨的类型检测和代码补完功能。&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;strong&gt;For Example:&lt;/strong&gt;&lt;/p&gt;
@@ -597,7 +622,7 @@ static CGFloat const RWTImageThumbnailHeight = 50.0;
 &lt;p&gt;Older k-style constant definitions should be &lt;strong&gt;avoided&lt;/strong&gt; unless writing CoreFoundation C code (unlikely).&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;老式的枚举应该尽量避免（像C）。&lt;/li&gt;
+  &lt;li&gt;传统的枚举则让代码看起来更像C。&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;strong&gt;Not Preferred:&lt;/strong&gt;&lt;/p&gt;
@@ -614,7 +639,8 @@ static CGFloat const RWTImageThumbnailHeight = 50.0;
 When a case contains more than one line, braces should be added.&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;除非返回结果需要多行表达（编译器也会提示），不加&lt;code&gt;{}&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;每一个&lt;code&gt;case&lt;/code&gt;分支下的执行语句，如果只有一行，不加&lt;code&gt;{}&lt;/code&gt;；&lt;/li&gt;
+  &lt;li&gt;如果&lt;code&gt;case&lt;/code&gt;分支下的执行语句有多行，则使用&lt;code&gt;{}&lt;/code&gt;划定范围。&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;pre&gt;&lt;code class=&quot;language-objc&quot;&gt;switch (condition) {
@@ -639,7 +665,7 @@ When a case contains more than one line, braces should be added.&lt;/p&gt;
 &lt;p&gt;There are times when the same code can be used for multiple cases, and a fall-through should be used.  A fall-through is the removal of the ‘break’ statement for a case thus allowing the flow of execution to pass to the next case value.  A fall-through should be commented for coding clarity.&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;相同方法使用&lt;code&gt;条件继承 fall-through&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;相同&lt;code&gt;case&lt;/code&gt;分支的条件使用&lt;code&gt;条件继承 fall-through&lt;/code&gt;，在上层&lt;code&gt;case&lt;/code&gt;中不使用&lt;code&gt;break&lt;/code&gt;跳出，直接继承下层&lt;code&gt;case&lt;/code&gt;的执行语句。&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;pre&gt;&lt;code class=&quot;language-objc&quot;&gt;switch (condition) {
@@ -681,7 +707,7 @@ switch (menuType) {
 &lt;p&gt;Private properties should be declared in class extensions (anonymous categories) in the implementation file of a class. Named categories (such as &lt;code&gt;RWTPrivate&lt;/code&gt; or &lt;code&gt;private&lt;/code&gt;) should never be used unless extending another class.   The Anonymous category can be shared/exposed for testing using the &lt;headerfile&gt;+Private.h file naming convention.&lt;/headerfile&gt;&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;私有变更应该在类的类别中，不需要加&lt;code&gt;private&lt;/code&gt;等词语来进行修饰。&lt;/li&gt;
+  &lt;li&gt;私有变更应该在类的私有类别中，不需要加&lt;code&gt;private&lt;/code&gt;等词语来进行修饰。&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;strong&gt;For Example:&lt;/strong&gt;&lt;/p&gt;
@@ -702,7 +728,8 @@ switch (menuType) {
 &lt;p&gt;Never compare something directly to &lt;code&gt;YES&lt;/code&gt;, because &lt;code&gt;YES&lt;/code&gt; is defined to 1 and a &lt;code&gt;BOOL&lt;/code&gt; can be up to 8 bits.&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;永远不要把对象直接和&lt;code&gt;YES&lt;/code&gt;进行比较。&lt;/li&gt;
+  &lt;li&gt;永远不要把对象直接和&lt;code&gt;YES&lt;/code&gt;进行比较，&lt;/li&gt;
+  &lt;li&gt;可以覆写类继承自&lt;code&gt;NSOjbect&lt;/code&gt;下的&lt;code&gt;-(BOOL)isEqual:(id)obj;&lt;/code&gt;方法来类的比较。&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;This allows for more consistency across files and greater visual clarity.&lt;/p&gt;
@@ -724,7 +751,7 @@ if (isAwesome == true) {} // Never do this.
 &lt;p&gt;If the name of a &lt;code&gt;BOOL&lt;/code&gt; property is expressed as an adjective, the property can omit the “is” prefix but specifies the conventional name for the get accessor, for example:&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;如果&lt;code&gt;BOOL&lt;/code&gt;变量是形容词，不需要&lt;strong&gt;is&lt;/strong&gt;来进行修饰&lt;/li&gt;
+  &lt;li&gt;如果&lt;code&gt;BOOL&lt;/code&gt;变量是形容词，不需要&lt;strong&gt;is&lt;/strong&gt;来进行修饰。&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;pre&gt;&lt;code class=&quot;language-objc&quot;&gt;@property (assign, getter=isEditable) BOOL editable;
@@ -740,8 +767,12 @@ if (isAwesome == true) {} // Never do this.
 &lt;p&gt;Conditional bodies should always use braces even when a conditional body could be written without braces (e.g., it is one line only) to prevent errors. These errors include adding a second line and expecting it to be part of the if-statement. Another, &lt;a href=&quot;http://programmers.stackexchange.com/a/16530&quot;&gt;even more dangerous defect&lt;/a&gt; may happen where the line “inside” the if-statement is commented out, and the next line unwittingly becomes part of the if-statement. In addition, this style is more consistent with all other conditionals, and therefore more easily scannable.&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;一定使用&lt;code&gt;{}&lt;/code&gt;来圈出结果的执行体&lt;/li&gt;
-  &lt;li&gt;条件判断与执行体不能在一行&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;一定使用&lt;code&gt;{}&lt;/code&gt;来划定判断后的执行语句；&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;即使执行评语非常简单，也不能与条件判断在一行。&lt;/p&gt;
+  &lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;strong&gt;Preferred:&lt;/strong&gt;&lt;/p&gt;
@@ -767,7 +798,7 @@ if (isAwesome == true) {} // Never do this.
 &lt;p&gt;The Ternary operator, &lt;code&gt;?:&lt;/code&gt; , should only be used when it increases clarity or code neatness. &lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;只有能够促进代码整洁与清晰的前提下才使用&lt;/li&gt;
+  &lt;li&gt;只有在确定能够促进代码整洁与清晰的前提下才使用。&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;A single condition is usually all that should be evaluated. Evaluating multiple conditions is usually more understandable as an &lt;code&gt;if&lt;/code&gt; statement, or refactored into instance variables. &lt;/p&gt;
@@ -775,13 +806,13 @@ if (isAwesome == true) {} // Never do this.
 &lt;p&gt;In general, the best use of the ternary operator is during assignment of a variable and deciding which value to use.&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;三元运算符最好在赋值需要判断时使用&lt;/li&gt;
+  &lt;li&gt;三元运算符最好在赋值需要判断时使用。&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;Non-boolean variables should be compared against something, and parentheses are added for improved readability.  If the variable being compared is a boolean type, then no parentheses are needed.&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;非BOOL类型变量必须要与其类型变量做出判断后才能使用&lt;/li&gt;
+  &lt;li&gt;非BOOL类型变量必须要与其类型变量做出判断后才能使用。&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;strong&gt;Preferred:&lt;/strong&gt;&lt;/p&gt;
@@ -803,7 +834,7 @@ result = isHorizontal ? x : y;
 &lt;p&gt;Init methods should follow the convention provided by Apple’s generated code template.  A return type of ‘instancetype’ should also be used instead of ‘id’.&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;&lt;code&gt;init&lt;/code&gt;方法中返回值使用&lt;code&gt;instancetype&lt;/code&gt;取代&lt;code&gt;id&lt;/code&gt;作为返回&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;init&lt;/code&gt;方法中返回值使用&lt;code&gt;instancetype&lt;/code&gt;取代&lt;code&gt;id&lt;/code&gt;作为返回。&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;pre&gt;&lt;code class=&quot;language-objc&quot;&gt;- (instancetype)init {
@@ -828,9 +859,9 @@ result = isHorizontal ? x : y;
 
 &lt;p&gt;More information on instancetype can be found on &lt;a href=&quot;http://nshipster.com/instancetype/&quot;&gt;NSHipster.com&lt;/a&gt;.&lt;/p&gt;
 
-&lt;blockquote&gt;
-  &lt;p&gt;参考&lt;a href=&quot;http://blog.csdn.net/wzzvictory/article/details/16994913&quot;&gt;Objective-C中的instancetype和id关键字&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;ul&gt;
+  &lt;li&gt;以下摘取自&lt;a href=&quot;http://blog.csdn.net/wzzvictory/article/details/16994913&quot;&gt;Objective-C中的instancetype和id关键字&lt;/a&gt;。&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;pre&gt;&lt;code&gt;三、instancetype作用
 1、作用
@@ -875,7 +906,7 @@ result = isHorizontal ? x : y;
 &lt;/blockquote&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;使用&lt;code&gt;CGGeometry&lt;/code&gt;方法来获取&lt;code&gt;CGRect&lt;/code&gt;结构下的长宽位置值&lt;/li&gt;
+  &lt;li&gt;使用&lt;code&gt;CGGeometry&lt;/code&gt;方法来获取&lt;code&gt;CGRect&lt;/code&gt;结构下的长宽位置值。&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;strong&gt;Preferred:&lt;/strong&gt;&lt;/p&gt;
@@ -905,8 +936,15 @@ CGRect frame = (CGRect){ .origin = CGPointZero, .size = frame.size };
 &lt;p&gt;When coding with conditionals, the left hand margin of the code should be the “golden” or “happy” path.  That is, don’t nest &lt;code&gt;if&lt;/code&gt; statements.  Multiple return statements are OK.&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;条件判断的左侧空间被称为==黄金==或者==幸福==路径&lt;/li&gt;
-  &lt;li&gt;减少&lt;code&gt;if&lt;/code&gt;的条件的嵌套，多个返回条件是可以接受的&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;条件判断的左侧空间被称为&lt;strong&gt;黄金&lt;/strong&gt;或者&lt;strong&gt;幸福&lt;/strong&gt;路径；&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;减少&lt;code&gt;if&lt;/code&gt;的条件的嵌套，扁平化多个返回条件。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;函数的多个返回条件是可以接受的。&lt;/p&gt;
+  &lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;strong&gt;Preferred:&lt;/strong&gt;&lt;/p&gt;
@@ -929,12 +967,43 @@ CGRect frame = (CGRect){ .origin = CGPointZero, .size = frame.size };
 }
 &lt;/code&gt;&lt;/pre&gt;
 
+&lt;p&gt;&lt;strong&gt;Demo:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-objc&quot;&gt;    if (text.length &amp;gt; 0) {
+        WVContact* contact = [[WVContact alloc] initContact:text combName:text withLastModify:nil];
+        if (contact) {
+            [_sentTo addObject:contact];
+            [self setSearchTableShow:NO];
+            tokenField.inputText = @&quot;&quot;;
+            [tokenField reloadData];
+       }
+    } else {
+        [_subjectTokenField becomeFirstResponder];
+    }
+
+//Rebuild:
+
+    if (text.length &amp;lt;= 0) {
+        [_subjectTokenField becomeFirstResponder];
+        return;
+    }
+    WVContact* contact = [[WVContact alloc] initContact:text combName:text withLastModify:nil];
+    if (!contact) {
+        return;
+    }
+    [_sentTo addObject:contact];
+    [self setSearchTableShow:NO];
+    tokenField.inputText = @&quot;&quot;;
+    [tokenField reloadData];
+
+&lt;/code&gt;&lt;/pre&gt;
+
 &lt;h2 id=&quot;error-handling&quot;&gt;Error handling&lt;/h2&gt;
 
 &lt;p&gt;When methods return an error parameter by reference, switch on the returned value, not the error variable.&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;条件判断必须是错误变量本身&lt;/li&gt;
+  &lt;li&gt;条件判断错误时，应该是错误变量本身。&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;strong&gt;Preferred:&lt;/strong&gt;&lt;/p&gt;
@@ -961,7 +1030,7 @@ if (error) {
 &lt;p&gt;Singleton objects should use a thread-safe pattern for creating their shared instance.&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;单例必须线程安全&lt;/li&gt;
+  &lt;li&gt;单例必须线程安全。&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;pre&gt;&lt;code class=&quot;language-objc&quot;&gt;+ (instancetype)sharedInstance {
@@ -988,8 +1057,8 @@ if (error) {
 &lt;p&gt;A long line of code like this should be carried on to the second line adhering to this style guide’s Spacing section (two spaces).&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;因为代码太长需要换行时，与首行有两个空格间隔。&lt;/li&gt;
-  &lt;li&gt;&lt;code&gt;xcode&lt;/code&gt;-&amp;gt;&lt;code&gt;preferences&lt;/code&gt;-&amp;gt;&lt;code&gt;Text Editing&lt;/code&gt;-&amp;gt;&lt;code&gt;Indentation&lt;/code&gt;-&amp;gt;&lt;code&gt;Line Wrapping&lt;/code&gt; 手动设置为&lt;code&gt;2&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;因为代码太长需要换行时，与首行有两个空格间隔；&lt;/li&gt;
+  &lt;li&gt;设置方法：&lt;code&gt;xcode&lt;/code&gt;-&amp;gt;&lt;code&gt;preferences&lt;/code&gt;-&amp;gt;&lt;code&gt;Text Editing&lt;/code&gt;-&amp;gt;&lt;code&gt;Indentation&lt;/code&gt;-&amp;gt;&lt;code&gt;Line Wrapping&lt;/code&gt; 手动设置为&lt;code&gt;2&lt;/code&gt;。&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;pre&gt;&lt;code class=&quot;language-objc&quot;&gt;self.productsRequest = [[SKProductsRequest alloc] 
