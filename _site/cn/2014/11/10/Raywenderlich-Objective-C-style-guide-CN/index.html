@@ -236,7 +236,7 @@
 <ul>
   <li>Indent using 2 spaces (this conserves space in print and makes line wrapping less likely). Never indent with tabs. Be sure to set this preference in Xcode.
     <ul>
-      <li>XCODE默认换行是4个空格，推荐使用2个空格，让代码看起来更紧凑，</li>
+      <li>XCODE默认换行是4个空格，推 荐使用2个空格，让代码看起来更紧凑，</li>
       <li>设置方法:<code>xcode</code>-&gt;<code>preferences</code>-&gt;<code>Text Editing</code>-&gt;<code>Indentation</code>-&gt;<code>Indent width</code>。</li>
     </ul>
   </li>
@@ -560,10 +560,10 @@ Why? Even if you declared a property as <code>NSString</code> somebody might pas
 
 <ul>
   <li>
-    <p>只要是对象自身的值和方法，都推荐使用点表达式；</p>
+    <p>点表达式应该是用于获取或者改变属性</p>
   </li>
   <li>
-    <p>只要不是自身的值和方法，都推荐使用<code>[]</code><strong>括号记法</strong>。</p>
+    <p>其它实例方法，都推荐使用<code>[]</code><strong>括号记法</strong>。</p>
   </li>
 </ul>
 
@@ -618,7 +618,7 @@ NSNumber *buildingStreetNumber = [NSNumber numberWithInteger:10018];
 <p>Constants are preferred over in-line string literals or numbers, as they allow for easy reproduction of commonly used variables and can be quickly changed without the need for find and replace. Constants should be declared as <code>static</code> constants and not <code>#define</code>s unless explicitly being used as a macro.</p>
 
 <ul>
-  <li>常量使用<code>static</code>与直接量语法创建，<code>#define</code>可以用于定义便利方法。</li>
+  <li>常量使用<code>static</code>与<code>const</code>创建，<code>#define</code>可以用于定义便利方法。</li>
 </ul>
 
 <p><strong>Preferred:</strong></p>
@@ -640,7 +640,7 @@ static CGFloat const RWTImageThumbnailHeight = 50.0;
 <p>When using <code>enum</code>s, it is recommended to use the new fixed underlying type specification because it has stronger type checking and code completion. The SDK now includes a macro to facilitate and encourage use of fixed underlying types: <code>NS_ENUM()</code></p>
 
 <ul>
-  <li>推荐使用代码提示中<code>NS_ENUM()</code>枚举模块来创建，它可以提供更严谨的类型检测和代码补完功能。</li>
+  <li>推荐使用代码提示中宏定义的<code>NS_ENUM()</code>枚举模块来创建，它可以提供更严谨的类型检测和代码补完功能。</li>
 </ul>
 
 <p><strong>For Example:</strong></p>
@@ -750,7 +750,12 @@ switch (menuType) {
 <p>Private properties should be declared in class extensions (anonymous categories) in the implementation file of a class. Named categories (such as <code>RWTPrivate</code> or <code>private</code>) should never be used unless extending another class.   The Anonymous category can be shared/exposed for testing using the <headerfile>+Private.h file naming convention.</headerfile></p>
 
 <ul>
-  <li>私有变更应该在类的私有类别中，不需要加<code>private</code>等词语来进行修饰。</li>
+  <li>
+    <p>私有变更应该在类的私有类别中，不需要加<code>private</code>等词语来进行修饰。</p>
+  </li>
+  <li>
+    <p>私有类别可以在命名为<code>&lt;headerfile&gt;+Private.h</code>的文件里提供</p>
+  </li>
 </ul>
 
 <p><strong>For Example:</strong></p>
@@ -771,7 +776,7 @@ switch (menuType) {
 <p>Never compare something directly to <code>YES</code>, because <code>YES</code> is defined to 1 and a <code>BOOL</code> can be up to 8 bits.</p>
 
 <ul>
-  <li>永远不要把对象直接和<code>YES</code>进行比较，</li>
+  <li>不要把对象直接和<code>YES</code>进行比较，</li>
   <li>可以覆写类继承自<code>NSOjbect</code>下的<code>-(BOOL)isEqual:(id)obj;</code>方法来类的比较。</li>
 </ul>
 
@@ -814,7 +819,7 @@ if (isAwesome == true) {} // Never do this.
     <p>一定使用<code>{}</code>来划定判断后的执行语句；</p>
   </li>
   <li>
-    <p>即使执行评语非常简单，也不能与条件判断在一行。</p>
+    <p>即使执行语非常简单，也不能与条件判断在一行。</p>
   </li>
 </ul>
 
@@ -980,7 +985,7 @@ CGRect frame = (CGRect){ .origin = CGPointZero, .size = frame.size };
 
 <ul>
   <li>
-    <p>条件判断的左侧空间被称为<strong>黄金</strong>或者<strong>幸福</strong>路径；</p>
+    <p>条件判断的左侧空间被称为<strong>黄金路径</strong>或者<strong>幸福路径</strong>；</p>
   </li>
   <li>
     <p>减少<code>if</code>的条件的嵌套，扁平化多个返回条件。</p>

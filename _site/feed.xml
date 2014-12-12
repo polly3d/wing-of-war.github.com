@@ -5,9 +5,82 @@
     <description>I will show my best.</description>
     <link>http://wing-of-war.github.io//</link>
     <atom:link href="http://wing-of-war.github.io//feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Wed, 12 Nov 2014 11:25:15 +0800</pubDate>
-    <lastBuildDate>Wed, 12 Nov 2014 11:25:15 +0800</lastBuildDate>
+    <pubDate>Fri, 12 Dec 2014 12:02:38 +0800</pubDate>
+    <lastBuildDate>Fri, 12 Dec 2014 12:02:38 +0800</lastBuildDate>
     <generator>Jekyll v2.2.0</generator>
+    
+      <item>
+        <title>重置iOS App请求推送授权请求</title>
+        <description>&lt;p&gt;在iOS上给自己的App创建推送通并不容易，连测试用户给App进行授权推送通知也是件很麻烦的事情。这将直接关系到用户体验与应用流程的处理。&lt;/p&gt;
+
+&lt;p&gt;之前一直是有在模拟器上测试授权（比如通讯录，月历访问等），通过模拟器的&lt;code&gt;Reset Content and Setting&lt;/code&gt;来重置整个模拟器系统来进行调试。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://github.com/Wing-Of-War/wing-of-war.github.com/blob/master/_postsImages/2014/12/1.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;相比其它授权，Push Token是不能只使用模拟器进行测试的，因为iOS的服务器是不会给模拟器下发Push Token的。所以这个流程最好是用真机进行测试。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://github.com/Wing-Of-War/wing-of-war.github.com/blob/master/_postsImages/2014/12/2.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;但如果使用真机进行反复测试，在之前几乎只有一个办法:  &lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;通用&lt;/code&gt;-&amp;gt;&lt;code&gt;还原&lt;/code&gt;-&amp;gt;&lt;code&gt;抹掉所有内容和设置&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;清空所有内容不说，整个过程可能还长达数十分钟。&lt;/p&gt;
+
+&lt;p&gt;昨天在和同事感叹这个问题的时候，搜索了一下stackoverflow.com上找到了答案：&lt;/p&gt;
+
+&lt;p&gt;http://stackoverflow.com/questions/2438400/reset-push-notification-settings-for-app&lt;/p&gt;
+
+&lt;p&gt;以及此答案指向的Apple官方解答：&lt;/p&gt;
+
+&lt;p&gt;https://developer.apple.com/library/ios/technotes/tn2010/tn2265.html&lt;/p&gt;
+
+&lt;p&gt;相关文档引用&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;h3 id=&quot;resetting-the-push-notifications-permissions-alert-on-ios&quot;&gt;Resetting the Push Notifications Permissions Alert on iOS&lt;/h3&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;The first time a push-enabled app registers for push notifications, iOS asks the user if they wish to receive notifications for that app. Once the user has responded to this alert it is not presented again unless the device is restored or the app has been uninstalled for at least a day.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;If you want to simulate a first-time run of your app, you can leave the app uninstalled for a day. You can achieve the latter without actually waiting a day by following these steps:&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;ul&gt;
+    &lt;li&gt;Delete your app from the device.&lt;/li&gt;
+    &lt;li&gt;Turn the device off completely and turn it back on.&lt;/li&gt;
+    &lt;li&gt;Go to Settings &amp;gt; General &amp;gt; Date &amp;amp; Time and set the date ahead a day or more.&lt;/li&gt;
+    &lt;li&gt;Turn the device off completely again and turn it back on.&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;翻译一下：&lt;/p&gt;
+
+&lt;p&gt;将App从设备上删除&lt;br /&gt;
+将设备完全关机再重新启动&lt;br /&gt;
+打开 设置-&amp;gt;通用-&amp;gt;日期与时间里 将设备时间拔快一天以上&lt;br /&gt;
+将设备再次完全关机再重新启动&lt;/p&gt;
+
+&lt;p&gt;此时再安装你的App可以像纯新的流程一样进行测试所有授权，&lt;/p&gt;
+
+&lt;p&gt;在设置中查看你的App授权选项也是全部重置。&lt;/p&gt;
+
+&lt;p&gt;分析：&lt;/p&gt;
+
+&lt;p&gt;由于之前没有仔细看过相关文档，但可以肯定iOS的授权设置会在设备重新启动时进行更新，而重置的周期需要在一天以上。以后再看到更细的说明再补充。&lt;/p&gt;
+</description>
+        <pubDate>Fri, 12 Dec 2014 00:00:00 +0800</pubDate>
+        <link>http://wing-of-war.github.io//cn/2014/12/12/iOS%20Push%20Authoarztion%20Rest-CN/</link>
+        <guid isPermaLink="true">http://wing-of-war.github.io//cn/2014/12/12/iOS%20Push%20Authoarztion%20Rest-CN/</guid>
+        
+        
+        <category>cn</category>
+        
+      </item>
     
       <item>
         <title>raywenderlich.com Objective-C代码规范中文简易注释</title>
@@ -186,7 +259,7 @@
 &lt;ul&gt;
   &lt;li&gt;Indent using 2 spaces (this conserves space in print and makes line wrapping less likely). Never indent with tabs. Be sure to set this preference in Xcode.
     &lt;ul&gt;
-      &lt;li&gt;XCODE默认换行是4个空格，推荐使用2个空格，让代码看起来更紧凑，&lt;/li&gt;
+      &lt;li&gt;XCODE默认换行是4个空格，推 荐使用2个空格，让代码看起来更紧凑，&lt;/li&gt;
       &lt;li&gt;设置方法:&lt;code&gt;xcode&lt;/code&gt;-&amp;gt;&lt;code&gt;preferences&lt;/code&gt;-&amp;gt;&lt;code&gt;Text Editing&lt;/code&gt;-&amp;gt;&lt;code&gt;Indentation&lt;/code&gt;-&amp;gt;&lt;code&gt;Indent width&lt;/code&gt;。&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
@@ -510,10 +583,10 @@ Why? Even if you declared a property as &lt;code&gt;NSString&lt;/code&gt; somebo
 
 &lt;ul&gt;
   &lt;li&gt;
-    &lt;p&gt;只要是对象自身的值和方法，都推荐使用点表达式；&lt;/p&gt;
+    &lt;p&gt;点表达式应该是用于获取或者改变属性&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;只要不是自身的值和方法，都推荐使用&lt;code&gt;[]&lt;/code&gt;&lt;strong&gt;括号记法&lt;/strong&gt;。&lt;/p&gt;
+    &lt;p&gt;其它实例方法，都推荐使用&lt;code&gt;[]&lt;/code&gt;&lt;strong&gt;括号记法&lt;/strong&gt;。&lt;/p&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
 
@@ -568,7 +641,7 @@ NSNumber *buildingStreetNumber = [NSNumber numberWithInteger:10018];
 &lt;p&gt;Constants are preferred over in-line string literals or numbers, as they allow for easy reproduction of commonly used variables and can be quickly changed without the need for find and replace. Constants should be declared as &lt;code&gt;static&lt;/code&gt; constants and not &lt;code&gt;#define&lt;/code&gt;s unless explicitly being used as a macro.&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;常量使用&lt;code&gt;static&lt;/code&gt;与直接量语法创建，&lt;code&gt;#define&lt;/code&gt;可以用于定义便利方法。&lt;/li&gt;
+  &lt;li&gt;常量使用&lt;code&gt;static&lt;/code&gt;与&lt;code&gt;const&lt;/code&gt;创建，&lt;code&gt;#define&lt;/code&gt;可以用于定义便利方法。&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;strong&gt;Preferred:&lt;/strong&gt;&lt;/p&gt;
@@ -590,7 +663,7 @@ static CGFloat const RWTImageThumbnailHeight = 50.0;
 &lt;p&gt;When using &lt;code&gt;enum&lt;/code&gt;s, it is recommended to use the new fixed underlying type specification because it has stronger type checking and code completion. The SDK now includes a macro to facilitate and encourage use of fixed underlying types: &lt;code&gt;NS_ENUM()&lt;/code&gt;&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;推荐使用代码提示中&lt;code&gt;NS_ENUM()&lt;/code&gt;枚举模块来创建，它可以提供更严谨的类型检测和代码补完功能。&lt;/li&gt;
+  &lt;li&gt;推荐使用代码提示中宏定义的&lt;code&gt;NS_ENUM()&lt;/code&gt;枚举模块来创建，它可以提供更严谨的类型检测和代码补完功能。&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;strong&gt;For Example:&lt;/strong&gt;&lt;/p&gt;
@@ -700,7 +773,12 @@ switch (menuType) {
 &lt;p&gt;Private properties should be declared in class extensions (anonymous categories) in the implementation file of a class. Named categories (such as &lt;code&gt;RWTPrivate&lt;/code&gt; or &lt;code&gt;private&lt;/code&gt;) should never be used unless extending another class.   The Anonymous category can be shared/exposed for testing using the &lt;headerfile&gt;+Private.h file naming convention.&lt;/headerfile&gt;&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;私有变更应该在类的私有类别中，不需要加&lt;code&gt;private&lt;/code&gt;等词语来进行修饰。&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;私有变更应该在类的私有类别中，不需要加&lt;code&gt;private&lt;/code&gt;等词语来进行修饰。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;私有类别可以在命名为&lt;code&gt;&amp;lt;headerfile&amp;gt;+Private.h&lt;/code&gt;的文件里提供&lt;/p&gt;
+  &lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;strong&gt;For Example:&lt;/strong&gt;&lt;/p&gt;
@@ -721,7 +799,7 @@ switch (menuType) {
 &lt;p&gt;Never compare something directly to &lt;code&gt;YES&lt;/code&gt;, because &lt;code&gt;YES&lt;/code&gt; is defined to 1 and a &lt;code&gt;BOOL&lt;/code&gt; can be up to 8 bits.&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;永远不要把对象直接和&lt;code&gt;YES&lt;/code&gt;进行比较，&lt;/li&gt;
+  &lt;li&gt;不要把对象直接和&lt;code&gt;YES&lt;/code&gt;进行比较，&lt;/li&gt;
   &lt;li&gt;可以覆写类继承自&lt;code&gt;NSOjbect&lt;/code&gt;下的&lt;code&gt;-(BOOL)isEqual:(id)obj;&lt;/code&gt;方法来类的比较。&lt;/li&gt;
 &lt;/ul&gt;
 
@@ -764,7 +842,7 @@ if (isAwesome == true) {} // Never do this.
     &lt;p&gt;一定使用&lt;code&gt;{}&lt;/code&gt;来划定判断后的执行语句；&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;即使执行评语非常简单，也不能与条件判断在一行。&lt;/p&gt;
+    &lt;p&gt;即使执行语非常简单，也不能与条件判断在一行。&lt;/p&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
 
@@ -930,7 +1008,7 @@ CGRect frame = (CGRect){ .origin = CGPointZero, .size = frame.size };
 
 &lt;ul&gt;
   &lt;li&gt;
-    &lt;p&gt;条件判断的左侧空间被称为&lt;strong&gt;黄金&lt;/strong&gt;或者&lt;strong&gt;幸福&lt;/strong&gt;路径；&lt;/p&gt;
+    &lt;p&gt;条件判断的左侧空间被称为&lt;strong&gt;黄金路径&lt;/strong&gt;或者&lt;strong&gt;幸福路径&lt;/strong&gt;；&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
     &lt;p&gt;减少&lt;code&gt;if&lt;/code&gt;的条件的嵌套，扁平化多个返回条件。&lt;/p&gt;

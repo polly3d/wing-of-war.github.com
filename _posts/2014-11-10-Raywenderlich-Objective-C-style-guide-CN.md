@@ -164,7 +164,7 @@ Use `#pragma mark -` to categorize methods in functional groupings and protocol/
 ## Spacing空格
 
 * Indent using 2 spaces (this conserves space in print and makes line wrapping less likely). Never indent with tabs. Be sure to set this preference in Xcode.
-    *  XCODE默认换行是4个空格，推荐使用2个空格，让代码看起来更紧凑，
+    *  XCODE默认换行是4个空格，推 荐使用2个空格，让代码看起来更紧凑，
     *  设置方法:`xcode`->`preferences`->`Text Editing`->`Indentation`->`Indent width`。
    
 * Method braces and other braces (`if`/`else`/`switch`/`while` etc.) always open on the same line as the statement but close on a new line.
@@ -468,9 +468,9 @@ Dot syntax is purely a convenient wrapper around accessor method calls. When you
 
 Dot-notation should **always** be used for accessing and mutating properties, as it makes code more concise. Bracket notation is preferred in all other instances.
 
-* 只要是对象自身的值和方法，都推荐使用点表达式；
+* 点表达式应该是用于获取或者改变属性
 
-* 只要不是自身的值和方法，都推荐使用`[]`**括号记法**。
+* 其它实例方法，都推荐使用`[]`**括号记法**。
 
 **Preferred:**
 
@@ -523,7 +523,7 @@ NSNumber *buildingStreetNumber = [NSNumber numberWithInteger:10018];
 
 Constants are preferred over in-line string literals or numbers, as they allow for easy reproduction of commonly used variables and can be quickly changed without the need for find and replace. Constants should be declared as `static` constants and not `#define`s unless explicitly being used as a macro.
 
-* 常量使用`static`与直接量语法创建，`#define`可以用于定义便利方法。
+* 常量使用`static`与`const`创建，`#define`可以用于定义便利方法。
 
 **Preferred:**
 
@@ -545,7 +545,7 @@ static CGFloat const RWTImageThumbnailHeight = 50.0;
 
 When using `enum`s, it is recommended to use the new fixed underlying type specification because it has stronger type checking and code completion. The SDK now includes a macro to facilitate and encourage use of fixed underlying types: `NS_ENUM()`
 
-* 推荐使用代码提示中`NS_ENUM()`枚举模块来创建，它可以提供更严谨的类型检测和代码补完功能。
+* 推荐使用代码提示中宏定义的`NS_ENUM()`枚举模块来创建，它可以提供更严谨的类型检测和代码补完功能。
 
 **For Example:**
 
@@ -655,6 +655,8 @@ Private properties should be declared in class extensions (anonymous categories)
 
 * 私有变更应该在类的私有类别中，不需要加`private`等词语来进行修饰。
 
+* 私有类别可以在命名为`<headerfile>+Private.h`的文件里提供
+
 **For Example:**
 
 ~~~objc
@@ -673,7 +675,7 @@ Objective-C uses `YES` and `NO`.  Therefore `true` and `false` should only be us
 
 Never compare something directly to `YES`, because `YES` is defined to 1 and a `BOOL` can be up to 8 bits.
 
-* 永远不要把对象直接和`YES`进行比较，
+* 不要把对象直接和`YES`进行比较，
 * 可以覆写类继承自`NSOjbect`下的`-(BOOL)isEqual:(id)obj;`方法来类的比较。
 
 This allows for more consistency across files and greater visual clarity.
@@ -713,7 +715,7 @@ Conditional bodies should always use braces even when a conditional body could b
 
 * 一定使用`{}`来划定判断后的执行语句；
 
-* 即使执行评语非常简单，也不能与条件判断在一行。
+* 即使执行语非常简单，也不能与条件判断在一行。
 
 **Preferred:**
 
@@ -871,7 +873,7 @@ CGRect frame = (CGRect){ .origin = CGPointZero, .size = frame.size };
 
 When coding with conditionals, the left hand margin of the code should be the "golden" or "happy" path.  That is, don't nest `if` statements.  Multiple return statements are OK.
 
-* 条件判断的左侧空间被称为**黄金**或者**幸福**路径；
+* 条件判断的左侧空间被称为**黄金路径**或者**幸福路径**；
 
 * 减少`if`的条件的嵌套，扁平化多个返回条件。
 
