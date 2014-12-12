@@ -5,8 +5,8 @@
     <description>I will show my best.</description>
     <link>http://wing-of-war.github.io//</link>
     <atom:link href="http://wing-of-war.github.io//feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Fri, 12 Dec 2014 12:02:38 +0800</pubDate>
-    <lastBuildDate>Fri, 12 Dec 2014 12:02:38 +0800</lastBuildDate>
+    <pubDate>Fri, 12 Dec 2014 15:02:22 +0800</pubDate>
+    <lastBuildDate>Fri, 12 Dec 2014 15:02:22 +0800</lastBuildDate>
     <generator>Jekyll v2.2.0</generator>
     
       <item>
@@ -15,11 +15,11 @@
 
 &lt;p&gt;之前一直是有在模拟器上测试授权（比如通讯录，月历访问等），通过模拟器的&lt;code&gt;Reset Content and Setting&lt;/code&gt;来重置整个模拟器系统来进行调试。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://github.com/Wing-Of-War/wing-of-war.github.com/blob/master/_postsImages/2014/12/1.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Wing-Of-War/wing-of-war.github.com/e2bf38e87f0c194df27a897c9f945f257bcf83b5/_postsImages/2014/12/1.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;相比其它授权，Push Token是不能只使用模拟器进行测试的，因为iOS的服务器是不会给模拟器下发Push Token的。所以这个流程最好是用真机进行测试。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://github.com/Wing-Of-War/wing-of-war.github.com/blob/master/_postsImages/2014/12/2.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Wing-Of-War/wing-of-war.github.com/e2bf38e87f0c194df27a897c9f945f257bcf83b5/_postsImages/2014/12/2.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;但如果使用真机进行反复测试，在之前几乎只有一个办法:  &lt;/p&gt;
 
@@ -76,6 +76,101 @@
         <pubDate>Fri, 12 Dec 2014 00:00:00 +0800</pubDate>
         <link>http://wing-of-war.github.io//cn/2014/12/12/iOS%20Push%20Authoarztion%20Rest-CN/</link>
         <guid isPermaLink="true">http://wing-of-war.github.io//cn/2014/12/12/iOS%20Push%20Authoarztion%20Rest-CN/</guid>
+        
+        
+        <category>cn</category>
+        
+      </item>
+    
+      <item>
+        <title>Golden Path</title>
+        <description>&lt;h3 id=&quot;section&quot;&gt;起源&lt;/h3&gt;
+
+&lt;p&gt;上个月的时候，公司要我整理一份iOS的代码规范给大家一起学习和使用。当然自己整理是不太可能的，所以找了一份靠谱的并且自己详细阅读与注释后给大家进行了分享。&lt;/p&gt;
+
+&lt;p&gt;其中有一个章节的内容从分享那一天之后深刻的影响了。此章节很短，所以我直接粘贴在下面。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Wing-Of-War/wing-of-war.github.com/814f41347a8c6d711b04df58d0a40ae6f7d979ee/_postsImages/2014/12/3.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Golden Path, 非常好听名字。初次阅读此代码规范的时候我倒也没有太在意，想着只是有个好听的名字就花了三分钟到了下一章节。等到再和公司一有经验的同事一起商量的时候觉得这不仅仅是一个代码规范，更是写出好代码的Golden Key。&lt;/p&gt;
+
+&lt;h3 id=&quot;section-1&quot;&gt;简单的理念与规则&lt;/h3&gt;
+
+&lt;p&gt;如果你的代码开始处离你的左侧边框越来越远，整个代码像&lt;code&gt;&amp;gt;&lt;/code&gt;变得越来越深的时候，就会像一个&lt;strong&gt;深坑&lt;/strong&gt;一样散发出坏代码的气味。而好代码的应该是更倾向于&lt;code&gt;]&lt;/code&gt;这种形状的。&lt;/p&gt;
+
+&lt;p&gt;当然，经过一个多月的执行与演化，我个人深化之后总结如下：&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;每一个方法内，只处理一件最重要的事情&lt;code&gt;most important thing&lt;/code&gt;；&lt;/li&gt;
+  &lt;li&gt;将与这个&lt;code&gt;most important thing&lt;/code&gt;关系不紧密的部分，提炼成为一个或者多个独立方法进行引用，或者作为执行&lt;code&gt;most important thing&lt;/code&gt;的条件；&lt;/li&gt;
+  &lt;li&gt;将执行此方法的判断条件放在前面，排除掉所有不能执行此方法的情况，最后执行&lt;code&gt;something important &lt;/code&gt;。&lt;/li&gt;
+  &lt;li&gt;多个return的返回是可以接受的。当然，是做为不执行此方法的返回。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;section-2&quot;&gt;举一个实例&lt;/h3&gt;
+
+&lt;p&gt;这是逻辑处理层对于UI与数据库建立搜索联系的方法：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-objc&quot;&gt;- (void)searchContactByEmail:(NSString *email)email withCallback:(void (^)(ContactData *contact))callback{	
+	if (emai.length&amp;gt;0 &amp;amp;&amp;amp; [emall rangeOfString:@&quot;@&quot;].length &amp;gt; 0 ) {//1、判断查询的email有效性
+		if (self.sharedDB) {//2、判断数据库存在
+			ContactData *result =  [self.sharedDB getContactByEmail:email];//3、数据库中查询联系人
+			if (callback) {//4、判断回调是否存在
+                    callback(result);//5、进行回调
+			}
+		}
+	}
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;根据之前描述，如此一个简单的方法在&lt;code&gt;callback(result);//5、进行回调 &lt;/code&gt;处已经处于至少5个&lt;code&gt;Tab&lt;/code&gt;的位置，20个&lt;code&gt;Space&lt;/code&gt;的深度，感观上就非常差。逻辑判断也相互嵌套，重点位置不明确。&lt;/p&gt;
+
+&lt;p&gt;详细分析原代码：&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;联系人email的有效性判断独立成方法&lt;code&gt;- (BOOL)checkEmailAvailable:(NSString *)email &lt;/code&gt;，这样如果需要改进判断email有效性比如添加正则匹配的时候只用修改此一；&lt;/li&gt;
+  &lt;li&gt;判断数据库是否存在应该判断优先级比判断email方法高；&lt;/li&gt;
+  &lt;li&gt;在数据库中查询联系人应该是这个方法最重要的一步，应该将其放在此方法靠后的位置；&lt;/li&gt;
+  &lt;li&gt;回调方法应该是整个方法运行的前提条件，如果都不需要进行回调返回，那整个方法都不需要运行。&lt;/li&gt;
+  &lt;li&gt;回调的位置在最后不变。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;经过整理后，代码应该至少是这个样子：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-objc&quot;&gt;- (void)searchContactByEmail:(NSString *email)email withCallback:(void (^)(ContactData *contact))callback{
+	if (!callback) {
+		return;
+	}
+	if (!self.sharedDB) {
+		return;
+	}
+	if (![self checkEmailAvailable:email]) {
+		return;
+	}
+	ContactData *result = [self.sharedDB getContactByEmail:email];
+	callback(result);
+}
+
+- (BOOL)checkEmailAvailable:(NSString *)email {
+	if (!email.length) {
+		return NO;
+	}
+	if (![email rangeOfString:@&quot;@&quot;].length) {
+		return NO;
+	}
+	return YES;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&quot;ios&quot;&gt;再补充一点我个人在iOS开发上的理解：&lt;/h3&gt;
+
+&lt;p&gt;一般的移动客户端上基本上也就是UI调用，逻辑运算，流程控制，网络请求访问等，那么就可以将每一个方法尽可能写得简单，也起到每一个方法注释了一部分的功能 。在引用起来起到方法既是注释的作用。&lt;/p&gt;
+
+&lt;p&gt;我自己之前见过一定要用到if大量嵌套的也就是一些算法，比如快速排序，冒泡排序等，或者是图片渲染，AI计算等有大量不可避免的条件判断。&lt;/p&gt;
+</description>
+        <pubDate>Fri, 12 Dec 2014 00:00:00 +0800</pubDate>
+        <link>http://wing-of-war.github.io//cn/2014/12/12/Golden%20Path%20Cn/</link>
+        <guid isPermaLink="true">http://wing-of-war.github.io//cn/2014/12/12/Golden%20Path%20Cn/</guid>
         
         
         <category>cn</category>

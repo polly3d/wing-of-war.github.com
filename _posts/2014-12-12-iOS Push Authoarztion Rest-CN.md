@@ -9,12 +9,12 @@ categories: CN
 
 之前一直是有在模拟器上测试授权（比如通讯录，月历访问等），通过模拟器的`Reset Content and Setting`来重置整个模拟器系统来进行调试。
 
-![](https://github.com/Wing-Of-War/wing-of-war.github.com/blob/master/_postsImages/2014/12/1.png
+![](https://raw.githubusercontent.com/Wing-Of-War/wing-of-war.github.com/e2bf38e87f0c194df27a897c9f945f257bcf83b5/_postsImages/2014/12/1.png
 )
 
 相比其它授权，Push Token是不能只使用模拟器进行测试的，因为iOS的服务器是不会给模拟器下发Push Token的。所以这个流程最好是用真机进行测试。
 
-![](https://github.com/Wing-Of-War/wing-of-war.github.com/blob/master/_postsImages/2014/12/2.png)
+![](https://raw.githubusercontent.com/Wing-Of-War/wing-of-war.github.com/e2bf38e87f0c194df27a897c9f945f257bcf83b5/_postsImages/2014/12/2.png)
 
 但如果使用真机进行反复测试，在之前几乎只有一个办法:  
 
