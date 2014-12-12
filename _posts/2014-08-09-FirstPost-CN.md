@@ -2,7 +2,7 @@
 layout: post
 title: GitHub 上的第一贴
 date: 2014-08-09
-categories: CN
+categories: cn
 ---
 
 

@@ -2,7 +2,7 @@
 layout: post
 title: 重置iOS App请求推送授权请求
 date: 2014-12-12
-categories: CN
+categories: cn
 ---
 
 在iOS上给自己的App创建推送通并不容易，连测试用户给App进行授权推送通知也是件很麻烦的事情。这将直接关系到用户体验与应用流程的处理。

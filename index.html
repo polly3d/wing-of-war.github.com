@@ -1,18 +1,8 @@
 ---
-layout: default
+layout: index
+title: place_your_blog_title_here
 ---
 
-{% for category in site.categories %}
-<h1>{{ category | first }}</h1>
-<!-- </span>{{ category | last | size }}</span> -->
-<ul class="posts">
-    {% for post in category.last %}
-<!--         <li>{{ post.date | date:"%d/%m/%Y"}}<a href="{{ post.url }}">{{ post.title }}</a></li>
- -->    
-      <li>
-        <span class="post-date">{{ post.date | date: "%b %-d, %Y" }}</span>
-        <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-      </li>
-    {% endfor %}
-</ul>
-{% endfor %}
+<article id="post__content">
+  <h1 id="post__title">Welcome</h1>
+</article> <!-- end #post__content -->

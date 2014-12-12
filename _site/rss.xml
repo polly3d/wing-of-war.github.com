@@ -1,17 +1,22 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title></title>
-    <description></description>
-    <link>/</link>
-    <atom:link href="/feed.xml" rel="self" type="application/rss+xml" />
+    <title>place_your_blog_title_here</title>
+    <link>place_your_blog_url_here</link>
+    <atom:link href="place_your_blog_url_here/rss.xml" rel="self" type="application/rss+xml" />
+    <description>place_your_blog_description_here</description>
+    <language>place_your_blog_language_here</language>
     <pubDate>Sat, 13 Dec 2014 00:49:16 +0800</pubDate>
     <lastBuildDate>Sat, 13 Dec 2014 00:49:16 +0800</lastBuildDate>
-    <generator>Jekyll v2.2.0</generator>
+
     
-      <item>
-        <title>重置iOS App请求推送授权请求</title>
-        <description>&lt;p&gt;在iOS上给自己的App创建推送通并不容易，连测试用户给App进行授权推送通知也是件很麻烦的事情。这将直接关系到用户体验与应用流程的处理。&lt;/p&gt;
+    <item>
+      <title>重置iOS App请求推送授权请求</title>
+      <link>place_your_blog_url_here/cn/2014/12/12/iOS%20Push%20Authoarztion%20Rest-CN.html</link>
+      <pubDate>12 Dec 2014</pubDate>
+      <author>place_your_name_here</author>
+      <guid>place_your_blog_url_here/cn/2014/12/12/iOS Push Authoarztion Rest-CN</guid>
+      <description>&lt;p&gt;在iOS上给自己的App创建推送通并不容易，连测试用户给App进行授权推送通知也是件很麻烦的事情。这将直接关系到用户体验与应用流程的处理。&lt;/p&gt;
 
 &lt;p&gt;之前一直是有在模拟器上测试授权（比如通讯录，月历访问等），通过模拟器的&lt;code&gt;Reset Content and Setting&lt;/code&gt;来重置整个模拟器系统来进行调试。&lt;/p&gt;
 
@@ -73,18 +78,15 @@
 
 &lt;p&gt;由于之前没有仔细看过相关文档，但可以肯定iOS的授权设置会在设备重新启动时进行更新，而重置的周期需要在一天以上。以后再看到更细的说明再补充。&lt;/p&gt;
 </description>
-        <pubDate>Fri, 12 Dec 2014 00:00:00 +0800</pubDate>
-        <link>/cn/2014/12/12/iOS%20Push%20Authoarztion%20Rest-CN.html</link>
-        <guid isPermaLink="true">/cn/2014/12/12/iOS%20Push%20Authoarztion%20Rest-CN.html</guid>
-        
-        
-        <category>cn</category>
-        
-      </item>
+    </item>
     
-      <item>
-        <title>Golden Path</title>
-        <description>&lt;h3 id=&quot;section&quot;&gt;起源&lt;/h3&gt;
+    <item>
+      <title>Golden Path</title>
+      <link>place_your_blog_url_here/cn/2014/12/12/Golden%20Path%20Cn.html</link>
+      <pubDate>12 Dec 2014</pubDate>
+      <author>place_your_name_here</author>
+      <guid>place_your_blog_url_here/cn/2014/12/12/Golden Path Cn</guid>
+      <description>&lt;h3 id=&quot;section&quot;&gt;起源&lt;/h3&gt;
 
 &lt;p&gt;上个月的时候，公司要我整理一份iOS的代码规范给大家一起学习和使用。当然自己整理是不太可能的，所以找了一份靠谱的并且自己详细阅读与注释后给大家进行了分享。&lt;/p&gt;
 
@@ -168,18 +170,15 @@
 
 &lt;p&gt;我自己之前见过一定要用到if大量嵌套的也就是一些算法，比如快速排序，冒泡排序等，或者是图片渲染，AI计算等有大量不可避免的条件判断。&lt;/p&gt;
 </description>
-        <pubDate>Fri, 12 Dec 2014 00:00:00 +0800</pubDate>
-        <link>/cn/2014/12/12/Golden%20Path%20Cn.html</link>
-        <guid isPermaLink="true">/cn/2014/12/12/Golden%20Path%20Cn.html</guid>
-        
-        
-        <category>cn</category>
-        
-      </item>
+    </item>
     
-      <item>
-        <title>raywenderlich.com Objective-C代码规范中文简易注释</title>
-        <description>&lt;h1 id=&quot;the-official-raywenderlichcom-objective-c-style-guide&quot;&gt;The official raywenderlich.com Objective-C style guide.&lt;/h1&gt;
+    <item>
+      <title>raywenderlich.com Objective-C代码规范中文简易注释</title>
+      <link>place_your_blog_url_here/cn/2014/11/10/Raywenderlich-Objective-C-style-guide-CN.html</link>
+      <pubDate>10 Nov 2014</pubDate>
+      <author>place_your_name_here</author>
+      <guid>place_your_blog_url_here/cn/2014/11/10/Raywenderlich-Objective-C-style-guide-CN</guid>
+      <description>&lt;h1 id=&quot;the-official-raywenderlichcom-objective-c-style-guide&quot;&gt;The official raywenderlich.com Objective-C style guide.&lt;/h1&gt;
 
 &lt;p&gt;This style guide outlines the coding conventions for raywenderlich.com.&lt;/p&gt;
 
@@ -1271,18 +1270,15 @@ if (error) {
   &lt;li&gt;&lt;a href=&quot;http://www.cimgf.com/zds-code-style-guide/&quot;&gt;Marcus Zarra&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
-        <pubDate>Mon, 10 Nov 2014 00:00:00 +0800</pubDate>
-        <link>/cn/2014/11/10/Raywenderlich-Objective-C-style-guide-CN.html</link>
-        <guid isPermaLink="true">/cn/2014/11/10/Raywenderlich-Objective-C-style-guide-CN.html</guid>
-        
-        
-        <category>cn</category>
-        
-      </item>
+    </item>
     
-      <item>
-        <title>如何快速的切换Mac系统的网络配置</title>
-        <description>&lt;h1 id=&quot;mac&quot;&gt;如何快速的切换Mac系统的网络配置&lt;/h1&gt;
+    <item>
+      <title>如何快速的切换Mac系统的网络配置</title>
+      <link>place_your_blog_url_here/cn/2014/11/03/SwitchInternetSetting-CN.html</link>
+      <pubDate>03 Nov 2014</pubDate>
+      <author>place_your_name_here</author>
+      <guid>place_your_blog_url_here/cn/2014/11/03/SwitchInternetSetting-CN</guid>
+      <description>&lt;h1 id=&quot;mac&quot;&gt;如何快速的切换Mac系统的网络配置&lt;/h1&gt;
 
 &lt;h2 id=&quot;section&quot;&gt;问题&lt;/h2&gt;
 
@@ -1311,18 +1307,15 @@ if (error) {
 &lt;p&gt;OK，此种方法最赞的就是只用点击桌面左上角的小苹果&lt;code&gt;&lt;/code&gt;-&amp;gt;&lt;code&gt;位置&lt;/code&gt;进行切换即可。
 ####缺点：网络会切断一会儿。&lt;/p&gt;
 </description>
-        <pubDate>Mon, 03 Nov 2014 00:00:00 +0800</pubDate>
-        <link>/cn/2014/11/03/SwitchInternetSetting-CN.html</link>
-        <guid isPermaLink="true">/cn/2014/11/03/SwitchInternetSetting-CN.html</guid>
-        
-        
-        <category>cn</category>
-        
-      </item>
+    </item>
     
-      <item>
-        <title>Ruby Study Memo</title>
-        <description>&lt;p&gt;Leran this at www.codecademy.com. Great online course.I picked up some key word from this lession for memo.&lt;/p&gt;
+    <item>
+      <title>Ruby Study Memo</title>
+      <link>place_your_blog_url_here/ruby/2014/10/25/Ruby_Study-EN.html</link>
+      <pubDate>25 Oct 2014</pubDate>
+      <author>place_your_name_here</author>
+      <guid>place_your_blog_url_here/ruby/2014/10/25/Ruby_Study-EN</guid>
+      <description>&lt;p&gt;Leran this at www.codecademy.com. Great online course.I picked up some key word from this lession for memo.&lt;/p&gt;
 
 &lt;h1 id=&quot;basic&quot;&gt;Basic&lt;/h1&gt;
 
@@ -1626,18 +1619,15 @@ end
 &lt;/ul&gt;
 
 </description>
-        <pubDate>Sat, 25 Oct 2014 00:00:00 +0800</pubDate>
-        <link>/ruby/2014/10/25/Ruby_Study-EN.html</link>
-        <guid isPermaLink="true">/ruby/2014/10/25/Ruby_Study-EN.html</guid>
-        
-        
-        <category>ruby</category>
-        
-      </item>
+    </item>
     
-      <item>
-        <title>ACGArt DownLoader</title>
-        <description>&lt;h3 id=&quot;repositoryacgartimagebatchdonehttpsgithubcomwing-of-waracgartimagebatchdone&quot;&gt;&lt;a href=&quot;https://github.com/Wing-Of-War/ACGArtImageBatchDone&quot;&gt;Repository:ACGArtImageBatchDone&lt;/a&gt;&lt;/h3&gt;
+    <item>
+      <title>ACGArt DownLoader</title>
+      <link>place_your_blog_url_here/python/2014/09/13/ACGArt-EN.html</link>
+      <pubDate>13 Sep 2014</pubDate>
+      <author>place_your_name_here</author>
+      <guid>place_your_blog_url_here/python/2014/09/13/ACGArt-EN</guid>
+      <description>&lt;h3 id=&quot;repositoryacgartimagebatchdonehttpsgithubcomwing-of-waracgartimagebatchdone&quot;&gt;&lt;a href=&quot;https://github.com/Wing-Of-War/ACGArtImageBatchDone&quot;&gt;Repository:ACGArtImageBatchDone&lt;/a&gt;&lt;/h3&gt;
 
 &lt;h2 id=&quot;project-origin&quot;&gt;Project Origin&lt;/h2&gt;
 
@@ -1663,18 +1653,15 @@ So, I spent two days worktout this little thing to batch download.&lt;/p&gt;
   &lt;li&gt;If this offend you&lt;/li&gt;
 &lt;/ul&gt;
 </description>
-        <pubDate>Sat, 13 Sep 2014 00:00:00 +0800</pubDate>
-        <link>/python/2014/09/13/ACGArt-EN.html</link>
-        <guid isPermaLink="true">/python/2014/09/13/ACGArt-EN.html</guid>
-        
-        
-        <category>python</category>
-        
-      </item>
+    </item>
     
-      <item>
-        <title>Cocoapods进阶教程</title>
-        <description>&lt;p&gt;作为第一篇正式技术性Blog，主要是为了记录最近研究的Cocoapods在项目中的使用（虽然也还不是特别懂：P）。&lt;/p&gt;
+    <item>
+      <title>Cocoapods进阶教程</title>
+      <link>place_your_blog_url_here/cn/2014/08/10/Cocoapods-Research-CN.html</link>
+      <pubDate>10 Aug 2014</pubDate>
+      <author>place_your_name_here</author>
+      <guid>place_your_blog_url_here/cn/2014/08/10/Cocoapods-Research-CN</guid>
+      <description>&lt;p&gt;作为第一篇正式技术性Blog，主要是为了记录最近研究的Cocoapods在项目中的使用（虽然也还不是特别懂：P）。&lt;/p&gt;
 
 &lt;h4 id=&quot;section&quot;&gt;文章说明：&lt;/h4&gt;
 &lt;ul&gt;
@@ -2105,18 +2092,15 @@ end
 
 &lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Wing-Of-War/wing-of-war.github.com/master/_postsImages/2014/08/MacProject%20import%20MyLocalLib.png&quot; alt=&quot;MacProject import MyLocalLib&quot; /&gt;&lt;/p&gt;
 </description>
-        <pubDate>Sun, 10 Aug 2014 00:00:00 +0800</pubDate>
-        <link>/cn/2014/08/10/Cocoapods-Research-CN.html</link>
-        <guid isPermaLink="true">/cn/2014/08/10/Cocoapods-Research-CN.html</guid>
-        
-        
-        <category>cn</category>
-        
-      </item>
+    </item>
     
-      <item>
-        <title>My first blog in github</title>
-        <description>&lt;h1 id=&quot;my-first-blog-in-github&quot;&gt;My first blog in github&lt;/h1&gt;
+    <item>
+      <title>My first blog in github</title>
+      <link>place_your_blog_url_here/en/2014/08/09/FirstPost-EN.html</link>
+      <pubDate>09 Aug 2014</pubDate>
+      <author>place_your_name_here</author>
+      <guid>place_your_blog_url_here/en/2014/08/09/FirstPost-EN</guid>
+      <description>&lt;h1 id=&quot;my-first-blog-in-github&quot;&gt;My first blog in github&lt;/h1&gt;
 
 &lt;p class=&quot;meta&quot;&gt;9 August 2014 - BeiJing&lt;/p&gt;
 
@@ -2128,18 +2112,15 @@ end
   &lt;li&gt;Improve the web site every week.&lt;/li&gt;
 &lt;/ul&gt;
 </description>
-        <pubDate>Sat, 09 Aug 2014 00:00:00 +0800</pubDate>
-        <link>/en/2014/08/09/FirstPost-EN.html</link>
-        <guid isPermaLink="true">/en/2014/08/09/FirstPost-EN.html</guid>
-        
-        
-        <category>en</category>
-        
-      </item>
+    </item>
     
-      <item>
-        <title>GitHub 上的第一贴</title>
-        <description>&lt;h1 id=&quot;github-&quot;&gt;GitHub 上的第一贴&lt;/h1&gt;
+    <item>
+      <title>GitHub 上的第一贴</title>
+      <link>place_your_blog_url_here/cn/2014/08/09/FirstPost-CN.html</link>
+      <pubDate>09 Aug 2014</pubDate>
+      <author>place_your_name_here</author>
+      <guid>place_your_blog_url_here/cn/2014/08/09/FirstPost-CN</guid>
+      <description>&lt;h1 id=&quot;github-&quot;&gt;GitHub 上的第一贴&lt;/h1&gt;
 
 &lt;p class=&quot;meta&quot;&gt;9 August 2014 - BeiJing&lt;/p&gt;
 
@@ -2153,14 +2134,7 @@ end
 
 &lt;h3 id=&quot;ps2014-8-20&quot;&gt;PS:补于2014-8-20，文章分类后&lt;/h3&gt;
 </description>
-        <pubDate>Sat, 09 Aug 2014 00:00:00 +0800</pubDate>
-        <link>/cn/2014/08/09/FirstPost-CN.html</link>
-        <guid isPermaLink="true">/cn/2014/08/09/FirstPost-CN.html</guid>
-        
-        
-        <category>cn</category>
-        
-      </item>
+    </item>
     
   </channel>
 </rss>

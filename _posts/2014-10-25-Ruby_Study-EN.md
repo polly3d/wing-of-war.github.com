@@ -2,7 +2,7 @@
 layout: post
 title: Ruby Study Memo
 date: 2014-10-25
-categories: En
+categories: ruby
 ---
 
 Leran this at www.codecademy.com. Great online course.I picked up some key word from this lession for memo.
