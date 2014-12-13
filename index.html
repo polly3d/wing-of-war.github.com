@@ -1,8 +1,29 @@
 ---
 layout: index
-title: place_your_blog_title_here
+title: Wing Of War
 ---
 
-<article id="post__content">
-  <h1 id="post__title">Welcome</h1>
-</article> <!-- end #post__content -->
+
+<br>
+<div class="row">
+  <div class="col-md-12">
+    <div class="panel panel-primary">
+      <div class="panel-heading">{{ site.locals.newest }}</div>
+ 
+  {% for post in site.posts %}
+ <h2 class="post-title">{{ post.title }}</h2>
+  <p class="post-meta">By {{ post.date | date: "%m" }}月{{ post.date | date: "%d" }}日  {{ post.date | date: "%Y" }}
+  <a class="post-categorybut " href="#">{{ post.categories  }}</a>
+  <a class="post-category " href="#"> {{ post.tags | first }}</a>
+  <a class="post-category " href="#">  {{ post.tags[1] }}</a> </p></header>
+  <div class="post-description">
+   {{ post.content | split:'<!-- more -->'| first }}
+   <a href="{{ post.url }}" class="list-group-item pjaxlink clearfix">阅读全文</a>
+  {% endfor %}
+
+
+
+    </div>
+  </div>
+
+</div>

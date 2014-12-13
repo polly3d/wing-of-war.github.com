@@ -9,6 +9,8 @@ categories: cn
 
 上个月的时候，公司要我整理一份iOS的代码规范给大家一起学习和使用。当然自己整理是不太可能的，所以找了一份靠谱的并且自己详细阅读与注释后给大家进行了分享。
 
+<!-- more -->
+
 其中有一个章节的内容从分享那一天之后深刻的影响了。此章节很短，所以我直接粘贴在下面。
 
 ![](https://raw.githubusercontent.com/Wing-Of-War/wing-of-war.github.com/814f41347a8c6d711b04df58d0a40ae6f7d979ee/_postsImages/2014/12/3.png)

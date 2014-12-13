@@ -7,6 +7,8 @@ categories: ruby
 
 Leran this at www.codecademy.com. Great online course.I picked up some key word from this lession for memo.
 
+<!-- more -->
+
 #Basic
 
 1. There's always more than one way to do something in Ruby.

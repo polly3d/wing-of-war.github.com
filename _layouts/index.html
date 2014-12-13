@@ -31,25 +31,32 @@
       </nav> <!-- end #tags -->
 
       <div id="posts-list">
-        <form action="" id="search-form">
+        <!-- 搜索框，使用GoogleEngine失败 -->
+<!--         <form action="" id="search-form">
           <a href="/index.html" id="mobile-avatar"></a>
-          <!-- NOTE: input field is disabled by default -->
+          NOTE: input field is disabled by default
           <input id="search-input" type="text" placeholder="Search..." >
         </form>
-
+ -->
         <nav id="pl__container">
         {% for post in site.posts %}
-          <a class="{{ post.categories }} pl__all" href="{{ post.url }}"><span class="pl__circle"></span><span class="pl__title">{{ post.title }}</span><span class="pl__date">{{ post.date | date: "%b %Y" }}</span></a>
+          <a class="{{ post.categories }} pl__all" href="{{ post.url }}">
+            <span class="pl__circle"></span>
+            <span class="pl__title">{{ post.title }}</span>
+            <span class="pl__date">{{ post.date | date: "%b %Y" }}</span>
+          </a>
         {% endfor %}
         </nav>
       </div> <!-- end #posts-list -->
     </aside> <!-- end #sidebar -->
 
     <div id="post">
+      <!-- 加载文章 -->
       <div id="pjax">
         {{ content }}
       </div> <!-- end #pjax -->
 
+      <!-- 右侧文章导航栏 -->
       <div id="post__toc-trigger">
         <div id="post__toc">
           <span id="post__toc-title">Table of Contents</span>
@@ -58,6 +65,7 @@
       </div>
     </div> <!-- end #post -->
 
+<!-- 右侧导航按钮 -->
     <button id="js-fullscreen"><span id="icon-arrow" class="fontello"></span></button>
 
     <script src="/assets/js/jquery-2.0.3.min.js"></script>

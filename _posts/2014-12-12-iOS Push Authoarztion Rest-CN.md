@@ -9,6 +9,8 @@ categories: cn
 
 之前一直是有在模拟器上测试授权（比如通讯录，月历访问等），通过模拟器的`Reset Content and Setting`来重置整个模拟器系统来进行调试。
 
+<!-- more -->
+
 ![](https://raw.githubusercontent.com/Wing-Of-War/wing-of-war.github.com/e2bf38e87f0c194df27a897c9f945f257bcf83b5/_postsImages/2014/12/1.png
 )
 

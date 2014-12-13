@@ -13,6 +13,8 @@ This style guide outlines the coding conventions for raywenderlich.com.
 *  中文注释部分由 [wing.of.war.1980th@gmail](http://wing-of-war.github.io/) 编写于段落的加重部分;
 *  中文主要是对代码规范要点解释，部分为补充说明。
 
+<!-- more -->
+
 ## Introduction
 
 The reason we made this style guide was so that we could keep the code in our books, tutorials, and starter kits nice and consistent - even though we have many different authors working on the books.
