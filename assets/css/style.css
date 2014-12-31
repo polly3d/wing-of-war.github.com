@@ -6,7 +6,7 @@
 /*---------------------------------*\
    Fonts
 \*---------------------------------*/
-@font-face {
+/*@font-face {
   font-family: "fontello";
   src: url("../font/fontello.eot");
   src: url("../font/fontello.eot#iefix") format("embedded-opentype"), url("../font/fontello.woff") format("woff"), url("../font/fontello.ttf") format("truetype"), url("../font/fontello.svg#fontello") format("svg");
@@ -19,7 +19,28 @@
   font-variant: normal;
   text-transform: none;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }*/
+
+  @font-face {
+  font-family: "fontawesomeregular";
+  src: url("../font/fontawesome-webfont.eot");
+  src: url("../font/fontawesome-webfont.eot#iefix") format("embedded-opentype"), 
+  url("../font/fontawesome-webfont.woff") format("woff"), 
+  url("../font/fontawesome-webfont.ttf") format("truetype"), 
+  url("../font/fontawesome-webfont.svg#fontawesomeregular") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+.fontawesomeregular, .post__toc-li:before {
+  font-family: "fontawesomeregular";
+  speak: none;
+  font-variant: normal;
+  text-transform: none;
+  -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
+
+
+  
 
 /*---------------------------------*\
    Base
@@ -178,8 +199,8 @@ a {
   position: absolute;
   left: 0;
   bottom: 0; }
-  #tags__bottom > .fontello, #tags__bottom > .post__toc-li:before {
-    width: 50%;
+  #tags__bottom > .fontawesomeregular, #tags__bottom > .post__toc-li:before {
+    width: 33%;
     font-size: 18px;
     line-height: 44px;
     text-align: center;
@@ -187,14 +208,28 @@ a {
     float: left; }
 
 #icon-email {
-  border-right: 1px solid #3c4149; }
+  height: 44px;
+  border-right: 1px solid #3c4149; 
+  border-bottom: 1px solid #3c4149;}
   #icon-email:before {
-    content: "\e800"; }
+    content: "\f0e0"; }
 
 #icon-feed {
-  border-left: 1px solid #525965; }
+  height: 44px;
+  border-left: 1px solid #525965; 
+  border-bottom: 1px solid #3c4149
+}
   #icon-feed:before {
-    content: "\e802"; }
+    content: "\f09e"; }
+
+#icon-github {
+  height: 44px;
+  border-left: 1px solid #525965; 
+  content: "GitHub";
+}
+#icon-github:before {
+  content: "\f092";
+}
 
 .tags-btn {
   color: #a6a6a7;
@@ -511,7 +546,7 @@ iframe {
   display: block;
   overflow: hidden; }
   .post__toc-li:before {
-    content: "\e806";
+    content: "\f105";
     margin-right: 5px; }
   .post__toc-li > a:hover {
     color: #2eb695; }
@@ -542,7 +577,7 @@ iframe {
   margin-bottom: 19px;
   border-bottom: 2px solid rgba(229, 232, 236, 0.5);
   position: relative; }
-  #post__share > .fontello, #post__share > .post__toc-li:before {
+  #post__share > .fontawesomeregular, #post__share > .post__toc-li:before {
     display: block;
     width: 40px;
     height: 40px;
@@ -561,7 +596,7 @@ iframe {
     -ms-transition: color .35s, box-shadow .35s;
     -o-transition: color .35s, box-shadow .35s;
     transition: color .35s, box-shadow .35s; }
-    #post__share > .fontello:hover, #post__share > .post__toc-li:hover:before {
+    #post__share > .fontawesomeregular:hover, #post__share > .post__toc-li:hover:before {
       box-shadow: 0 0 0 2px rgba(125, 139, 153, 0.15); }
 
 #icon-twitter {
@@ -569,21 +604,21 @@ iframe {
   #icon-twitter:hover {
     color: #4099ff; }
   #icon-twitter:before {
-    content: "\e805"; }
+    content: "\f081"; }
 
 #icon-cc {
   margin-left: -20px; }
   #icon-cc:hover {
     color: #f8ce5e; }
   #icon-cc:before {
-    content: "\e803"; }
+    content: "\f112"; }
 
 #icon-weibo {
   margin-left: 50px; }
   #icon-weibo:hover {
     color: #d40220; }
   #icon-weibo:before {
-    content: "\e804"; }
+    content: "\f18a"; }
 
 #disqus_thread {
   padding: 30px 0;
@@ -675,7 +710,7 @@ iframe {
   transition: transform 0.5s cubic-bezier(0.77, 0, 0.175, 1);
   display: block; }
   #icon-arrow:before {
-    content: "\e801";
+    content: "\f104";
     margin-left: -1px;
     font-size: 20px;
     line-height: 1; }
