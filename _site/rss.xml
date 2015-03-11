@@ -6,9 +6,70 @@
     <atom:link href="place_your_blog_url_here/rss.xml" rel="self" type="application/rss+xml" />
     <description>place_your_blog_description_here</description>
     <language>place_your_blog_language_here</language>
-    <pubDate>Wed, 31 Dec 2014 17:32:14 +0800</pubDate>
-    <lastBuildDate>Wed, 31 Dec 2014 17:32:14 +0800</lastBuildDate>
+    <pubDate>Wed, 11 Mar 2015 18:56:24 +0800</pubDate>
+    <lastBuildDate>Wed, 11 Mar 2015 18:56:24 +0800</lastBuildDate>
 
+    
+    <item>
+      <title>as!操作符（译）</title>
+      <link>place_your_blog_url_here/other/2015/03/11/as!-Operator.html</link>
+      <pubDate>11 Mar 2015</pubDate>
+      <author>place_your_name_here</author>
+      <guid>place_your_blog_url_here/other/2015/03/11/as!-Operator</guid>
+      <description>&lt;h3 id=&quot;as&quot;&gt;as!操作符&lt;/h3&gt;
+
+&lt;p&gt;PS1:试译一些Swift的相关内容&lt;/p&gt;
+
+&lt;p&gt;PS2:Swift官网微博原文  &lt;a href=&quot;https://developer.apple.com/swift/blog/?id=23&quot;&gt;The as! Operator&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;在Swift 1.2版之前，根据表达式的类型和被转换表达式的类型，&lt;code&gt;as&lt;/code&gt;操作符可以用于两种不同的转换&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;保守转换&lt;/strong&gt;，这种是可以通过Swift的编辑器进行检查校正。举个例子，向上类型转换（将类转换为其父类）或者指定字面量表达式（&lt;code&gt;1 as Float&lt;/code&gt;）&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;强制转换&lt;/strong&gt;，这种类型转换的安全性不能得到Swift编辑器的保证，可能产生在运行时的陷阱。比如类型的向下转换，将父类转换为子类。&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;在Swift 1.2版中，将强制转换和保守转换分成了两种不同的操作符。保守转换继续使用&lt;code&gt;as&lt;/code&gt;操作符，但强制转换使用&lt;code&gt;as!&lt;/code&gt;操作符。&lt;code&gt;!&lt;/code&gt;用于指示转换可能失败。这样一来，你一眼就可以发现它的转换可能会导致程序崩溃。&lt;/p&gt;
+
+&lt;p&gt;下面的例子展示了这种变化：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-swift&quot;&gt;class Animal {}
+class Dog: Animal {}
+
+let a: Animal = Dog()
+a as Dog		// 将提示错&quot;&#39;Animal is not convertible to &#39;Dog&#39;; did you mean to use &#39;as!&#39; to force downcast?&quot;
+a as! Dog		// 这种强制向下转换是允许的
+
+let d = Dog()
+d as Animal		// 向上转换是允许的
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;注意对比&lt;code&gt;!&lt;/code&gt;和&lt;code&gt;?&lt;/code&gt;这两种不同后缀的表达式和&lt;code&gt;as!&lt;/code&gt;与&lt;code&gt;as?&lt;/code&gt;这两种转换操作符：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-swift&quot;&gt;class Animal {}
+
+class Cat: Animal {}
+
+class Dog: Animal {
+	var name = &quot;Spot&quot;
+}
+
+let dog: Dog? = nil
+dog?.name		// 等于nil
+dog!.name		// 引发运行时错误
+
+let animal: Animal = Cat()
+animal as? Dog	// 等于nil
+animal as! Dog	// 引发运行时错误
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;最简单记住这些操作符的方法可能是: &lt;code&gt;!&lt;/code&gt;意味着这可能是个陷阱， 而&lt;code&gt;?&lt;/code&gt; 意味着这可能是空值&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>创建Objective-C数据模型的心得1</title>
@@ -2308,28 +2369,6 @@ end
   &lt;li&gt;Each post of this blog will be published in Chinese and English.(I’m exercising my English writing skills)&lt;/li&gt;
   &lt;li&gt;Improve the web site every week.&lt;/li&gt;
 &lt;/ul&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>GitHub 上的第一贴</title>
-      <link>place_your_blog_url_here/cn/2014/08/09/FirstPost-CN.html</link>
-      <pubDate>09 Aug 2014</pubDate>
-      <author>place_your_name_here</author>
-      <guid>place_your_blog_url_here/cn/2014/08/09/FirstPost-CN</guid>
-      <description>&lt;h1 id=&quot;github-&quot;&gt;GitHub 上的第一贴&lt;/h1&gt;
-
-&lt;p class=&quot;meta&quot;&gt;9 August 2014 - BeiJing&lt;/p&gt;
-
-&lt;p&gt;我在这里设立了几个目标：&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;通过Jekyll来打造Github上的技术博客，学习与使用一些Html技术&lt;/li&gt;
-  &lt;li&gt;每一遍技术博客都是中英文双语&lt;/li&gt;
-  &lt;li&gt;保持更新量，并且争取投稿&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;ps2014-8-20&quot;&gt;PS:补于2014-8-20，文章分类后&lt;/h3&gt;
 </description>
     </item>
     
