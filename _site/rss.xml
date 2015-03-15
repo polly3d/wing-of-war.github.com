@@ -6,8 +6,8 @@
     <atom:link href="place_your_blog_url_here/rss.xml" rel="self" type="application/rss+xml" />
     <description>place_your_blog_description_here</description>
     <language>place_your_blog_language_here</language>
-    <pubDate>Sun, 15 Mar 2015 23:58:04 +0800</pubDate>
-    <lastBuildDate>Sun, 15 Mar 2015 23:58:04 +0800</lastBuildDate>
+    <pubDate>Mon, 16 Mar 2015 00:00:10 +0800</pubDate>
+    <lastBuildDate>Mon, 16 Mar 2015 00:00:10 +0800</lastBuildDate>
 
     
     <item>
@@ -158,10 +158,10 @@
     
     <item>
       <title>9个伟大的Swift面试题(译)</title>
-      <link>place_your_blog_url_here/ios/2015/03/12/9-Great%20Swift%20Interview%20Questions.html</link>
+      <link>place_your_blog_url_here/ios/2015/03/12/9-Great-Swift-Interview-Questions.html</link>
       <pubDate>12 Mar 2015</pubDate>
       <author>place_your_name_here</author>
-      <guid>place_your_blog_url_here/ios/2015/03/12/9-Great Swift Interview Questions</guid>
+      <guid>place_your_blog_url_here/ios/2015/03/12/9-Great-Swift-Interview-Questions</guid>
       <description>&lt;h1 id=&quot;swift&quot;&gt;9个伟大的Swift面试题(译)&lt;/h1&gt;
 
 &lt;h3 id=&quot;great-swift-interview-questionshttpwwwtoptalcomswiftinterview-questions&quot;&gt;原文:  &lt;a href=&quot;http://www.toptal.com/swift/interview-questions&quot;&gt;9 Great Swift Interview Questions&lt;/a&gt;&lt;/h3&gt;
@@ -396,10 +396,10 @@ animal as! Dog	// 引发运行时错误
     
     <item>
       <title>创建Objective-C数据模型的心得1</title>
-      <link>place_your_blog_url_here/ios/2014/12/21/SubClass-Of-%20NSObject.html</link>
+      <link>place_your_blog_url_here/ios/2014/12/21/SubClass-Of-NSObject.html</link>
       <pubDate>21 Dec 2014</pubDate>
       <author>place_your_name_here</author>
-      <guid>place_your_blog_url_here/ios/2014/12/21/SubClass-Of- NSObject</guid>
+      <guid>place_your_blog_url_here/ios/2014/12/21/SubClass-Of-NSObject</guid>
       <description>&lt;p&gt;之前自己在公司写iOS应用主要是写的逻辑层与数据层，也算有些心得。所以决定在最近几篇Blog里将一些网上不常见的方法总结一下。&lt;/p&gt;
 
 &lt;h2 id=&quot;section&quot;&gt;本期的一个关键方法&lt;/h2&gt;
@@ -579,10 +579,10 @@ index:2&lt;/p&gt;
     
     <item>
       <title>重置iOS App请求推送授权请求</title>
-      <link>place_your_blog_url_here/ios/2014/12/12/iOS%20Push%20Authoarztion%20Rest-CN.html</link>
+      <link>place_your_blog_url_here/ios/2014/12/12/iOS-Push-Authoarztion-Rest-CN.html</link>
       <pubDate>12 Dec 2014</pubDate>
       <author>place_your_name_here</author>
-      <guid>place_your_blog_url_here/ios/2014/12/12/iOS Push Authoarztion Rest-CN</guid>
+      <guid>place_your_blog_url_here/ios/2014/12/12/iOS-Push-Authoarztion-Rest-CN</guid>
       <description>&lt;p&gt;在iOS上给自己的App创建推送通并不容易，连测试用户给App进行授权推送通知也是件很麻烦的事情。这将直接关系到用户体验与应用流程的处理。&lt;/p&gt;
 
 &lt;p&gt;之前一直是有在模拟器上测试授权（比如通讯录，月历访问等），通过模拟器的&lt;code&gt;Reset Content and Setting&lt;/code&gt;来重置整个模拟器系统来进行调试。&lt;/p&gt;
@@ -651,10 +651,10 @@ index:2&lt;/p&gt;
     
     <item>
       <title>Golden Path</title>
-      <link>place_your_blog_url_here/ios/2014/12/12/Golden%20Path%20Cn.html</link>
+      <link>place_your_blog_url_here/ios/2014/12/12/Golden-Path-Cn.html</link>
       <pubDate>12 Dec 2014</pubDate>
       <author>place_your_name_here</author>
-      <guid>place_your_blog_url_here/ios/2014/12/12/Golden Path Cn</guid>
+      <guid>place_your_blog_url_here/ios/2014/12/12/Golden-Path-Cn</guid>
       <description>&lt;h3 id=&quot;section&quot;&gt;起源&lt;/h3&gt;
 
 &lt;p&gt;上个月的时候，公司要我整理一份iOS的代码规范给大家一起学习和使用。当然自己整理是不太可能的，所以找了一份靠谱的并且自己详细阅读与注释后给大家进行了分享。&lt;/p&gt;
