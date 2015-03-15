@@ -2,7 +2,7 @@
 layout: post
 title: 创建Objective-C数据模型的心得1
 date: 2014-12-21
-categories: cn
+categories: iOS
 ---
 
 之前自己在公司写iOS应用主要是写的逻辑层与数据层，也算有些心得。所以决定在最近几篇Blog里将一些网上不常见的方法总结一下。

@@ -2,7 +2,7 @@
 layout: post
 title: Golden Path
 date: 2014-12-12
-categories: cn
+categories: iOS
 ---
 
 ### 起源

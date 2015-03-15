@@ -5,8 +5,8 @@
     <description></description>
     <link>/</link>
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Sat, 14 Mar 2015 00:43:30 +0800</pubDate>
-    <lastBuildDate>Sat, 14 Mar 2015 00:43:30 +0800</lastBuildDate>
+    <pubDate>Sun, 15 Mar 2015 23:58:04 +0800</pubDate>
+    <lastBuildDate>Sun, 15 Mar 2015 23:58:04 +0800</lastBuildDate>
     <generator>Jekyll v2.2.0</generator>
     
       <item>
@@ -330,11 +330,11 @@ createMaster()
 &lt;p&gt;请指出代码中的错误，并更正。&lt;/p&gt;
 </description>
         <pubDate>Thu, 12 Mar 2015 00:00:00 +0800</pubDate>
-        <link>/other/2015/03/12/9-Great%20Swift%20Interview%20Questions.html</link>
-        <guid isPermaLink="true">/other/2015/03/12/9-Great%20Swift%20Interview%20Questions.html</guid>
+        <link>/ios/2015/03/12/9-Great%20Swift%20Interview%20Questions.html</link>
+        <guid isPermaLink="true">/ios/2015/03/12/9-Great%20Swift%20Interview%20Questions.html</guid>
         
         
-        <category>other</category>
+        <category>ios</category>
         
       </item>
     
@@ -394,11 +394,11 @@ animal as! Dog	// 引发运行时错误
 &lt;p&gt;最简单记住这些操作符的方法可能是: &lt;code&gt;!&lt;/code&gt;意味着这可能是个陷阱， 而&lt;code&gt;?&lt;/code&gt; 意味着这可能是空值&lt;/p&gt;
 </description>
         <pubDate>Wed, 11 Mar 2015 00:00:00 +0800</pubDate>
-        <link>/other/2015/03/11/as!-Operator.html</link>
-        <guid isPermaLink="true">/other/2015/03/11/as!-Operator.html</guid>
+        <link>/ios/2015/03/11/as!-Operator.html</link>
+        <guid isPermaLink="true">/ios/2015/03/11/as!-Operator.html</guid>
         
         
-        <category>other</category>
+        <category>ios</category>
         
       </item>
     
@@ -580,11 +580,11 @@ index:2&lt;/p&gt;
 &lt;p&gt;可以参考自己数据库中的主键，网络服务返回回来的UID等&lt;/p&gt;
 </description>
         <pubDate>Sun, 21 Dec 2014 00:00:00 +0800</pubDate>
-        <link>/cn/2014/12/21/SubClass-Of-%20NSObject.html</link>
-        <guid isPermaLink="true">/cn/2014/12/21/SubClass-Of-%20NSObject.html</guid>
+        <link>/ios/2014/12/21/SubClass-Of-%20NSObject.html</link>
+        <guid isPermaLink="true">/ios/2014/12/21/SubClass-Of-%20NSObject.html</guid>
         
         
-        <category>cn</category>
+        <category>ios</category>
         
       </item>
     
@@ -655,11 +655,11 @@ index:2&lt;/p&gt;
 &lt;p&gt;由于之前没有仔细看过相关文档，但可以肯定iOS的授权设置会在设备重新启动时进行更新，而重置的周期需要在一天以上。以后再看到更细的说明再补充。&lt;/p&gt;
 </description>
         <pubDate>Fri, 12 Dec 2014 00:00:00 +0800</pubDate>
-        <link>/cn/2014/12/12/iOS%20Push%20Authoarztion%20Rest-CN.html</link>
-        <guid isPermaLink="true">/cn/2014/12/12/iOS%20Push%20Authoarztion%20Rest-CN.html</guid>
+        <link>/ios/2014/12/12/iOS%20Push%20Authoarztion%20Rest-CN.html</link>
+        <guid isPermaLink="true">/ios/2014/12/12/iOS%20Push%20Authoarztion%20Rest-CN.html</guid>
         
         
-        <category>cn</category>
+        <category>ios</category>
         
       </item>
     
@@ -752,11 +752,11 @@ index:2&lt;/p&gt;
 &lt;p&gt;我自己之前见过一定要用到if大量嵌套的也就是一些算法，比如快速排序，冒泡排序等，或者是图片渲染，AI计算等有大量不可避免的条件判断。&lt;/p&gt;
 </description>
         <pubDate>Fri, 12 Dec 2014 00:00:00 +0800</pubDate>
-        <link>/cn/2014/12/12/Golden%20Path%20Cn.html</link>
-        <guid isPermaLink="true">/cn/2014/12/12/Golden%20Path%20Cn.html</guid>
+        <link>/ios/2014/12/12/Golden%20Path%20Cn.html</link>
+        <guid isPermaLink="true">/ios/2014/12/12/Golden%20Path%20Cn.html</guid>
         
         
-        <category>cn</category>
+        <category>ios</category>
         
       </item>
     
@@ -1857,11 +1857,11 @@ if (error) {
 &lt;/ul&gt;
 </description>
         <pubDate>Mon, 10 Nov 2014 00:00:00 +0800</pubDate>
-        <link>/cn/2014/11/10/Raywenderlich-Objective-C-style-guide-CN.html</link>
-        <guid isPermaLink="true">/cn/2014/11/10/Raywenderlich-Objective-C-style-guide-CN.html</guid>
+        <link>/ios/2014/11/10/Raywenderlich-Objective-C-style-guide-CN.html</link>
+        <guid isPermaLink="true">/ios/2014/11/10/Raywenderlich-Objective-C-style-guide-CN.html</guid>
         
         
-        <category>cn</category>
+        <category>ios</category>
         
       </item>
     
@@ -1899,11 +1899,11 @@ if (error) {
 ####缺点：网络会切断一会儿。&lt;/p&gt;
 </description>
         <pubDate>Mon, 03 Nov 2014 00:00:00 +0800</pubDate>
-        <link>/cn/2014/11/03/SwitchInternetSetting-CN.html</link>
-        <guid isPermaLink="true">/cn/2014/11/03/SwitchInternetSetting-CN.html</guid>
+        <link>/other/2014/11/03/SwitchInternetSetting-CN.html</link>
+        <guid isPermaLink="true">/other/2014/11/03/SwitchInternetSetting-CN.html</guid>
         
         
-        <category>cn</category>
+        <category>other</category>
         
       </item>
     

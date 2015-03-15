@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
     <!--[if lte IE 9]><meta http-equiv="refresh" content="0;url=/ie.html"><![endif]-->
 
-    <title>as!操作符（译）</title>
+    <title>如何快速的切换Mac系统的网络配置</title>
     <meta name="description" content="">
     <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
     <link rel="icon" 
@@ -19,12 +19,11 @@
         <a href="/index.html" id="avatar"></a>
 
         <ul id="tags__ul">
-          <li id="js-label1" class="tags__li tags-btn active">全部</li>
-          <li id="js-label2" class="tags__li tags-btn">中文</li>
-          <li id="js-label3" class="tags__li tags-btn">English</li>
-          <li id="js-label4" class="tags__li tags-btn">Python</li>
-          <li id="js-label5" class="tags__li tags-btn">Ruby</li>
-          <li id="js-label6" class="tags__li tags-btn">其它</li>
+          <li id="js-label1" class="tags__li tags-btn active">All</li>
+          <li id="js-label2" class="tags__li tags-btn">iOS</li>
+          <li id="js-label3" class="tags__li tags-btn">Python</li>
+          <li id="js-label4" class="tags__li tags-btn">Ruby</li>
+          <li id="js-label5" class="tags__li tags-btn">Other</li>
         </ul>
 
         <div id="tags__bottom">
@@ -51,43 +50,43 @@
             <span class="pl__date">Mar 2015</span>
           </a>
         
-          <a class="other pl__all" href="/other/2015/03/12/9-Great%20Swift%20Interview%20Questions.html">
+          <a class="ios pl__all" href="/ios/2015/03/12/9-Great%20Swift%20Interview%20Questions.html">
             <span class="pl__circle"></span>
             <span class="pl__title">9个伟大的Swift面试题(译)</span>
             <span class="pl__date">Mar 2015</span>
           </a>
         
-          <a class="other pl__all" href="/other/2015/03/11/as!-Operator.html">
+          <a class="ios pl__all" href="/ios/2015/03/11/as!-Operator.html">
             <span class="pl__circle"></span>
             <span class="pl__title">as!操作符（译）</span>
             <span class="pl__date">Mar 2015</span>
           </a>
         
-          <a class="cn pl__all" href="/cn/2014/12/21/SubClass-Of-%20NSObject.html">
+          <a class="ios pl__all" href="/ios/2014/12/21/SubClass-Of-%20NSObject.html">
             <span class="pl__circle"></span>
             <span class="pl__title">创建Objective-C数据模型的心得1</span>
             <span class="pl__date">Dec 2014</span>
           </a>
         
-          <a class="cn pl__all" href="/cn/2014/12/12/iOS%20Push%20Authoarztion%20Rest-CN.html">
+          <a class="ios pl__all" href="/ios/2014/12/12/iOS%20Push%20Authoarztion%20Rest-CN.html">
             <span class="pl__circle"></span>
             <span class="pl__title">重置iOS App请求推送授权请求</span>
             <span class="pl__date">Dec 2014</span>
           </a>
         
-          <a class="cn pl__all" href="/cn/2014/12/12/Golden%20Path%20Cn.html">
+          <a class="ios pl__all" href="/ios/2014/12/12/Golden%20Path%20Cn.html">
             <span class="pl__circle"></span>
             <span class="pl__title">Golden Path</span>
             <span class="pl__date">Dec 2014</span>
           </a>
         
-          <a class="cn pl__all" href="/cn/2014/11/10/Raywenderlich-Objective-C-style-guide-CN.html">
+          <a class="ios pl__all" href="/ios/2014/11/10/Raywenderlich-Objective-C-style-guide-CN.html">
             <span class="pl__circle"></span>
             <span class="pl__title">raywenderlich.com Objective-C代码规范中文简易注释</span>
             <span class="pl__date">Nov 2014</span>
           </a>
         
-          <a class="cn pl__all" href="/cn/2014/11/03/SwitchInternetSetting-CN.html">
+          <a class="other pl__all" href="/other/2014/11/03/SwitchInternetSetting-CN.html">
             <span class="pl__circle"></span>
             <span class="pl__title">如何快速的切换Mac系统的网络配置</span>
             <span class="pl__date">Nov 2014</span>
@@ -105,15 +104,9 @@
             <span class="pl__date">Sep 2014</span>
           </a>
         
-          <a class="cn pl__all" href="/cn/2014/08/10/Cocoapods-Research-CN.html">
+          <a class="ios pl__all" href="/ios/2014/08/10/Cocoapods-Research-CN.html">
             <span class="pl__circle"></span>
             <span class="pl__title">Cocoapods进阶教程</span>
-            <span class="pl__date">Aug 2014</span>
-          </a>
-        
-          <a class="en pl__all" href="/en/2014/08/09/FirstPost-EN.html">
-            <span class="pl__circle"></span>
-            <span class="pl__title">My first blog in github</span>
             <span class="pl__date">Aug 2014</span>
           </a>
         
@@ -131,66 +124,44 @@
       <!-- 加载文章 -->
       <div id="pjax">
         <article id="post__content">
-  <h1 id="post__title" data-identifier="20150311">as!操作符（译）</h1>
-  <h3 id="as">as!操作符</h3>
+  <h1 id="post__title" data-identifier="20141103">如何快速的切换Mac系统的网络配置</h1>
+  <h1 id="mac">如何快速的切换Mac系统的网络配置</h1>
 
-<p>PS1:试译一些Swift的相关内容</p>
+<h2 id="section">问题</h2>
 
-<p>PS2:Swift官网微博原文  <a href="https://developer.apple.com/swift/blog/?id=23">The as! Operator</a></p>
-
-<p>在Swift 1.2版之前，根据表达式的类型和被转换表达式的类型，<code>as</code>操作符可以用于两种不同的转换</p>
+<p>由于国内网络环境恶劣，在日常使用中，我经常会面临如下情况</p>
 
 <ul>
   <li>
-    <p><strong>保守转换</strong>，这种是可以通过Swift的编辑器进行检查校正。举个例子，向上类型转换（将类转换为其父类）或者指定字面量表达式（<code>1 as Float</code>）</p>
+    <p>访问Google, Youtube等境外网站需要使用<code>曲径</code>等自动代理配置</p>
   </li>
   <li>
-    <p><strong>强制转换</strong>，这种类型转换的安全性不能得到Swift编辑器的保证，可能产生在运行时的陷阱。比如类型的向下转换，将父类转换为子类。</p>
+    <p>或者最近经常出现的DNS服务污染，比较严重的情况连taobao搜索都不可使用，或者在使用Appstore下载更新时，使用 114, 08 , openDNS等手动配置更为靠谱</p>
+  </li>
+  <li>
+    <p>时候却造成我访问国内网站（视频网站会比较明显）速度下降，所以需要切换回运营提供的DNS（此DNS一般能与114，08等DNS有几十到几百望毫秒的差距）</p>
   </li>
 </ul>
 
-<p>在Swift 1.2版中，将强制转换和保守转换分成了两种不同的操作符。保守转换继续使用<code>as</code>操作符，但强制转换使用<code>as!</code>操作符。<code>!</code>用于指示转换可能失败。这样一来，你一眼就可以发现它的转换可能会导致程序崩溃。</p>
+<!-- more -->
 
-<p>下面的例子展示了这种变化：</p>
+<p>所以每当感觉上网不畅时，一般都需要点开<code>系统偏好设置</code>-&gt;<code>网络</code>-&gt;<code>高级</code>-&gt;<code>DNS</code> or <code>代理</code>等设置，还需要额外的从一些记录软件中提取相应的配置参数</p>
 
-<pre><code class="language-swift">class Animal {}
-class Dog: Animal {}
+<h2 id="section-1">解决办法：</h2>
 
-let a: Animal = Dog()
-a as Dog		// 将提示错"'Animal is not convertible to 'Dog'; did you mean to use 'as!' to force downcast?"
-a as! Dog		// 这种强制向下转换是允许的
+<p><code>系统偏好设置</code>-&gt;<code>网络</code> 此页面上有一个位置，选择<code>编辑位置</code>后点击下面的<code>+</code>，即设立一种新的网络环境。</p>
 
-let d = Dog()
-d as Animal		// 向上转换是允许的
-</code></pre>
+<h2 id="section-2">使用：</h2>
 
-<p>注意对比<code>!</code>和<code>?</code>这两种不同后缀的表达式和<code>as!</code>与<code>as?</code>这两种转换操作符：</p>
-
-<pre><code class="language-swift">class Animal {}
-
-class Cat: Animal {}
-
-class Dog: Animal {
-	var name = "Spot"
-}
-
-let dog: Dog? = nil
-dog?.name		// 等于nil
-dog!.name		// 引发运行时错误
-
-let animal: Animal = Cat()
-animal as? Dog	// 等于nil
-animal as! Dog	// 引发运行时错误
-</code></pre>
-
-<p>最简单记住这些操作符的方法可能是: <code>!</code>意味着这可能是个陷阱， 而<code>?</code> 意味着这可能是空值</p>
+<p>OK，此种方法最赞的就是只用点击桌面左上角的小苹果<code></code>-&gt;<code>位置</code>进行切换即可。
+####缺点：网络会切断一会儿。</p>
 
 </article> <!-- end #post__content -->
 
 <div id="post__share">
-  <a id="icon-twitter" class="fontawesomeregular" href="https://twitter.com/intent/tweet?url=http://wing-of-war.github.io//other/2015/03/11/as!-Operator.html&text=as!操作符（译）" target="_blank"></a>
+  <a id="icon-twitter" class="fontawesomeregular" href="https://twitter.com/intent/tweet?url=http://wing-of-war.github.io//other/2014/11/03/SwitchInternetSetting-CN.html&text=如何快速的切换Mac系统的网络配置" target="_blank"></a>
   <a id="icon-cc" class="fontawesomeregular" href="http://creativecommons.org/licenses/by-nc-sa/3.0" target="_blank"></a>
-  <a id="icon-weibo" class="fontawesomeregular" href="http://v.t.sina.com.cn/share/share.php?url=http://wing-of-war.github.io//other/2015/03/11/as!-Operator.html&title=as!操作符（译）" target="_blank"></a>
+  <a id="icon-weibo" class="fontawesomeregular" href="http://v.t.sina.com.cn/share/share.php?url=http://wing-of-war.github.io//other/2014/11/03/SwitchInternetSetting-CN.html&title=如何快速的切换Mac系统的网络配置" target="_blank"></a>
 </div> <!-- end #post__share -->
 
 <div id="disqus_thread">

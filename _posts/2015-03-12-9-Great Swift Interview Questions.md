@@ -2,7 +2,7 @@
 layout: post
 title: 9个伟大的Swift面试题(译)
 date: 2015-03-12
-categories: other
+categories: ios
 ---
 
 # 9个伟大的Swift面试题(译)

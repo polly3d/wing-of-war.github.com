@@ -2,7 +2,7 @@
 layout: post
 title: raywenderlich.com Objective-C代码规范中文简易注释
 date: 2014-11-10
-categories: cn
+categories: iOS
 ---
 
 # The official raywenderlich.com Objective-C style guide.

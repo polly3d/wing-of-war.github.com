@@ -12,11 +12,10 @@ if ($(window).width() <= 1280) {
 
 // Variables
     tag1       = $('.pl__all'),
-    tag2       = $('.cn'),
-    tag3       = $('.en'),
-    tag4       = $('.python'),
-    tag5       = $('.ruby'),
-    tag6       = $('.other');
+    tag2       = $('.ios'),
+    tag3       = $('.python'),
+    tag4       = $('.ruby'),
+    tag5       = $('.other');
 
 var sidebar    = $('#sidebar'),
     container  = $('#post'),

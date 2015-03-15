@@ -2,7 +2,7 @@
 layout: post
 title: 如何快速的切换Mac系统的网络配置
 date: 2014-11-03
-categories: cn
+categories: other
 ---
 
 #如何快速的切换Mac系统的网络配置

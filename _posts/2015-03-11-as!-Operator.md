@@ -2,7 +2,7 @@
 layout: post
 title: as!操作符（译）
 date: 2015-03-11
-categories: other
+categories: ios
 ---
 
 ### as!操作符
