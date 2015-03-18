@@ -1,0 +1,73 @@
+html,
+body {
+  font-family:"Roboto","Arial","Microsoft YaHei","榛戜綋","瀹嬩綋",sans-serif;
+  color: #404040;
+/*  background-color: #eee;
+*/      
+
+ background-image: -webkit-linear-gradient(top, #edecec, #cecbc9);
+ background-image: linear-gradient(top, #edecec, #cecbc9);
+
+}
+
+.container {
+  width: 520px;
+  margin-top: 20px;
+}
+
+.button-group {
+  margin-bottom: 20px;
+}
+
+.counter {
+  display: inline;
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-right: 10px;
+}
+
+.posts {
+  clear: both;
+  list-style: none;
+  padding-left: 0;
+  width: 100%;
+}
+
+.posts li {
+  background-color: #fff;
+  border: 1px solid #d8d8d8;
+  padding-top: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  word-wrap: break-word;
+  min-height: 42px;
+}
+
+
+
+
+
+progress {
+  -webkit-appearance: none;
+  appearance:         none;
+  height:             2px;
+  width:              500px;
+  position:          absolute;
+  left:              50%;
+  top:              50%;
+  -webkit-transform:  translate(-50%, -50%);
+  -moz-transform:     translate(-50%, -50%);
+  -ms-transform:      translate(-50%, -50%);
+  -o-transform:       translate(-50%, -50%);
+  transform:        translate(-50%, -50%);
+}
+
+progress::-webkit-progress-bar {
+  background:          #C7C7CC;
+}
+
+progress::-webkit-progress-value {
+  background:         #007AFF;
+}
