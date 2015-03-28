@@ -5,9 +5,71 @@
     <description></description>
     <link>/</link>
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Wed, 18 Mar 2015 15:50:13 +0800</pubDate>
-    <lastBuildDate>Wed, 18 Mar 2015 15:50:13 +0800</lastBuildDate>
+    <pubDate>Sat, 28 Mar 2015 11:50:16 +0800</pubDate>
+    <lastBuildDate>Sat, 28 Mar 2015 11:50:16 +0800</lastBuildDate>
     <generator>Jekyll v2.2.0</generator>
+    
+      <item>
+        <title>Chrome插件 TabSpace</title>
+        <description>&lt;p&gt;项目地址：https://github.com/Wing-Of-War/ChormeTabSpace&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://ww4.sinaimg.cn/mw690/56becbc4gw1eqlac5wzfzj21400p0k15.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;学习前端的练习项目吧，确实已经有类似的插件产品了。看看还有没有机会拼一下UI吧 &lt;/p&gt;
+
+&lt;p&gt;(●—●)&lt;/p&gt;
+
+&lt;h2 id=&quot;section&quot;&gt;使用场景&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;开了十几个网页做事情A&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;又开了十几个网页做事情B&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;机器性能不够或者想暂时关闭A，将A窗口下所有的网页做成集合保存，等下次需要的时候再一次打开&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;section-1&quot;&gt;使用方法&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;保存当前Chrome窗口下所有的Tab（仅保存到本地，请放心），作为一个&lt;code&gt;TabSpace&lt;/code&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;在稍后合适的时候，通过打开相应的&lt;code&gt;TabSpace&lt;/code&gt;可以打开之前保存的Tab&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;section-2&quot;&gt;剩下的坑&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;如果算是稍后阅读类产品，可以做成Todo列表&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;一些常见交互功能：批量删除的提示，改名，历史记录，条目详情，&lt;code&gt;TabSpace&lt;/code&gt;的编辑&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;UI改进，现在就是拿的别人的一个Todo的UI改的&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;跟Gmail帐号绑定（感觉不是很需要）&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+        <pubDate>Sat, 28 Mar 2015 00:00:00 +0800</pubDate>
+        <link>/web/2015/03/28/ChromeExtension-TabSpace.html</link>
+        <guid isPermaLink="true">/web/2015/03/28/ChromeExtension-TabSpace.html</guid>
+        
+        
+        <category>web</category>
+        
+      </item>
     
       <item>
         <title>创业公司去留评估指南</title>
@@ -2223,45 +2285,6 @@ end
         
         
         <category>ruby</category>
-        
-      </item>
-    
-      <item>
-        <title>ACGArt DownLoader</title>
-        <description>&lt;h3 id=&quot;repositoryacgartimagebatchdonehttpsgithubcomwing-of-waracgartimagebatchdone&quot;&gt;&lt;a href=&quot;https://github.com/Wing-Of-War/ACGArtImageBatchDone&quot;&gt;Repository:ACGArtImageBatchDone&lt;/a&gt;&lt;/h3&gt;
-
-&lt;h2 id=&quot;project-origin&quot;&gt;Project Origin&lt;/h2&gt;
-
-&lt;p&gt;Last Year I bought an intersting iOS application named ACG ART&lt;a href=&quot;https://itunes.apple.com/cn/app/acg-art-er-ci-yuan-dong-man/id577006740?mt=8&quot;&gt;APP Store link&lt;/a&gt;.&lt;/p&gt;
-
-&lt;!-- more --&gt;
-
-&lt;p&gt;As you can see, it will provide large number of anime pictures. It’s really briliant.&lt;/p&gt;
-
-&lt;p&gt;But you know mobile phone it’s not a work platform , it is hard to manage and pick the image from the application.(Connection and download are not fast..)
-So, I spent two days worktout this little thing to batch download.&lt;/p&gt;
-
-&lt;h2 id=&quot;wow-i-cant-stop-it&quot;&gt;WoW~ I can’t stop it!&lt;/h2&gt;
-
-&lt;h3 id=&quot;downloading&quot;&gt;DownLoading..&lt;/h3&gt;
-&lt;p&gt;&lt;img src=&quot;http://ww3.sinaimg.cn/mw690/56becbc4gw1eka8cay4vkj20it0ca436.jpg&quot; alt=&quot;DownLoading..&quot; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;pictures&quot;&gt;Pictures&lt;/h3&gt;
-&lt;p&gt;&lt;img src=&quot;http://ww3.sinaimg.cn/mw690/56becbc4gw1eka8cable3j20qr0u7q90.jpg&quot; alt=&quot;Pictures&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;please-tell-me&quot;&gt;Please Tell Me&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;If you like it &lt;/li&gt;
-  &lt;li&gt;If you have better ideal to impove it &lt;/li&gt;
-  &lt;li&gt;If this offend you&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Sat, 13 Sep 2014 00:00:00 +0800</pubDate>
-        <link>/python/2014/09/13/ACGArt-EN.html</link>
-        <guid isPermaLink="true">/python/2014/09/13/ACGArt-EN.html</guid>
-        
-        
-        <category>python</category>
         
       </item>
     

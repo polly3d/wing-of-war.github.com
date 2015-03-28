@@ -15,7 +15,8 @@ if ($(window).width() <= 1280) {
     tag2       = $('.ios'),
     tag3       = $('.python'),
     tag4       = $('.ruby'),
-    tag5       = $('.other');
+    tag5       = $('.web'),
+    tag6       = $('.other');
 
 var sidebar    = $('#sidebar'),
     container  = $('#post'),
