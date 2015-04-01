@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
     <!--[if lte IE 9]><meta http-equiv="refresh" content="0;url=/ie.html"><![endif]-->
 
-    <title>如何快速的切换Mac系统的网络配置</title>
+    <title>Chrome插件 开发的前端笔记</title>
     <meta name="description" content="">
     <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
     <link rel="icon" 
@@ -137,44 +137,114 @@
       <!-- 加载文章 -->
       <div id="pjax">
         <article id="post__content">
-  <h1 id="post__title" data-identifier="20141103">如何快速的切换Mac系统的网络配置</h1>
-  <h1 id="mac">如何快速的切换Mac系统的网络配置</h1>
+  <h1 id="post__title" data-identifier="20150402">Chrome插件 开发的前端笔记</h1>
+  <p>总结一下Chrome Extension开发中学习到的东西</p>
 
-<h2 id="section">问题</h2>
+<h2 id="html">HTML</h2>
 
-<p>由于国内网络环境恶劣，在日常使用中，我经常会面临如下情况</p>
+<p><strong>所有的javascript脚本全部都要写在js文件中</strong></p>
 
-<ul>
-  <li>
-    <p>访问Google, Youtube等境外网站需要使用<code>曲径</code>等自动代理配置</p>
-  </li>
-  <li>
-    <p>或者最近经常出现的DNS服务污染，比较严重的情况连taobao搜索都不可使用，或者在使用Appstore下载更新时，使用 114, 08 , openDNS等手动配置更为靠谱</p>
-  </li>
-  <li>
-    <p>时候却造成我访问国内网站（视频网站会比较明显）速度下降，所以需要切换回运营提供的DNS（此DNS一般能与114，08等DNS有几十到几百望毫秒的差距）</p>
-  </li>
-</ul>
+<p>原文引用：
+<a href="https://developer.chrome.com/extensions/contentSecurityPolicy">JavaScript and HTML must be in separate files: see our Content Security Policy documentation for details and explanation.</a></p>
 
-<!-- more -->
+<p><strong>特别的：</strong></p>
 
-<p>所以每当感觉上网不畅时，一般都需要点开<code>系统偏好设置</code>-&gt;<code>网络</code>-&gt;<code>高级</code>-&gt;<code>DNS</code> or <code>代理</code>等设置，还需要额外的从一些记录软件中提取相应的配置参数</p>
+<pre><code class="language-html">&lt;a href="javascript:" class="load"&gt;load&lt;/a&gt;
+</code></pre>
 
-<h2 id="section-1">解决办法：</h2>
+<p>虽然只是空指令，在href中引用javascript:是会触发Chrome 插件的安全协议的，可以换成</p>
 
-<p><code>系统偏好设置</code>-&gt;<code>网络</code> 此页面上有一个位置，选择<code>编辑位置</code>后点击下面的<code>+</code>，即设立一种新的网络环境。</p>
+<pre><code class="language-html">&lt;a href="#"&gt;&lt;/a&gt;
+</code></pre>
 
-<h2 id="section-2">使用：</h2>
+<h2 id="css">CSS</h2>
 
-<p>OK，此种方法最赞的就是只用点击桌面左上角的小苹果<code></code>-&gt;<code>位置</code>进行切换即可。
-####缺点：网络会切断一会儿。</p>
+<h3 id="section">禁止选择文本的属性</h3>
+
+<p>引用 : <a href="*http://stackoverflow.com/questions/826782/css-rule-to-disable-text-selection-highlighting?answertab=votes#tab-top*"><em>http://stackoverflow.com/questions/826782/css-rule-to-disable-text-selection-highlighting?answertab=votes#tab-top</em></a></p>
+
+<pre><code class="language-css">.noselect {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+</code></pre>
+
+<h3 id="section-1">变换特效</h3>
+
+<pre><code class="language-css">.todoForm .button:hover{
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f1f3f5), color-stop(100%,#d5d7d9));
+}
+</code></pre>
+
+<h2 id="javascript">Javascript</h2>
+
+<h3 id="js">JS脚本加载的开始</h3>
+
+<pre><code class="language-js">document.addEventListener('DOMContentLoaded', function() {
+
+});
+</code></pre>
+
+<blockquote>
+  <p>The DOMContentLoaded event is fired when the document has been completely loaded and parsed, without waiting for stylesheets, images, and subframes to finish loading (the load event can be used to detect a fully-loaded page).<a href="https://developer.mozilla.org/en-US/docs/Web/Events/DOMContentLoaded">https://developer.mozilla.org/en-US/docs/Web/Events/DOMContentLoaded</a></p>
+</blockquote>
+
+<p>相当于页面载入方法，加载完HTML后，会这里开始加载并执行JS脚本</p>
+
+<h3 id="section-2">获取网页元素时，判断元素否存在</h3>
+
+<pre><code class="language-js">    var createButton = document.getElementById("createNew");
+    if (createButton) {
+        createButton.addEventListener("click", createTabSpace);
+    } else {
+        console.log('createButton not found');
+    };
+</code></pre>
+
+<h3 id="jqueryjs">jQuery对象与JS对象是有区别的</h3>
+
+<p>jQ对象可以用<code>$</code>来进行标记
+~~~jq
+var $input = $(“#todoInput”);
+~~~</p>
+
+<p>http://stackoverflow.com/questions/205853/why-would-a-javascript-variable-start-with-a-dollar-sign</p>
+
+<p>http://www.cnblogs.com/zxjyuan/archive/2010/05/07/1729462.html</p>
+
+<p>注意dom对象和jquery对象是有区别的，调用方法时要注意操作的是dom对象还是jquery对象。</p>
+
+<p><strong>javascript对象是DOM？</strong></p>
+
+<h3 id="js-1">JS数组清空</h3>
+
+<p>How to clean a array: http://stackoverflow.com/questions/1232040/empty-an-array-in-javascript
+~~~js
+tabSpaceItems = []
+~~~</p>
+
+<h3 id="chromeextension-storage-">ChromeExtension Storage 存储的小坑</h3>
+
+<p>set的第一个参数为字典，设置的时候创立对象进行键值对赋值，否则会产生<code>键名</code>作为<code>键值</code>的问题。</p>
+
+<pre><code class="language-js">var toDBData = {};
+toDBData[TabSpaceDBKey] = tabSpaceItems;
+chrome.storage.local.set(toDBData, function() {
+// Notify that we saved.
+console.log('Settings saved');
+});
+</code></pre>
 
 </article> <!-- end #post__content -->
 
 <div id="post__share">
-  <a id="icon-twitter" class="fontawesomeregular" href="https://twitter.com/intent/tweet?url=http://wing-of-war.github.io//other/2014/11/03/SwitchInternetSetting-CN.html&text=如何快速的切换Mac系统的网络配置" target="_blank"></a>
+  <a id="icon-twitter" class="fontawesomeregular" href="https://twitter.com/intent/tweet?url=http://wing-of-war.github.io//web/2015/04/02/ChromeExtension-Note.html&text=Chrome插件 开发的前端笔记" target="_blank"></a>
   <a id="icon-cc" class="fontawesomeregular" href="http://creativecommons.org/licenses/by-nc-sa/3.0" target="_blank"></a>
-  <a id="icon-weibo" class="fontawesomeregular" href="http://v.t.sina.com.cn/share/share.php?url=http://wing-of-war.github.io//other/2014/11/03/SwitchInternetSetting-CN.html&title=如何快速的切换Mac系统的网络配置" target="_blank"></a>
+  <a id="icon-weibo" class="fontawesomeregular" href="http://v.t.sina.com.cn/share/share.php?url=http://wing-of-war.github.io//web/2015/04/02/ChromeExtension-Note.html&title=Chrome插件 开发的前端笔记" target="_blank"></a>
 </div> <!-- end #post__share -->
 
 <div id="disqus_thread">

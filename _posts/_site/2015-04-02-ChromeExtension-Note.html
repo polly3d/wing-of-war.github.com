@@ -1,0 +1,100 @@
+<p>总结一下Chrome Extension开发中学习到的东西</p>
+
+<h2 id="html">HTML</h2>
+
+<p><strong>所有的javascript脚本全部都要写在js文件中</strong></p>
+
+<p>原文引用：
+<a href="https://developer.chrome.com/extensions/contentSecurityPolicy">JavaScript and HTML must be in separate files: see our Content Security Policy documentation for details and explanation.</a></p>
+
+<p><strong>特别的：</strong></p>
+
+<pre><code class="language-html">&lt;a href="javascript:" class="load"&gt;load&lt;/a&gt;
+</code></pre>
+
+<p>虽然只是空指令，在href中引用javascript:是会触发Chrome 插件的安全协议的，可以换成</p>
+
+<pre><code class="language-html">&lt;a href="#"&gt;&lt;/a&gt;
+</code></pre>
+
+<h2 id="css">CSS</h2>
+
+<h3 id="section">禁止选择文本的属性</h3>
+
+<p>引用 : <a href="*http://stackoverflow.com/questions/826782/css-rule-to-disable-text-selection-highlighting?answertab=votes#tab-top*"><em>http://stackoverflow.com/questions/826782/css-rule-to-disable-text-selection-highlighting?answertab=votes#tab-top</em></a></p>
+
+<pre><code class="language-css">.noselect {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+</code></pre>
+
+<h3 id="section-1">变换特效</h3>
+
+<pre><code class="language-css">.todoForm .button:hover{
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f1f3f5), color-stop(100%,#d5d7d9));
+}
+</code></pre>
+
+<h2 id="javascript">Javascript</h2>
+
+<h3 id="js">JS脚本加载的开始</h3>
+
+<pre><code class="language-js">document.addEventListener('DOMContentLoaded', function() {
+
+});
+</code></pre>
+
+<blockquote>
+  <p>The DOMContentLoaded event is fired when the document has been completely loaded and parsed, without waiting for stylesheets, images, and subframes to finish loading (the load event can be used to detect a fully-loaded page).<a href="https://developer.mozilla.org/en-US/docs/Web/Events/DOMContentLoaded">https://developer.mozilla.org/en-US/docs/Web/Events/DOMContentLoaded</a></p>
+</blockquote>
+
+<p>相当于页面载入方法，加载完HTML后，会这里开始加载并执行JS脚本</p>
+
+<h3 id="section-2">获取网页元素时，判断元素否存在</h3>
+
+<pre><code class="language-js">    var createButton = document.getElementById("createNew");
+    if (createButton) {
+        createButton.addEventListener("click", createTabSpace);
+    } else {
+        console.log('createButton not found');
+    };
+</code></pre>
+
+<h3 id="jqueryjs">jQuery对象与JS对象是有区别的</h3>
+
+<p>jQ对象可以用<code>$</code>来进行标记
+~~~jq
+var $input = $(“#todoInput”);
+~~~</p>
+
+<p>http://stackoverflow.com/questions/205853/why-would-a-javascript-variable-start-with-a-dollar-sign</p>
+
+<p>http://www.cnblogs.com/zxjyuan/archive/2010/05/07/1729462.html</p>
+
+<p>注意dom对象和jquery对象是有区别的，调用方法时要注意操作的是dom对象还是jquery对象。</p>
+
+<p><strong>javascript对象是DOM？</strong></p>
+
+<h3 id="js-1">JS数组清空</h3>
+
+<p>How to clean a array: http://stackoverflow.com/questions/1232040/empty-an-array-in-javascript
+~~~js
+tabSpaceItems = []
+~~~</p>
+
+<h3 id="chromeextension-storage-">ChromeExtension Storage 存储的小坑</h3>
+
+<p>set的第一个参数为字典，设置的时候创立对象进行键值对赋值，否则会产生<code>键名</code>作为<code>键值</code>的问题。</p>
+
+<pre><code class="language-js">var toDBData = {};
+toDBData[TabSpaceDBKey] = tabSpaceItems;
+chrome.storage.local.set(toDBData, function() {
+// Notify that we saved.
+console.log('Settings saved');
+});
+</code></pre>

@@ -6,9 +6,118 @@
     <atom:link href="place_your_blog_url_here/rss.xml" rel="self" type="application/rss+xml" />
     <description>place_your_blog_description_here</description>
     <language>place_your_blog_language_here</language>
-    <pubDate>Sat, 28 Mar 2015 11:50:16 +0800</pubDate>
-    <lastBuildDate>Sat, 28 Mar 2015 11:50:16 +0800</lastBuildDate>
+    <pubDate>Thu, 02 Apr 2015 05:53:47 +0800</pubDate>
+    <lastBuildDate>Thu, 02 Apr 2015 05:53:47 +0800</lastBuildDate>
 
+    
+    <item>
+      <title>Chrome插件 开发的前端笔记</title>
+      <link>place_your_blog_url_here/web/2015/04/02/ChromeExtension-Note.html</link>
+      <pubDate>02 Apr 2015</pubDate>
+      <author>place_your_name_here</author>
+      <guid>place_your_blog_url_here/web/2015/04/02/ChromeExtension-Note</guid>
+      <description>&lt;p&gt;总结一下Chrome Extension开发中学习到的东西&lt;/p&gt;
+
+&lt;h2 id=&quot;html&quot;&gt;HTML&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;所有的javascript脚本全部都要写在js文件中&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;原文引用：
+&lt;a href=&quot;https://developer.chrome.com/extensions/contentSecurityPolicy&quot;&gt;JavaScript and HTML must be in separate files: see our Content Security Policy documentation for details and explanation.&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;特别的：&lt;/strong&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-html&quot;&gt;&amp;lt;a href=&quot;javascript:&quot; class=&quot;load&quot;&amp;gt;load&amp;lt;/a&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;虽然只是空指令，在href中引用javascript:是会触发Chrome 插件的安全协议的，可以换成&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-html&quot;&gt;&amp;lt;a href=&quot;#&quot;&amp;gt;&amp;lt;/a&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&quot;css&quot;&gt;CSS&lt;/h2&gt;
+
+&lt;h3 id=&quot;section&quot;&gt;禁止选择文本的属性&lt;/h3&gt;
+
+&lt;p&gt;引用 : &lt;a href=&quot;*http://stackoverflow.com/questions/826782/css-rule-to-disable-text-selection-highlighting?answertab=votes#tab-top*&quot;&gt;&lt;em&gt;http://stackoverflow.com/questions/826782/css-rule-to-disable-text-selection-highlighting?answertab=votes#tab-top&lt;/em&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-css&quot;&gt;.noselect {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&quot;section-1&quot;&gt;变换特效&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-css&quot;&gt;.todoForm .button:hover{
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f1f3f5), color-stop(100%,#d5d7d9));
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&quot;javascript&quot;&gt;Javascript&lt;/h2&gt;
+
+&lt;h3 id=&quot;js&quot;&gt;JS脚本加载的开始&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-js&quot;&gt;document.addEventListener(&#39;DOMContentLoaded&#39;, function() {
+
+});
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;The DOMContentLoaded event is fired when the document has been completely loaded and parsed, without waiting for stylesheets, images, and subframes to finish loading (the load event can be used to detect a fully-loaded page).&lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/Events/DOMContentLoaded&quot;&gt;https://developer.mozilla.org/en-US/docs/Web/Events/DOMContentLoaded&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;相当于页面载入方法，加载完HTML后，会这里开始加载并执行JS脚本&lt;/p&gt;
+
+&lt;h3 id=&quot;section-2&quot;&gt;获取网页元素时，判断元素否存在&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-js&quot;&gt;    var createButton = document.getElementById(&quot;createNew&quot;);
+    if (createButton) {
+        createButton.addEventListener(&quot;click&quot;, createTabSpace);
+    } else {
+        console.log(&#39;createButton not found&#39;);
+    };
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&quot;jqueryjs&quot;&gt;jQuery对象与JS对象是有区别的&lt;/h3&gt;
+
+&lt;p&gt;jQ对象可以用&lt;code&gt;$&lt;/code&gt;来进行标记
+~~~jq
+var $input = $(“#todoInput”);
+~~~&lt;/p&gt;
+
+&lt;p&gt;http://stackoverflow.com/questions/205853/why-would-a-javascript-variable-start-with-a-dollar-sign&lt;/p&gt;
+
+&lt;p&gt;http://www.cnblogs.com/zxjyuan/archive/2010/05/07/1729462.html&lt;/p&gt;
+
+&lt;p&gt;注意dom对象和jquery对象是有区别的，调用方法时要注意操作的是dom对象还是jquery对象。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;javascript对象是DOM？&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;js-1&quot;&gt;JS数组清空&lt;/h3&gt;
+
+&lt;p&gt;How to clean a array: http://stackoverflow.com/questions/1232040/empty-an-array-in-javascript
+~~~js
+tabSpaceItems = []
+~~~&lt;/p&gt;
+
+&lt;h3 id=&quot;chromeextension-storage-&quot;&gt;ChromeExtension Storage 存储的小坑&lt;/h3&gt;
+
+&lt;p&gt;set的第一个参数为字典，设置的时候创立对象进行键值对赋值，否则会产生&lt;code&gt;键名&lt;/code&gt;作为&lt;code&gt;键值&lt;/code&gt;的问题。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-js&quot;&gt;var toDBData = {};
+toDBData[TabSpaceDBKey] = tabSpaceItems;
+chrome.storage.local.set(toDBData, function() {
+// Notify that we saved.
+console.log(&#39;Settings saved&#39;);
+});
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
     
     <item>
       <title>Chrome插件 TabSpace</title>
@@ -1942,320 +2051,6 @@ if (error) {
 
 &lt;p&gt;OK，此种方法最赞的就是只用点击桌面左上角的小苹果&lt;code&gt;&lt;/code&gt;-&amp;gt;&lt;code&gt;位置&lt;/code&gt;进行切换即可。
 ####缺点：网络会切断一会儿。&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Ruby Study Memo</title>
-      <link>place_your_blog_url_here/ruby/2014/10/25/Ruby_Study-EN.html</link>
-      <pubDate>25 Oct 2014</pubDate>
-      <author>place_your_name_here</author>
-      <guid>place_your_blog_url_here/ruby/2014/10/25/Ruby_Study-EN</guid>
-      <description>&lt;p&gt;Leran this at www.codecademy.com. Great online course.I picked up some key word from this lession for memo.&lt;/p&gt;
-
-&lt;!-- more --&gt;
-
-&lt;h1 id=&quot;basic&quot;&gt;Basic&lt;/h1&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;There’s always more than one way to do something in Ruby.&lt;/li&gt;
-  &lt;li&gt;Everything in Ruby is an Object.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h2 id=&quot;input&quot;&gt;Input&lt;/h2&gt;
-
-&lt;pre&gt;&lt;code&gt;variable = gets.chomp
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;code&gt;chomp&lt;/code&gt; removes that extra line.&lt;/p&gt;
-
-&lt;h2 id=&quot;operation&quot;&gt;Operation&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;create with empty hash&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-ruby&quot;&gt;file = {}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;need space between variable and operation&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-ruby&quot;&gt;Error: a++
-Fine: a += 1 
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&quot;control-flow&quot;&gt;Control Flow&lt;/h2&gt;
-
-&lt;h3 id=&quot;unless--ifvar&quot;&gt;unless == if(!var)&lt;/h3&gt;
-
-&lt;h2 id=&quot;loops--iterators&quot;&gt;Loops &amp;amp; Iterators&lt;/h2&gt;
-
-&lt;h3 id=&quot;until&quot;&gt;until&lt;/h3&gt;
-&lt;pre&gt;&lt;code&gt;i = 0
-until i == 6
-  i += 1
-end
-puts i
-# ==&amp;gt; 6
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&quot;loop&quot;&gt;Loop&lt;/h3&gt;
-&lt;pre&gt;&lt;code&gt;i = 20
-loop do
-  i -= 1
-  print &quot;#{i}&quot;
-  break if i &amp;lt;= 0
-end
-#==&amp;gt;191817161514131211109876543210
-&lt;/code&gt;&lt;/pre&gt;
-&lt;ul&gt;
-  &lt;li&gt;The &lt;code&gt;next&lt;/code&gt; keywords can be used to skip over certain steps in the loop.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;pre&gt;&lt;code&gt;i = 20
-loop do
-  i -= 1
-  next if i % 2 == 1
-  print &quot;#{i}&quot;
-  break if i &amp;lt;= 0
-end
-#==&amp;gt;181614121086420
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&quot;inclusive-and-exclusive-ranges&quot;&gt;Inclusive and Exclusive Ranges&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;code&gt;1..15&lt;/code&gt; not include 15&lt;/li&gt;
-  &lt;li&gt;&lt;code&gt;1...15&lt;/code&gt; inlcude 15 &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;iterator&quot;&gt;Iterator&lt;/h2&gt;
-
-&lt;p&gt;can apply an expression to each element of an object.
-~~~
-object.each { |item| # Do something }
-~~~&lt;/p&gt;
-
-&lt;p&gt;The &lt;code&gt;.times&lt;/code&gt; methods is like a super compact &lt;code&gt;for&lt;/code&gt; loop: it can perform a task on each item in a object a specified number of times.
-~~~
-10.times { print “Chunky bacon!” }
-~~~&lt;/p&gt;
-
-&lt;h2 id=&quot;blockproclambda&quot;&gt;Block,Proc,Lambda&lt;/h2&gt;
-
-&lt;p&gt;&lt;code&gt;Block&lt;/code&gt;: A Ruby block is just a bit of code that can be excuted.&lt;/p&gt;
-
-&lt;h3 id=&quot;bolck&quot;&gt;Bolck&lt;/h3&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-ruby&quot;&gt;
-my_nums = [1,2,3]
-#.collection
-my_nums.collection { |num| num ** 2 }
-# return [1,4,9]
-my_nums.collection! { |num| num ** 2 }
-# return [1,4,9] &amp;amp;&amp;amp; my_nums == [1,4,9]
-
-
-#.each
-[1, 2, 3].each do |num|
-  puts num
-end
-# ==&amp;gt; Prints 1, 2, 3 on separate lines
-[1, 2, 3].each { |num| puts num }
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&quot;yied&quot;&gt;Yied&lt;/h3&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-ruby&quot;&gt;def block_test
-  puts &quot;We&#39;re in the method!&quot;
-  puts &quot;Yielding to the block...&quot;
-  yield
-  puts &quot;We&#39;re back in the method!&quot;
-end
-
-block_test { puts &quot;&amp;gt;&amp;gt;&amp;gt; We&#39;re in the block!&quot; }
-
-
-def double(n)
-    puts &quot;Ori input is #{n}&quot;
-    yield(n)
-end
-
-double(2) { |n| puts n *2}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&quot;proc&quot;&gt;Proc&lt;/h3&gt;
-&lt;p&gt;Procs are easy to define! You just call &lt;code&gt;Proc.new&lt;/code&gt; and pass in the block you want to save.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Procs are full-fledged object.&lt;/li&gt;
-  &lt;li&gt;This prevents you from haveing to retype the contents of your block every time you need to execute a particular bit of code.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-ruby&quot;&gt;multiples_of_3 = Proc.new do |n|
-  n % 3 == 0
-end
-
-(1..100).to_a.select(&amp;amp;multiples_of_3)
-
-multiples_of_3.call
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&quot;lambda&quot;&gt;Lambda&lt;/h3&gt;
-
-&lt;pre&gt;&lt;code&gt;lambda { |param| block }
-
-lambda { puts &quot;Hello!&quot; }
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&quot;lambda-vs-proc&quot;&gt;Lambda VS. Proc&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;A lambda checks the number of arguments passed to it , while a proc does not. This means that a lambda will throw an error if you pass it the worng number of arguments, whereas a proc will ignore unexpected arguments and assign &lt;code&gt;nil&lt;/code&gt; to any that are missing.&lt;/li&gt;
-  &lt;li&gt;When a lambda returns , it passes control back to the calling methods; when a proc returns, it does so immediately, without going back to the calling methods.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&quot;class&quot;&gt;Class&lt;/h1&gt;
-
-&lt;h3 id=&quot;create-a-class&quot;&gt;Create a class&lt;/h3&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-ruby&quot;&gt;class Message
-    @@messages_sent = 0
-    def initialize(from, to)
-        @from = from
-        @to = to
-        @@messages_sent += 1
-    end
-end
-
-my_message = Message.new(&quot;wing.of.war&quot;,&quot;Zhangejue&quot;)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;if you want to end a Ruby statement without going to a new line, you can just type a semicolon.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-ruby&quot;&gt;class Monkey
-end
-
-to 
-
-class Monkey;end
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&quot;set--get&quot;&gt;Set &amp;amp; Get&lt;/h3&gt;
-
-&lt;p&gt;That &lt;code&gt;name=&lt;/code&gt; might look funny, but you’re allowed to put an &lt;code&gt;=&lt;/code&gt; sign in a methods name.
-~~~
-def name
-  @name
-end&lt;/p&gt;
-
-&lt;p&gt;def name=(value)
-  @name = value
-end&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;*equal*
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;attr_reader :name
-attr_writer :job
-attr_accessor :job
-~~~&lt;/p&gt;
-
-&lt;h2 id=&quot;class-variable&quot;&gt;Class Variable&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;We can create class variable by starting a variable name with two @&lt;/li&gt;
-  &lt;li&gt;Only one copy of a class variable shared by all instances of a class.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-ruby&quot;&gt;class MyClass
-	@@class_variable
-end
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;class variable should use a class method to grab it.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;inheritance&quot;&gt;Inheritance&lt;/h2&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-ruby&quot;&gt;class ChildClass &amp;lt; FatherClass
-end
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;ChildClass is called: &lt;strong&gt;derived class&lt;/strong&gt; Or &lt;strong&gt;subclasss&lt;/strong&gt;&lt;/li&gt;
-  &lt;li&gt;FatherClass is called: &lt;strong&gt;parent&lt;/strong&gt; or &lt;strong&gt;superclass&lt;/strong&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;derived class&lt;/strong&gt; can only have one &lt;strong&gt;superclass&lt;/strong&gt;, not support &lt;strong&gt;multiple inheritance&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-ruby&quot;&gt;class DerivedClass &amp;lt; Base
-  def some_method
-    super(optional args)
-      # Some stuff
-    end
-  end
-end
-
-class Email&amp;lt;Message
-    def initialize(from, to)
-        super
-    end
-end
-
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&quot;publicprivate&quot;&gt;Public&amp;amp;Private&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Note that everything after the &lt;strong&gt;public&lt;/strong&gt; keyword through the &lt;strong&gt;end&lt;/strong&gt; of the class definition will now be public unless we say otherwise.&lt;/li&gt;
-  &lt;li&gt;Another way to say this is that the method cannot be called with an explicit receiver.&lt;/li&gt;
-  &lt;li&gt;In order to access private information, we have to create public methods that know how to get it.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&quot;module&quot;&gt;Module&lt;/h1&gt;
-
-&lt;p&gt;You can think of a &lt;strong&gt;Module&lt;/strong&gt; as a toolbox that contains a set of methods and constants.&lt;/p&gt;
-
-&lt;p&gt;One of the main purposes of modules is to seprate methods and constants into named spaces. That is called &lt;code&gt;namespacing&lt;/code&gt;.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;It dosent’t make sense to include variables in modules, since variables change.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-ruby&quot;&gt;module MyLibrary
-    FAVE_BOOK = &quot;Harry porter&quot;
-end
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;code&gt;Math::PI&lt;/code&gt; and &lt;code&gt;Circle::PI&lt;/code&gt;, This is called the &lt;strong&gt;scope resolution operator&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;inlcude-a-module&quot;&gt;inlcude a module…&lt;/h4&gt;
-&lt;pre&gt;&lt;code class=&quot;language-ruby&quot;&gt;class Angle
-  include Math
-  attr_accessor :radians
-  
-  def initialize(radians)
-    @radians = radians
-  end
-  
-  def cosine
-    cos(@radians)
-  end
-end
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&quot;mixin&quot;&gt;Mixin&lt;/h2&gt;
-
-&lt;p&gt;When a module is used to mix addtional behavior and information into a class, it’s called &lt;strong&gt;mixin&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;code&gt;include&lt;/code&gt; mixed a module’s methods in at the instance level.&lt;/li&gt;
-  &lt;li&gt;&lt;code&gt;extend&lt;/code&gt; keyword mixes a module’s methods at the &lt;code&gt;class&lt;/code&gt; level.&lt;/li&gt;
-&lt;/ul&gt;
-
 </description>
     </item>
     
