@@ -5,9 +5,192 @@
     <description></description>
     <link>/</link>
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Fri, 05 Jun 2015 22:56:10 +0800</pubDate>
-    <lastBuildDate>Fri, 05 Jun 2015 22:56:10 +0800</lastBuildDate>
+    <pubDate>Sun, 28 Jun 2015 23:25:39 +0800</pubDate>
+    <lastBuildDate>Sun, 28 Jun 2015 23:25:39 +0800</lastBuildDate>
     <generator>Jekyll v2.2.0</generator>
+    
+      <item>
+        <title>Storyboard和Code加载Xib自定义View</title>
+        <description>&lt;h1 id=&quot;storyboardcodexibuiview&quot;&gt;使用Storyboard和Code加载Xib定义的UIView&lt;/h1&gt;
+
+&lt;p&gt;之前一直使用代码来编写UI，但随着iOS开发中StoryBoard，Autolayout逐步完善，及未来iOS中分屏等功能的增加，迫切感项目开发中UI使用混编的重要性。&lt;/p&gt;
+
+&lt;p&gt;本文是对使用Xib来编写的自定义UIView的一个小小总结，将以一个小项目的形式来进行讲解。&lt;/p&gt;
+
+&lt;p&gt;目的：
+1. 通过StoryBoard加载支持AutoLayout的自定义UIView&lt;br /&gt;
+2. 通过Code加载支持AutoLayout的自定义UIView&lt;br /&gt;
+3. 合理自定义Custom UIView的SubView  &lt;/p&gt;
+
+&lt;h2 id=&quot;section&quot;&gt;1.项目结构&lt;/h2&gt;
+
+&lt;p&gt;创建了一个&lt;code&gt;Albums&lt;/code&gt;的项目，添加了&lt;code&gt;AlbumView&lt;/code&gt;继承于&lt;code&gt;UIView&lt;/code&gt;的类，用于Custom UIView的演示，同时导入&lt;code&gt;2.jpg&lt;/code&gt;,&lt;code&gt;3.jpg&lt;/code&gt;,&lt;code&gt;4.jpg&lt;/code&gt;用作于Album的封面。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Wing-Of-War/wing-of-war.github.com/master/_postsImages/2015/1/1.png&quot; alt=&quot;Alt text&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;xibcustom-ui&quot;&gt;2.Xib绘制Custom UI&lt;/h2&gt;
+
+&lt;p&gt;构建你需要的自定义UI。本文简单起见，只添加了一个&lt;code&gt;UIImage&lt;/code&gt;，和一个&lt;code&gt;UILabel&lt;/code&gt;，
+* 通过&lt;code&gt;AutoLayout&lt;/code&gt;来控制&lt;code&gt;ImageView&lt;/code&gt;的大小，与&lt;code&gt;ContainerView&lt;/code&gt;（即View）保持上左中8px的边距，下底保持22px的边距（给&lt;code&gt;UILabel&lt;/code&gt;留下足够的位置）
+* UILabel保持与ImageView的中线对齐与顶端0px的距离
+* &lt;code&gt;View&lt;/code&gt;在&lt;code&gt;Simulated Metrics&lt;/code&gt;中的&lt;code&gt;Size&lt;/code&gt;设置为&lt;code&gt;Freeform&lt;/code&gt;，&lt;code&gt;Size inspector&lt;/code&gt;中设置的宽为128，高设置为160&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Wing-Of-War/wing-of-war.github.com/master/_postsImages/2015/1/2.png&quot; alt=&quot;Alt text&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;xibclass&quot;&gt;3.Xib与Class的连接&lt;/h2&gt;
+
+&lt;p&gt;1 . File’s Owner需要与&lt;code&gt;AlbumView&lt;/code&gt;进行连接，即在代码中进行加载时，View的控制对象，用于构建Class File与Xib的连接  &lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Wing-Of-War/wing-of-war.github.com/master/_postsImages/2015/1/3.png&quot; alt=&quot;Alt text&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;2 . 连接完File’s Owner后，连接Xib中&lt;code&gt;SubView&lt;/code&gt;与&lt;code&gt;Class&lt;/code&gt;中对应的实例（可以不连接固定不变的对象）  &lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;strong&gt;&lt;code&gt;View&lt;/code&gt;这个实例就是使用UIView对象进行加载，直接从&lt;code&gt;1&lt;/code&gt;处拖到代码处，建立一个Strong类型的实例&lt;/strong&gt;  &lt;/li&gt;
+    &lt;li&gt;&lt;code&gt;2&lt;/code&gt;处则保持UIView的基本类型即可（我之前在这里犯了好多次错误，会将其填写为AlbumView，将会造成加载的死循环）&lt;/li&gt;
+    &lt;li&gt;其它的控件拖到interface中建立连接即可&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Wing-Of-War/wing-of-war.github.com/master/_postsImages/2015/1/4.png&quot; alt=&quot;Alt text&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;3 . 当然，还需要在class中实现&lt;code&gt;- (instancetype)initWithCoder:(NSCoder *)aDecoder&lt;/code&gt;方法，进行Xib的加载。Owner即为通过File’s Owner建立链接&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;- (instancetype)initWithCoder:(NSCoder *)aDecoder {
+  if (self = [super initWithCoder:aDecoder]) {
+    [[NSBundle mainBundle]loadNibNamed:@&quot;AlbumView&quot; owner:self options:nil];
+    [self addSubview:self.view];
+  }
+  return self;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&quot;storyboard&quot;&gt;4. 通过Storyboard进行加载&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code&gt;album1&lt;/code&gt;通过调整，使用得View的Size与Xib中的一致为&lt;code&gt;W128&lt;/code&gt;，&lt;code&gt;H160&lt;/code&gt;.&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;album2&lt;/code&gt;和&lt;code&gt;album3&lt;/code&gt;为随机拉扯大小，模拟自动布局或者在不同使用场景不同尺寸下&lt;code&gt;AlumbView&lt;/code&gt;的加载表现情况&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;album1,2,3&lt;/code&gt;分别添加了不同的底色用于区别（在开发中，将通过代码根据实际情况进行调整）&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Wing-Of-War/wing-of-war.github.com/master/_postsImages/2015/1/5.png&quot; alt=&quot;Alt text&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;运行模拟器&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Wing-Of-War/wing-of-war.github.com/master/_postsImages/2015/1/6.png&quot; alt=&quot;Alt text&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;除了&lt;code&gt;album1&lt;/code&gt;，结果并非我们所希望。&lt;/p&gt;
+
+&lt;p&gt;分析：
+模拟器中，红块，灰块为AlumbView本身，而蓝底部分则为我们在Xib中绘制定义的部分。所以在我们的&lt;code&gt;- (id)initWithCoder:(NSCoder *)aDecoder&lt;/code&gt;方法中还缺上这样一行代码。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;self.view.frame = CGRectMake(0, 0, self.frame.size.width, self.frame.size.height);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;将&lt;code&gt;AlbumView&lt;/code&gt;尺寸传给Xib中的View，再次启动模拟器：&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;坚屏&lt;/strong&gt;：  &lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Wing-Of-War/wing-of-war.github.com/master/_postsImages/2015/1/7.png&quot; alt=&quot;Alt text&quot; /&gt;  &lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;横屏&lt;/strong&gt;：
+&lt;img src=&quot;https://raw.githubusercontent.com/Wing-Of-War/wing-of-war.github.com/master/_postsImages/2015/1/8.png&quot; alt=&quot;Alt text&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;两个都非常正常，&lt;code&gt;AlbumView&lt;/code&gt;的&lt;code&gt;subviews&lt;/code&gt;也根据&lt;code&gt;autolayout&lt;/code&gt;很好的进行调整&lt;/p&gt;
+
+&lt;h2 id=&quot;code&quot;&gt;5.通过Code进行加载&lt;/h2&gt;
+
+&lt;p&gt;1 . 通过StoryBoard加载的自定义UIView需要实现&lt;code&gt;- (instancetype)initWithCoder:(NSCoder *)aDecoder&lt;/code&gt;，而通过代码实现的UIView则需要实现&lt;code&gt;- (instancetype)initWithFrame:(CGRect)frame&lt;/code&gt;或者&lt;code&gt;- (instancetype)init&lt;/code&gt;方法。但后者将只能实现固定大小的自定义UIView的加载，所以不继续讨论。
+2 . 在AlbumView.m文件中，添加以下代码：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;- (instancetype)initWithFrame:(CGRect)frame {
+  self = [super initWithFrame:frame];
+  if (self) {
+  //1
+    [[NSBundle mainBundle]loadNibNamed:@&quot;AlbumView&quot; owner:self options:nil];
+  //2
+    self.view.frame = CGRectMake(0, 0, self.frame.size.width, self.frame.size.height);
+    [self addSubview:self.view];
+  }
+  return self;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;代码1处加载&lt;code&gt;Xib&lt;/code&gt;文件，与使用&lt;code&gt;StoryBoard&lt;/code&gt;加载一样
+代码2处可见通过代码加载&lt;code&gt;AlbumView&lt;/code&gt;时，&lt;code&gt;AlbumView&lt;/code&gt;的尺寸是通过&lt;code&gt;frame&lt;/code&gt;传入，而&lt;code&gt;Storyboard&lt;/code&gt;中&lt;code&gt;AlbumView&lt;/code&gt;在运行&lt;code&gt;initWithCoder&lt;/code&gt;已经有由IB传入的尺寸
+&amp;gt;如果不加代码2处，AlbumView的Frame将为（0，0）尺寸的UIView进行加载，但AlbumView中的子View将会加载Xib中默认的UI布局。并且由于AlbumView的尺寸为CGRectZero，&lt;strong&gt;将不能对用户的操作进行响应&lt;/strong&gt;。&lt;/p&gt;
+
+&lt;p&gt;3 .  在ViewController的ViewDidLoa方法后面添加如下代码进行加载同样位置的AlbumView&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;  self.album1.hidden = true;
+  self.album2.hidden = true;
+  self.album3.hidden = true;
+  
+  AlbumView* album4 = [[AlbumView alloc]initWithFrame:self.album1.frame];
+  AlbumView* album5 = [[AlbumView alloc]initWithFrame:self.album2.frame];
+  AlbumView* album6 = [[AlbumView alloc]initWithFrame:self.album3.frame];
+  
+  [album4.imageView setImage:[UIImage imageNamed:@&quot;2.jpg&quot;]];
+  [album5.imageView setImage:[UIImage imageNamed:@&quot;3.jpg&quot;]];
+  [album6.imageView setImage:[UIImage imageNamed:@&quot;4.jpg&quot;]];
+  [album4.label setText:@&quot;初音ミク&quot;];
+  [album5.label setText:@&quot;初音ミク&quot;];
+  [album6.label setText:@&quot;初音ミク&quot;];
+
+  
+  [self.view addSubview:album4];
+  [self.view addSubview:album5];
+  [self.view addSubview:album6];
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;将得到与StroyBoard加载一样的效果&lt;/p&gt;
+
+&lt;h2 id=&quot;customviewsubview&quot;&gt;6. CustomView中SubView的修饰与圆角阴影生成&lt;/h2&gt;
+
+&lt;p&gt;在&lt;code&gt;AlbumView.m&lt;/code&gt;的方法中添加以下方法&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;- (void)setupCustomUIItem {
+  //1.
+  self.view.layer.cornerRadius = 6.0;
+  //self.view.layer.borderWidth = 5.0;
+  //self.view.layer.borderColor = [UIColor grayColor].CGColor;
+  //2.
+  self.layer.shadowOpacity = 0.5f;
+  self.layer.shadowOffset = CGSizeMake(2.0f, 5.0f);
+  self.layer.shadowRadius = 5.0f;
+  //3.
+  self.view.layer.masksToBounds = YES;
+  //4.
+  self.backgroundColor = [UIColor clearColor];
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;修改的为Xib布局中的&lt;code&gt;view&lt;/code&gt;，将其修改为圆角矩形&lt;/li&gt;
+  &lt;li&gt;修改的为实际上的&lt;code&gt;AlbumView&lt;/code&gt;，为其添加阴影&lt;/li&gt;
+  &lt;li&gt;将以上两者的图层进行合并&lt;/li&gt;
+  &lt;li&gt;在&lt;code&gt;StoryBoard&lt;/code&gt;中将&lt;code&gt;AlbumView&lt;/code&gt;的背景色设置为不同颜色进行区别，在此处进行清除或者自定义&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;最后在两个不同的init的方法末尾调用此方法，运行模拟器：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Wing-Of-War/wing-of-war.github.com/master/_postsImages/2015/1/9.png&quot; alt=&quot;Alt text&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;section-1&quot;&gt;7. 参考&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=xP7YvdlnHfA&quot;&gt;Custom UIView from Xib file in Xcode 5 for Reusable Components - Part 1&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=5ibVlOx2o7I&quot;&gt;Custom UIView from Xib file Loaded Programmatically in Xcode 5 - Part 2&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Sun, 28 Jun 2015 00:00:00 +0800</pubDate>
+        <link>/ios/2015/06/28/Storyboard-and-Code-load-Xib.html</link>
+        <guid isPermaLink="true">/ios/2015/06/28/Storyboard-and-Code-load-Xib.html</guid>
+        
+        
+        <category>ios</category>
+        
+      </item>
     
       <item>
         <title>Chrome插件 开发的前端笔记</title>
@@ -2038,48 +2221,6 @@ if (error) {
         
         
         <category>ios</category>
-        
-      </item>
-    
-      <item>
-        <title>如何快速的切换Mac系统的网络配置</title>
-        <description>&lt;h1 id=&quot;mac&quot;&gt;如何快速的切换Mac系统的网络配置&lt;/h1&gt;
-
-&lt;h2 id=&quot;section&quot;&gt;问题&lt;/h2&gt;
-
-&lt;p&gt;由于国内网络环境恶劣，在日常使用中，我经常会面临如下情况&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;访问Google, Youtube等境外网站需要使用&lt;code&gt;曲径&lt;/code&gt;等自动代理配置&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;或者最近经常出现的DNS服务污染，比较严重的情况连taobao搜索都不可使用，或者在使用Appstore下载更新时，使用 114, 08 , openDNS等手动配置更为靠谱&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;时候却造成我访问国内网站（视频网站会比较明显）速度下降，所以需要切换回运营提供的DNS（此DNS一般能与114，08等DNS有几十到几百望毫秒的差距）&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;!-- more --&gt;
-
-&lt;p&gt;所以每当感觉上网不畅时，一般都需要点开&lt;code&gt;系统偏好设置&lt;/code&gt;-&amp;gt;&lt;code&gt;网络&lt;/code&gt;-&amp;gt;&lt;code&gt;高级&lt;/code&gt;-&amp;gt;&lt;code&gt;DNS&lt;/code&gt; or &lt;code&gt;代理&lt;/code&gt;等设置，还需要额外的从一些记录软件中提取相应的配置参数&lt;/p&gt;
-
-&lt;h2 id=&quot;section-1&quot;&gt;解决办法：&lt;/h2&gt;
-
-&lt;p&gt;&lt;code&gt;系统偏好设置&lt;/code&gt;-&amp;gt;&lt;code&gt;网络&lt;/code&gt; 此页面上有一个位置，选择&lt;code&gt;编辑位置&lt;/code&gt;后点击下面的&lt;code&gt;+&lt;/code&gt;，即设立一种新的网络环境。&lt;/p&gt;
-
-&lt;h2 id=&quot;section-2&quot;&gt;使用：&lt;/h2&gt;
-
-&lt;p&gt;OK，此种方法最赞的就是只用点击桌面左上角的小苹果&lt;code&gt;&lt;/code&gt;-&amp;gt;&lt;code&gt;位置&lt;/code&gt;进行切换即可。
-####缺点：网络会切断一会儿。&lt;/p&gt;
-</description>
-        <pubDate>Mon, 03 Nov 2014 00:00:00 +0800</pubDate>
-        <link>/other/2014/11/03/SwitchInternetSetting-CN.html</link>
-        <guid isPermaLink="true">/other/2014/11/03/SwitchInternetSetting-CN.html</guid>
-        
-        
-        <category>other</category>
         
       </item>
     

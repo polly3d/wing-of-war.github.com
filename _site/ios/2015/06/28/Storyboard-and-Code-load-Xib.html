@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="p:domain_verify" content="da11300c4771f2643982b1b5458e2f6b"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <!--[if lte IE 9]><meta http-equiv="refresh" content="0;url=/ie.html"><![endif]-->
+
+    <title>Storyboard和Code加载Xib自定义View</title>
+    <meta name="description" content="">
+    <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
+    <link rel="icon" 
+      type="image/png" 
+      href="/assets/img/myicon.png">
+
+  </head>
+  <body>
+    <aside id="sidebar">
+      <nav id="tags">
+        <a href="/index.html" id="avatar"></a>
+
+        <ul id="tags__ul">
+          <li id="js-label1" class="tags__li tags-btn active">All</li>
+          <li id="js-label2" class="tags__li tags-btn">iOS</li>
+          <li id="js-label3" class="tags__li tags-btn">Python</li>
+          <li id="js-label4" class="tags__li tags-btn">Ruby</li>
+          <li id="js-label5" class="tags__li tags-btn">Web</li>
+          <li id="js-label6" class="tags__li tags-btn">Other</li>
+        </ul>
+
+        <div id="tags__bottom">
+          <a href="mailto:wing.of.war.1980th@gmail.com" id="icon-email" class="tags-btn fontawesomeregular"></a>
+          <a href="/rss.xml" id="icon-feed" class="tags-btn fontawesomeregular"></a>
+          <a href="https://github.com/Wing-Of-War" id="icon-github" class="tags-btn fontawesomeregular"></a>
+
+        </div>
+      </nav> <!-- end #tags -->
+
+      <div id="posts-list">
+        <!-- 搜索框，使用GoogleEngine失败 -->
+<!--         <form action="" id="search-form">
+          <a href="/index.html" id="mobile-avatar"></a>
+          NOTE: input field is disabled by default
+          <input id="search-input" type="text" placeholder="Search..." >
+        </form>
+ -->
+        <nav id="pl__container">
+        
+          <a class="ios pl__all" href="/ios/2015/06/28/Storyboard-and-Code-load-Xib.html">
+            <span class="pl__circle"></span>
+            <span class="pl__title">Storyboard和Code加载Xib自定义View</span>
+            <span class="pl__date">Jun 2015</span>
+          </a>
+        
+          <a class="web pl__all" href="/web/2015/04/02/ChromeExtension-Note.html">
+            <span class="pl__circle"></span>
+            <span class="pl__title">Chrome插件 开发的前端笔记</span>
+            <span class="pl__date">Apr 2015</span>
+          </a>
+        
+          <a class="web pl__all" href="/web/2015/03/28/ChromeExtension-TabSpace.html">
+            <span class="pl__circle"></span>
+            <span class="pl__title">Chrome插件 TabSpace</span>
+            <span class="pl__date">Mar 2015</span>
+          </a>
+        
+          <a class="other pl__all" href="/other/2015/03/13/Leave-Or-Stay.html">
+            <span class="pl__circle"></span>
+            <span class="pl__title">创业公司去留评估指南</span>
+            <span class="pl__date">Mar 2015</span>
+          </a>
+        
+          <a class="ios pl__all" href="/ios/2015/03/12/9-Great-Swift-Interview-Questions.html">
+            <span class="pl__circle"></span>
+            <span class="pl__title">9个伟大的Swift面试题(译)</span>
+            <span class="pl__date">Mar 2015</span>
+          </a>
+        
+          <a class="ios pl__all" href="/ios/2015/03/11/as!-Operator.html">
+            <span class="pl__circle"></span>
+            <span class="pl__title">as!操作符（译）</span>
+            <span class="pl__date">Mar 2015</span>
+          </a>
+        
+          <a class="ios pl__all" href="/ios/2014/12/21/SubClass-Of-NSObject.html">
+            <span class="pl__circle"></span>
+            <span class="pl__title">创建Objective-C数据模型的心得1</span>
+            <span class="pl__date">Dec 2014</span>
+          </a>
+        
+          <a class="ios pl__all" href="/ios/2014/12/12/iOS-Push-Authoarztion-Rest-CN.html">
+            <span class="pl__circle"></span>
+            <span class="pl__title">重置iOS App请求推送授权请求</span>
+            <span class="pl__date">Dec 2014</span>
+          </a>
+        
+          <a class="ios pl__all" href="/ios/2014/12/12/Golden-Path-Cn.html">
+            <span class="pl__circle"></span>
+            <span class="pl__title">Golden Path</span>
+            <span class="pl__date">Dec 2014</span>
+          </a>
+        
+          <a class="ios pl__all" href="/ios/2014/11/10/Raywenderlich-Objective-C-style-guide-CN.html">
+            <span class="pl__circle"></span>
+            <span class="pl__title">raywenderlich.com Objective-C代码规范中文简易注释</span>
+            <span class="pl__date">Nov 2014</span>
+          </a>
+        
+          <a class="other pl__all" href="/other/2014/11/03/SwitchInternetSetting-CN.html">
+            <span class="pl__circle"></span>
+            <span class="pl__title">如何快速的切换Mac系统的网络配置</span>
+            <span class="pl__date">Nov 2014</span>
+          </a>
+        
+          <a class="ruby pl__all" href="/ruby/2014/10/25/Ruby_Study-EN.html">
+            <span class="pl__circle"></span>
+            <span class="pl__title">Ruby Study Memo</span>
+            <span class="pl__date">Oct 2014</span>
+          </a>
+        
+          <a class="python pl__all" href="/python/2014/09/13/ACGArt-EN.html">
+            <span class="pl__circle"></span>
+            <span class="pl__title">ACGArt DownLoader</span>
+            <span class="pl__date">Sep 2014</span>
+          </a>
+        
+          <a class="ios pl__all" href="/ios/2014/08/10/Cocoapods-Research-CN.html">
+            <span class="pl__circle"></span>
+            <span class="pl__title">Cocoapods进阶教程</span>
+            <span class="pl__date">Aug 2014</span>
+          </a>
+        
+          <a class="cn pl__all" href="/cn/2014/08/09/FirstPost-CN.html">
+            <span class="pl__circle"></span>
+            <span class="pl__title">GitHub 上的第一贴</span>
+            <span class="pl__date">Aug 2014</span>
+          </a>
+        
+        </nav>
+      </div> <!-- end #posts-list -->
+    </aside> <!-- end #sidebar -->
+
+    <div id="post">
+      <!-- 加载文章 -->
+      <div id="pjax">
+        <article id="post__content">
+  <h1 id="post__title" data-identifier="20150628">Storyboard和Code加载Xib自定义View</h1>
+  <h1 id="storyboardcodexibuiview">使用Storyboard和Code加载Xib定义的UIView</h1>
+
+<p>之前一直使用代码来编写UI，但随着iOS开发中StoryBoard，Autolayout逐步完善，及未来iOS中分屏等功能的增加，迫切感项目开发中UI使用混编的重要性。</p>
+
+<p>本文是对使用Xib来编写的自定义UIView的一个小小总结，将以一个小项目的形式来进行讲解。</p>
+
+<p>目的：
+1. 通过StoryBoard加载支持AutoLayout的自定义UIView<br />
+2. 通过Code加载支持AutoLayout的自定义UIView<br />
+3. 合理自定义Custom UIView的SubView  </p>
+
+<h2 id="section">1.项目结构</h2>
+
+<p>创建了一个<code>Albums</code>的项目，添加了<code>AlbumView</code>继承于<code>UIView</code>的类，用于Custom UIView的演示，同时导入<code>2.jpg</code>,<code>3.jpg</code>,<code>4.jpg</code>用作于Album的封面。</p>
+
+<p><img src="https://raw.githubusercontent.com/Wing-Of-War/wing-of-war.github.com/master/_postsImages/2015/1/1.png" alt="Alt text" /></p>
+
+<h2 id="xibcustom-ui">2.Xib绘制Custom UI</h2>
+
+<p>构建你需要的自定义UI。本文简单起见，只添加了一个<code>UIImage</code>，和一个<code>UILabel</code>，
+* 通过<code>AutoLayout</code>来控制<code>ImageView</code>的大小，与<code>ContainerView</code>（即View）保持上左中8px的边距，下底保持22px的边距（给<code>UILabel</code>留下足够的位置）
+* UILabel保持与ImageView的中线对齐与顶端0px的距离
+* <code>View</code>在<code>Simulated Metrics</code>中的<code>Size</code>设置为<code>Freeform</code>，<code>Size inspector</code>中设置的宽为128，高设置为160</p>
+
+<p><img src="https://raw.githubusercontent.com/Wing-Of-War/wing-of-war.github.com/master/_postsImages/2015/1/2.png" alt="Alt text" /></p>
+
+<h2 id="xibclass">3.Xib与Class的连接</h2>
+
+<p>1 . File’s Owner需要与<code>AlbumView</code>进行连接，即在代码中进行加载时，View的控制对象，用于构建Class File与Xib的连接  </p>
+
+<p><img src="https://raw.githubusercontent.com/Wing-Of-War/wing-of-war.github.com/master/_postsImages/2015/1/3.png" alt="Alt text" /></p>
+
+<p>2 . 连接完File’s Owner后，连接Xib中<code>SubView</code>与<code>Class</code>中对应的实例（可以不连接固定不变的对象）  </p>
+
+<blockquote>
+  <ul>
+    <li><strong><code>View</code>这个实例就是使用UIView对象进行加载，直接从<code>1</code>处拖到代码处，建立一个Strong类型的实例</strong>  </li>
+    <li><code>2</code>处则保持UIView的基本类型即可（我之前在这里犯了好多次错误，会将其填写为AlbumView，将会造成加载的死循环）</li>
+    <li>其它的控件拖到interface中建立连接即可</li>
+  </ul>
+</blockquote>
+
+<p><img src="https://raw.githubusercontent.com/Wing-Of-War/wing-of-war.github.com/master/_postsImages/2015/1/4.png" alt="Alt text" /></p>
+
+<p>3 . 当然，还需要在class中实现<code>- (instancetype)initWithCoder:(NSCoder *)aDecoder</code>方法，进行Xib的加载。Owner即为通过File’s Owner建立链接</p>
+
+<pre><code>- (instancetype)initWithCoder:(NSCoder *)aDecoder {
+  if (self = [super initWithCoder:aDecoder]) {
+    [[NSBundle mainBundle]loadNibNamed:@"AlbumView" owner:self options:nil];
+    [self addSubview:self.view];
+  }
+  return self;
+}
+</code></pre>
+
+<h2 id="storyboard">4. 通过Storyboard进行加载</h2>
+
+<ul>
+  <li><code>album1</code>通过调整，使用得View的Size与Xib中的一致为<code>W128</code>，<code>H160</code>.</li>
+  <li><code>album2</code>和<code>album3</code>为随机拉扯大小，模拟自动布局或者在不同使用场景不同尺寸下<code>AlumbView</code>的加载表现情况</li>
+  <li><code>album1,2,3</code>分别添加了不同的底色用于区别（在开发中，将通过代码根据实际情况进行调整）</li>
+</ul>
+
+<p><img src="https://raw.githubusercontent.com/Wing-Of-War/wing-of-war.github.com/master/_postsImages/2015/1/5.png" alt="Alt text" /></p>
+
+<p>运行模拟器</p>
+
+<p><img src="https://raw.githubusercontent.com/Wing-Of-War/wing-of-war.github.com/master/_postsImages/2015/1/6.png" alt="Alt text" /></p>
+
+<p>除了<code>album1</code>，结果并非我们所希望。</p>
+
+<p>分析：
+模拟器中，红块，灰块为AlumbView本身，而蓝底部分则为我们在Xib中绘制定义的部分。所以在我们的<code>- (id)initWithCoder:(NSCoder *)aDecoder</code>方法中还缺上这样一行代码。</p>
+
+<pre><code>self.view.frame = CGRectMake(0, 0, self.frame.size.width, self.frame.size.height);
+</code></pre>
+
+<p>将<code>AlbumView</code>尺寸传给Xib中的View，再次启动模拟器：</p>
+
+<p><strong>坚屏</strong>：  </p>
+
+<p><img src="https://raw.githubusercontent.com/Wing-Of-War/wing-of-war.github.com/master/_postsImages/2015/1/7.png" alt="Alt text" />  </p>
+
+<p><strong>横屏</strong>：
+<img src="https://raw.githubusercontent.com/Wing-Of-War/wing-of-war.github.com/master/_postsImages/2015/1/8.png" alt="Alt text" /></p>
+
+<p>两个都非常正常，<code>AlbumView</code>的<code>subviews</code>也根据<code>autolayout</code>很好的进行调整</p>
+
+<h2 id="code">5.通过Code进行加载</h2>
+
+<p>1 . 通过StoryBoard加载的自定义UIView需要实现<code>- (instancetype)initWithCoder:(NSCoder *)aDecoder</code>，而通过代码实现的UIView则需要实现<code>- (instancetype)initWithFrame:(CGRect)frame</code>或者<code>- (instancetype)init</code>方法。但后者将只能实现固定大小的自定义UIView的加载，所以不继续讨论。
+2 . 在AlbumView.m文件中，添加以下代码：</p>
+
+<pre><code>- (instancetype)initWithFrame:(CGRect)frame {
+  self = [super initWithFrame:frame];
+  if (self) {
+  //1
+    [[NSBundle mainBundle]loadNibNamed:@"AlbumView" owner:self options:nil];
+  //2
+    self.view.frame = CGRectMake(0, 0, self.frame.size.width, self.frame.size.height);
+    [self addSubview:self.view];
+  }
+  return self;
+}
+</code></pre>
+
+<p>代码1处加载<code>Xib</code>文件，与使用<code>StoryBoard</code>加载一样
+代码2处可见通过代码加载<code>AlbumView</code>时，<code>AlbumView</code>的尺寸是通过<code>frame</code>传入，而<code>Storyboard</code>中<code>AlbumView</code>在运行<code>initWithCoder</code>已经有由IB传入的尺寸
+&gt;如果不加代码2处，AlbumView的Frame将为（0，0）尺寸的UIView进行加载，但AlbumView中的子View将会加载Xib中默认的UI布局。并且由于AlbumView的尺寸为CGRectZero，<strong>将不能对用户的操作进行响应</strong>。</p>
+
+<p>3 .  在ViewController的ViewDidLoa方法后面添加如下代码进行加载同样位置的AlbumView</p>
+
+<pre><code>  self.album1.hidden = true;
+  self.album2.hidden = true;
+  self.album3.hidden = true;
+  
+  AlbumView* album4 = [[AlbumView alloc]initWithFrame:self.album1.frame];
+  AlbumView* album5 = [[AlbumView alloc]initWithFrame:self.album2.frame];
+  AlbumView* album6 = [[AlbumView alloc]initWithFrame:self.album3.frame];
+  
+  [album4.imageView setImage:[UIImage imageNamed:@"2.jpg"]];
+  [album5.imageView setImage:[UIImage imageNamed:@"3.jpg"]];
+  [album6.imageView setImage:[UIImage imageNamed:@"4.jpg"]];
+  [album4.label setText:@"初音ミク"];
+  [album5.label setText:@"初音ミク"];
+  [album6.label setText:@"初音ミク"];
+
+  
+  [self.view addSubview:album4];
+  [self.view addSubview:album5];
+  [self.view addSubview:album6];
+</code></pre>
+
+<p>将得到与StroyBoard加载一样的效果</p>
+
+<h2 id="customviewsubview">6. CustomView中SubView的修饰与圆角阴影生成</h2>
+
+<p>在<code>AlbumView.m</code>的方法中添加以下方法</p>
+
+<pre><code>- (void)setupCustomUIItem {
+  //1.
+  self.view.layer.cornerRadius = 6.0;
+  //self.view.layer.borderWidth = 5.0;
+  //self.view.layer.borderColor = [UIColor grayColor].CGColor;
+  //2.
+  self.layer.shadowOpacity = 0.5f;
+  self.layer.shadowOffset = CGSizeMake(2.0f, 5.0f);
+  self.layer.shadowRadius = 5.0f;
+  //3.
+  self.view.layer.masksToBounds = YES;
+  //4.
+  self.backgroundColor = [UIColor clearColor];
+}
+</code></pre>
+
+<ol>
+  <li>修改的为Xib布局中的<code>view</code>，将其修改为圆角矩形</li>
+  <li>修改的为实际上的<code>AlbumView</code>，为其添加阴影</li>
+  <li>将以上两者的图层进行合并</li>
+  <li>在<code>StoryBoard</code>中将<code>AlbumView</code>的背景色设置为不同颜色进行区别，在此处进行清除或者自定义</li>
+</ol>
+
+<p>最后在两个不同的init的方法末尾调用此方法，运行模拟器：</p>
+
+<p><img src="https://raw.githubusercontent.com/Wing-Of-War/wing-of-war.github.com/master/_postsImages/2015/1/9.png" alt="Alt text" /></p>
+
+<h2 id="section-1">7. 参考</h2>
+
+<p><a href="https://www.youtube.com/watch?v=xP7YvdlnHfA">Custom UIView from Xib file in Xcode 5 for Reusable Components - Part 1</a></p>
+
+<p><a href="https://www.youtube.com/watch?v=5ibVlOx2o7I">Custom UIView from Xib file Loaded Programmatically in Xcode 5 - Part 2</a></p>
+
+</article> <!-- end #post__content -->
+
+<div id="post__share">
+  <a id="icon-twitter" class="fontawesomeregular" href="https://twitter.com/intent/tweet?url=http://wing-of-war.github.io//ios/2015/06/28/Storyboard-and-Code-load-Xib.html&text=Storyboard和Code加载Xib自定义View" target="_blank"></a>
+  <a id="icon-cc" class="fontawesomeregular" href="http://creativecommons.org/licenses/by-nc-sa/3.0" target="_blank"></a>
+  <a id="icon-weibo" class="fontawesomeregular" href="http://v.t.sina.com.cn/share/share.php?url=http://wing-of-war.github.io//ios/2015/06/28/Storyboard-and-Code-load-Xib.html&title=Storyboard和Code加载Xib自定义View" target="_blank"></a>
+</div> <!-- end #post__share -->
+
+<div id="disqus_thread">
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  <a href="http://disqus.com" class="dsq-brlink" target="_blank">Loading Disqus comments...</a>
+</div> <!-- end #disqus_thread -->
+
+<p id="copyright">Powered by <a href="http://jekyllrb.com" target="_blank">Jekyll</a>&nbsp;&nbsp;|&nbsp;&nbsp;Theme <a href="https://github.com/P233/3-Jekyll" target="_blank">3-Jekyll</a></p>
+      </div> <!-- end #pjax -->
+
+      <!-- 右侧文章导航栏 -->
+      <div id="post__toc-trigger">
+        <div id="post__toc">
+          <span id="post__toc-title">Table of Contents</span>
+          <ul id="post__toc-ul"></ul>
+        </div>
+      </div>
+    </div> <!-- end #post -->
+
+<!-- 右侧导航按钮 -->
+    <button id="js-fullscreen"><span id="icon-arrow" class="fontawesomeregular"></span></button>
+
+    <script src="/assets/js/jquery-2.0.3.min.js"></script>
+    <script src="/assets/js/jquery.pjax.js"></script>
+    <script src="/assets/js/nprogress.js"></script>
+    <script src="/assets/js/script.js"></script>
+  </body>
+</html>
